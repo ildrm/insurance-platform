@@ -1,0 +1,41 @@
+test_id,owner,acceptance,status
+T-AUTHN,Identity,Passkey/password/TOTP/recovery/OIDC/SAML session flows; stolen/revoked token and factor reset cannot lower assurance,planned; not executed
+T-AUTHZ,Security,Branch/assignment/authority/purpose/step-up and independent approval evaluated; delayed tasks and replay reauthorize,planned; not executed
+T-TENANT,All protected owners,A-to-B ID substitutions fail across reads/writes/search/cache/export/SSE/jobs/webhooks; pooled sessions and composite FKs cannot leak,planned; not executed
+T-PARTY,Party,One canonical human has driver/beneficiary/claimant roles; ambiguous matches cannot merge; aliases hide global identity; steward corrections retain lineage,planned; not executed
+T-PRODUCT,Product,Published versions reject mutation; invalid effective dates/rule dependencies/terms missing approvals block publication; future pack adds typed strategy,planned; not executed
+T-RATING,Actuary/Pricing,Independent deterministic vectors and property tests verify rounding/tax/discount/factor/FX boundaries and historical runtime reproduction,planned; not executed
+T-QUOTE,Quote,"Firm-only expiry/version acceptance, partial carrier timeout, RFQ revisions, honest non-equivalent comparisons, stable repeated acceptance",planned; not executed
+T-UW,Underwriting,Accept/refer/decline rules and authority evidence preserved; changed risk invalidates clearance; no self-approved override,planned; not executed
+T-HISTORY,Policy,"Historical coverage/terms reproduced at loss instant, backdated endorsements/reinstatement gap/renewal preserve immutable old versions",planned; not executed
+T-CLAIM,Claims,"Concurrent claims cannot exceed shared cover limits; partial items/payees, reserve vs payable, claims-made dates, appeal/reopen/recovery do not duplicate payments",planned; not executed
+T-PAYMENT,Payments,"Timeout-after-capture, missing/out-of-order callback and provider statement converge on one effect; outstanding debit prevents unsafe duplicate attempt",planned; not executed
+T-LEDGER,Accounting,Golden journals balance per book/currency; refunds/chargebacks/FX/reserves mapped correctly; immutable postings; rebuild balances and three-way reconciliation,planned; not executed
+T-COMMISSION,Commission,Fixed/percentage/marginal vs whole-tier basis/version/vesting/clawback matches independent agreed vectors and statement journals,planned; not executed
+T-SETTLEMENT,Settlement,Changed payee invalidates approvals; partial success pays each line once; holds/tax/withholding/reconciliation prevent premature completion,planned; not executed
+T-ASSIST,Providers,Two simultaneous provider accepts award one assignment; booking capacity and reassign timeout safe; tracking consent/minimal disclosure,planned; not executed
+T-IMPORT,Distribution,"100k-row corporate/fleet import chunk/retry has row idempotency, clear invalid rows and no employee medical data for employer",planned; not executed
+T-DOC,Documents,"Actual MIME/size/decompression/polyglot/malware checks; quarantined file inaccessible; multipart checksum/retry, restricted OCR fields/human corrections",planned; not executed
+T-FRAUD,Fraud,"Signals/reasons/version preserved, reviewer/appeal path; opaque model score cannot deny claim or pay automatically",planned; not executed
+T-AI,AI,"Tenant/purpose retrieval, prompt-injection/advice/hallucination/retention/fairness eval; untrusted text cannot call privileged command without ordinary approval",planned; not executed
+T-NOTIFY,Notifications,"Transactional vs marketing consent, quiet hours/timezone, dedup/retry/fallback and delivery receipts; neutral push content",planned; not executed
+T-CRM,Customer,"Customer360 field grants, complaint/task/ticket timeline, verified reviews and consented campaigns do not expose another tenant or health dossier",planned; not executed
+T-COMPLIANCE,Compliance,"Jurisdiction bundle conflicts block publication; KYC/AML/complaint SLA/appeal, legal holds, filings and signed evidence verified",planned; not executed
+T-CONTRACT,Integrations,Certified mock/real sandbox carrier/PSP/KYC/bank schema/error/status-query/idempotency/signature/rotation/SSRF fault tests,planned; not executed
+T-EVENT,Platform,"Crash at commit/publish/ack/inbox boundary duplicates delivery but not effect; missing/out-of-order aggregate versions, DLQ replay/rebuild correct",planned; not executed
+T-WORKFLOW,Platform,"Replay old and multi-month workflow histories; worker/engine restarts, lost starts/signals, human escalation and irreversible compensation safety",planned; not executed
+T-RACE,Critical owners,Parallel acceptance/issue/decision/refund/payout/endorsement/renewal hit version/semantic key/cap locks; deadlock retries bounded,planned; not executed
+T-ANALYTICS,Data/Actuary,Metric definitions/cohorts/currencies/valuation verified; correction/replay does not inflate facts; marts reconcile to financial owners,planned; not executed
+T-AUDIT,Compliance,Sensitive reads/privileged writes and approvals recorded; operator cannot edit archive; signed hash chain detects tampering and restore gaps,planned; not executed
+T-PRIVACY,Privacy,Data inventory/class/purpose/hold/erasure/export/processor retention tested; no raw restricted logs/cache/analytics; restore reapplies deletions,planned; not executed
+T-SECURITY,Security,ASVS/API threat cases incl injection/XSS/CSRF/SSRF/smuggling/deserialization/bot/business abuse; independent penetration test,planned; not executed
+T-A11Y,UX,"WCAG2.2AA automated plus keyboard/screen-reader/zoom/manual FNOL/compare/forms/dialogs/charts, accessible authentication",planned; not executed
+T-I18N,UX,RTL/LTR local names/addresses/currencies/calendars/legal templates; DST/leap-day boundaries don't change contractual instants,planned; not executed
+T-BOUNDARY,Architecture,"Import/SQL graph denies cycles, domain Nest/DB imports and cross-owner writes; controllers do not make insurance decisions",planned; not executed
+T-SUPPLY,Platform,"Frozen builds, secret/dependency/container/license scans, SBOM/signature/provenance, no Docker socket and non-root/read-only/SIGTERM",planned; not executed
+T-COMPOSE,Platform,Clean checkout pinned images plus local secret bootstrap starts seeded four apps/API/workers/mocks; health/migrations/dev/test/prod profiles,planned; not executed
+T-LOAD,SRE,"Mixed realistic load/burst/stress/soak proves page/API/quote/queue budgets, fair tenant quotas, circuit/bulkhead/backpressure and capacity",planned; not executed
+T-RESTORE,SRE,"PITR/object/KMS/Temporal/broker restore with consistent checkpoint, external reconciliation/fencing, tenant isolation and journal reconstruction",planned; not executed
+T-MIGRATION,Database,"Expand/backfill/validate/contract compatibility, history retention, failed migrations and safe rollback/roll-forward with open workflows",planned; not executed
+T-E2E,QA,Two-carrier quote-to-policy then endorsement/renewal/FNOL/partial claim/payout/settlement per role across frontends with synthetic data,planned; not executed
+T-DESIGN,Architecture,All source clauses/sections/personas/output headings traced; diagrams/machines/ADRs/owners/API/test IDs consistent; no omitted major capability,planned; not executed

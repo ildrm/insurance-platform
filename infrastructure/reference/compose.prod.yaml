@@ -1,0 +1,23 @@
+# Reference single-host production override. Not an HA/cloud deployment.
+services:
+  reverse-proxy:
+    ports: !override ["443:8443"]
+    secrets: [ingress_tls]
+    environment: {PROXY_CONFIG_FILE: /etc/insurance-proxy/production.yaml}
+  api:
+    cpus: 2
+    mem_limit: 2g
+    environment: {NODE_ENV: production, DEPLOYMENT_MODE: production}
+  worker:
+    cpus: 2
+    mem_limit: 2g
+    environment: {NODE_ENV: production, DEPLOYMENT_MODE: production}
+  workflow-worker:
+    environment: {NODE_ENV: production, DEPLOYMENT_MODE: production}
+  integration-worker:
+    environment: {NODE_ENV: production, DEPLOYMENT_MODE: production}
+  bootstrap:
+    command: [node, dist/main.js, migrate-production]
+    # No demo seeds or mock credentials in production.
+secrets:
+  ingress_tls: {file: "${LOCAL_SECRET_DIR:?}/ingress_tls"}

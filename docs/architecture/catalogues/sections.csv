@@ -1,0 +1,99 @@
+source_section,title,owner,blueprint_sections
+1,Mission,architecture,1;8;40;41;46;54;55;58
+2,Non-negotiable technology requirements,platform,35;36;37;39;48
+3,Architectural philosophy,architecture,1;8;40;41;46;54;55;58
+4,Required frontend applications,frontend,32;33;34
+5,Multi-tenancy,tenant,6;26;28
+6,Identity and Party architecture,party,10;26;28
+7,Authentication,identity,6;26
+8,Authorization,security,6;26;51
+9,Insurance products,product,12;28
+10,Product versioning,product,12;28
+11,Rating and pricing engine,pricing,13;18
+12,Underwriting,underwriting,14;31;42
+13,Quotes,quote,15;29;31;42
+14,Marketplace comparison,quote,15;29;31;42
+15,Policy administration,policy,16;31;42
+16,Endorsements,policy,16;31;42
+17,Renewals,policy,16;31;42
+18,Claims,claims,17;31;42
+19,FNOL UX,claims,17;31;42
+20,Provider networks,providers,21;31;42
+21,Assistance,providers,21;31;42
+22,Payments,payments,18;29;31;42
+23,Financial ledger,ledger,18;28
+24,Commission,commission,19;18
+25,Settlement,settlement,20;31;42
+26,Corporate B2B,distribution,22;23
+27,Agent and broker platform,distribution,22;23
+28,Affiliate platform,distribution,22;23
+29,Embedded insurance,distribution,22;23
+30,Developer platform,integrations,23;29;52
+31,Integration platform,integrations,23;29;52
+32,API design,integrations,23;29;52
+33,Idempotency,payments,18;29;31;42
+34,Event-driven architecture,platform,35;36;37;39;48
+35,Durable workflows,platform,35;36;37;39;48
+36,Caching,platform,35;36;37;39;48
+37,Document architecture,documents,23;27;28
+38,Search,platform,35;36;37;39;48
+39,Analytics,analytics,38;49
+40,Fraud,fraud,25;27
+41,AI,ai,24;25;27
+42,Recommendation engine,ai,24;25;27
+43,OCR/document intelligence,documents,23;27;28
+44,Privacy,privacy,27;53
+45,Security baseline,security,6;26;51
+46,Audit,compliance,27;53;57
+47,Observability,platform,35;36;37;39;48
+48,Reliability,platform,35;36;37;39;48
+49,Backup and disaster recovery,platform,35;36;37;39;48
+50,Docker,platform,35;36;37;39;48
+51,Development experience,platform,35;36;37;39;48
+52,Database design,architecture,1;8;40;41;46;54;55;58
+53,Time,policy,16;31;42
+54,Money,ledger,18;28
+55,Localization,frontend,32;33;34
+56,Accessibility,frontend,32;33;34
+57,UX,frontend,32;33;34
+58,Design system,frontend,32;33;34
+59,Real-time communication,frontend,32;33;34
+60,Notifications,notifications,33;37
+61,CRM and communication,customer,8;22;33
+62,Complaints/disputes,compliance,27;53;57
+63,Reviews and reputation,customer,8;22;33
+64,Marketing,distribution,22;23
+65,Parametric insurance,claims,17;31;42
+66,Telematics/usage-based insurance,risk,13;14;25
+67,Reinsurance/co-insurance,policy,16;31;42
+68,Feature flags,architecture,1;8;40;41;46;54;55;58
+69,Configuration,architecture,1;8;40;41;46;54;55;58
+70,Testing strategy,architecture,1;8;40;41;46;54;55;58
+71,Contract testing,integrations,23;29;52
+72,Performance,platform,35;36;37;39;48
+73,CI/CD,platform,35;36;37;39;48
+74,Monorepo,architecture,1;8;40;41;46;54;55;58
+75,Dependency rules,architecture,1;8;40;41;46;54;55;58
+76,Coding standards,architecture,1;8;40;41;46;54;55;58
+77,Architecture Decision Records,architecture,1;8;40;41;46;54;55;58
+78,Required diagrams,architecture,1;8;40;41;46;54;55;58
+79,State machines,architecture,1;8;40;41;46;54;55;58
+80,Data classification,privacy,27;53
+81,Regulatory architecture,compliance,27;53;57
+82,Scalability,platform,35;36;37;39;48
+83,Failure analysis,platform,35;36;37;39;48
+84,Concurrency,architecture,1;8;40;41;46;54;55;58
+85,Auditability and explainability,compliance,27;53;57
+86,Production readiness,architecture,1;8;40;41;46;54;55;58
+87,Execution method,architecture,1;8;40;41;46;54;55;58
+88,Mandatory cross-review,architecture,1;8;40;41;46;54;55;58
+89,Traceability,architecture,1;8;40;41;46;54;55;58
+90,Required final output,architecture,1;8;40;41;46;54;55;58
+91,Implementation roadmap,architecture,1;8;40;41;46;54;55;58
+92,Anti-patterns to explicitly prevent,architecture,1;8;40;41;46;54;55;58
+93,Decision quality,architecture,1;8;40;41;46;54;55;58
+94,Research requirement,architecture,1;8;40;41;46;54;55;58
+95,No superficial output,architecture,1;8;40;41;46;54;55;58
+96,Handling uncertainty,compliance,27;53;57
+97,Final quality gate,architecture,1;8;40;41;46;54;55;58
+98,Final instruction,architecture,1;8;40;41;46;54;55;58

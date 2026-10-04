@@ -1,0 +1,23 @@
+# Add after compose.yaml and compose.dev.yaml in disposable isolated CI project.
+services:
+  test-runner:
+    image: ${TEST_RUNNER_IMAGE:?verified test runner image required}
+    profiles: [testing]
+    init: true
+    user: "1000:1000"
+    read_only: true
+    tmpfs: ["/tmp:rw,nosuid,size=1g"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    command: [node, dist/test-runner.js, integration-contract-workflow-tenant]
+    environment: {TEST_CONFIG_FILE: /run/secrets/test_config}
+    secrets: [test_config]
+    networks: [app, data]
+    depends_on:
+      api: {condition: service_healthy}
+      mock-insurer: {condition: service_started}
+      mock-payment: {condition: service_started}
+      mock-kyc: {condition: service_started}
+      mock-bank: {condition: service_started}
+secrets:
+  test_config: {file: "${LOCAL_SECRET_DIR:?}/test_config"}

@@ -1,0 +1,2025 @@
+requirement_id,source_section,source_line,kind,source_clause,accountable_owner,acceptance_test
+REQ-00-001,0,1,source-clause,"You are the principal architecture and product-engineering team responsible for designing a production-grade, multi-vendor, B2B/B2C digital insurance platform.",architecture,T-DESIGN
+REQ-00-002,0,3,source-clause,You must operate simultaneously through the perspectives of:,architecture,T-DESIGN
+REQ-00-003,0,5,review-persona,Chief Product Architect,architecture,T-DESIGN
+REQ-00-004,0,6,review-persona,Insurance Product Manager,architecture,T-DESIGN
+REQ-00-005,0,7,review-persona,Insurance Business Analyst,architecture,T-DESIGN
+REQ-00-006,0,8,review-persona,Insurance Operations Specialist,architecture,T-DESIGN
+REQ-00-007,0,9,review-persona,Actuary,architecture,T-DESIGN
+REQ-00-008,0,10,review-persona,Pricing Actuary,architecture,T-DESIGN
+REQ-00-009,0,11,review-persona,Underwriter,architecture,T-DESIGN
+REQ-00-010,0,12,review-persona,Claims Specialist,architecture,T-DESIGN
+REQ-00-011,0,13,review-persona,Policy Administration Specialist,architecture,T-DESIGN
+REQ-00-012,0,14,review-persona,Property & Casualty Insurance Specialist,architecture,T-DESIGN
+REQ-00-013,0,15,review-persona,Health Insurance Specialist,architecture,T-DESIGN
+REQ-00-014,0,16,review-persona,Life Insurance Specialist,architecture,T-DESIGN
+REQ-00-015,0,17,review-persona,Auto Insurance Specialist,architecture,T-DESIGN
+REQ-00-016,0,18,review-persona,Commercial Insurance Specialist,architecture,T-DESIGN
+REQ-00-017,0,19,review-persona,Reinsurance Specialist,architecture,T-DESIGN
+REQ-00-018,0,20,review-persona,Agent/Broker Distribution Specialist,architecture,T-DESIGN
+REQ-00-019,0,21,review-persona,Insurance Fraud Specialist,architecture,T-DESIGN
+REQ-00-020,0,22,review-persona,Enterprise Risk Manager,architecture,T-DESIGN
+REQ-00-021,0,23,review-persona,Regulatory Compliance Specialist,architecture,T-DESIGN
+REQ-00-022,0,24,review-persona,Insurance Legal Specialist,architecture,T-DESIGN
+REQ-00-023,0,25,review-persona,Finance Specialist,architecture,T-DESIGN
+REQ-00-024,0,26,review-persona,Insurance Accounting Specialist,architecture,T-DESIGN
+REQ-00-025,0,27,review-persona,Payment Specialist,architecture,T-DESIGN
+REQ-00-026,0,28,review-persona,Enterprise Architect,architecture,T-DESIGN
+REQ-00-027,0,29,review-persona,Solution Architect,architecture,T-DESIGN
+REQ-00-028,0,30,review-persona,Domain-Driven Design Architect,architecture,T-DESIGN
+REQ-00-029,0,31,review-persona,Software Architect,architecture,T-DESIGN
+REQ-00-030,0,32,review-persona,Next.js Architect,architecture,T-DESIGN
+REQ-00-031,0,33,review-persona,NestJS Architect,architecture,T-DESIGN
+REQ-00-032,0,34,review-persona,API Architect,architecture,T-DESIGN
+REQ-00-033,0,35,review-persona,Integration Architect,architecture,T-DESIGN
+REQ-00-034,0,36,review-persona,Event-Driven Architecture Specialist,architecture,T-DESIGN
+REQ-00-035,0,37,review-persona,Workflow Orchestration Engineer,architecture,T-DESIGN
+REQ-00-036,0,38,review-persona,Database Architect,architecture,T-DESIGN
+REQ-00-037,0,39,review-persona,PostgreSQL Specialist,architecture,T-DESIGN
+REQ-00-038,0,40,review-persona,Search Architect,architecture,T-DESIGN
+REQ-00-039,0,41,review-persona,Data Architect,architecture,T-DESIGN
+REQ-00-040,0,42,review-persona,Analytics Engineer,architecture,T-DESIGN
+REQ-00-041,0,43,review-persona,DevOps Engineer,architecture,T-DESIGN
+REQ-00-042,0,44,review-persona,Platform Engineer,architecture,T-DESIGN
+REQ-00-043,0,45,review-persona,Site Reliability Engineer,architecture,T-DESIGN
+REQ-00-044,0,46,review-persona,Performance Engineer,architecture,T-DESIGN
+REQ-00-045,0,47,review-persona,Security Architect,architecture,T-DESIGN
+REQ-00-046,0,48,review-persona,Application Security Engineer,architecture,T-DESIGN
+REQ-00-047,0,49,review-persona,IAM Architect,architecture,T-DESIGN
+REQ-00-048,0,50,review-persona,Privacy Engineer,architecture,T-DESIGN
+REQ-00-049,0,51,review-persona,Container Security Engineer,architecture,T-DESIGN
+REQ-00-050,0,52,review-persona,Penetration Tester,architecture,T-DESIGN
+REQ-00-051,0,53,review-persona,Payment Security/PCI Specialist,architecture,T-DESIGN
+REQ-00-052,0,54,review-persona,UX Researcher,architecture,T-DESIGN
+REQ-00-053,0,55,review-persona,Service Designer,architecture,T-DESIGN
+REQ-00-054,0,56,review-persona,Product Designer,architecture,T-DESIGN
+REQ-00-055,0,57,review-persona,UI/UX Designer,architecture,T-DESIGN
+REQ-00-056,0,58,review-persona,Design System Engineer,architecture,T-DESIGN
+REQ-00-057,0,59,review-persona,Accessibility Specialist,architecture,T-DESIGN
+REQ-00-058,0,60,review-persona,Content Designer,architecture,T-DESIGN
+REQ-00-059,0,61,review-persona,Localization/i18n Specialist,architecture,T-DESIGN
+REQ-00-060,0,62,review-persona,PWA Engineer,architecture,T-DESIGN
+REQ-00-061,0,63,review-persona,AI Architect,architecture,T-DESIGN
+REQ-00-062,0,64,review-persona,Machine Learning Engineer,architecture,T-DESIGN
+REQ-00-063,0,65,review-persona,Recommendation Systems Engineer,architecture,T-DESIGN
+REQ-00-064,0,66,review-persona,Fraud ML Specialist,architecture,T-DESIGN
+REQ-00-065,0,67,review-persona,OCR/Document Intelligence Engineer,architecture,T-DESIGN
+REQ-00-066,0,68,review-persona,Healthcare Interoperability Specialist,architecture,T-DESIGN
+REQ-00-067,0,69,review-persona,GIS/Geospatial Engineer,architecture,T-DESIGN
+REQ-00-068,0,70,review-persona,Telematics Specialist,architecture,T-DESIGN
+REQ-00-069,0,71,review-persona,QA Architect,architecture,T-DESIGN
+REQ-00-070,0,72,review-persona,Test Automation Engineer,architecture,T-DESIGN
+REQ-00-071,0,73,review-persona,Contract Testing Engineer,architecture,T-DESIGN
+REQ-00-072,0,74,review-persona,Performance Testing Engineer,architecture,T-DESIGN
+REQ-00-073,0,75,review-persona,Technical Writer,architecture,T-DESIGN
+REQ-00-074,0,76,review-persona,Program Manager,architecture,T-DESIGN
+REQ-00-075,0,77,review-persona,Prompt Engineer,architecture,T-DESIGN
+REQ-00-076,0,79,source-clause,"The responsibility of this virtual team is to challenge one another's assumptions and jointly produce a coherent, secure, auditable, scalable and implementation-ready design.",architecture,T-DESIGN
+REQ-01-001,1,81,scope,Mission,architecture,T-DESIGN
+REQ-01-002,1,83,source-clause,Design a complete production-grade digital insurance ecosystem supporting:,architecture,T-DESIGN
+REQ-01-003,1,85,source-clause,B2C insurance marketplace and customer self-service.,architecture,T-DESIGN
+REQ-01-004,1,86,source-clause,B2B insurance-company participation.,architecture,T-DESIGN
+REQ-01-005,1,87,source-clause,Multi-vendor insurance distribution.,architecture,T-DESIGN
+REQ-01-006,1,88,source-clause,Agents and brokers.,architecture,T-DESIGN
+REQ-01-007,1,89,source-clause,Corporate customers.,architecture,T-DESIGN
+REQ-01-008,1,90,source-clause,Healthcare providers.,architecture,T-DESIGN
+REQ-01-009,1,91,source-clause,Repair providers.,architecture,T-DESIGN
+REQ-01-010,1,92,source-clause,Roadside and assistance providers.,architecture,T-DESIGN
+REQ-01-011,1,93,source-clause,Claims assessors and surveyors.,architecture,T-DESIGN
+REQ-01-012,1,94,source-clause,Affiliates.,architecture,T-DESIGN
+REQ-01-013,1,95,source-clause,Embedded-insurance partners.,architecture,T-DESIGN
+REQ-01-014,1,96,source-clause,Future insurance ecosystem participants.,architecture,T-DESIGN
+REQ-01-015,1,98,source-clause,The system must support the complete lifecycle:,architecture,T-DESIGN
+REQ-01-016,1,100,source-clause,Discover,architecture,T-DESIGN
+REQ-01-017,1,101,source-clause,→ Needs Assessment,architecture,T-DESIGN
+REQ-01-018,1,102,source-clause,→ Compare,architecture,T-DESIGN
+REQ-01-019,1,103,source-clause,→ Quote,architecture,T-DESIGN
+REQ-01-020,1,104,source-clause,→ RFQ,architecture,T-DESIGN
+REQ-01-021,1,105,source-clause,→ Risk Assessment,architecture,T-DESIGN
+REQ-01-022,1,106,source-clause,→ Underwriting,architecture,T-DESIGN
+REQ-01-023,1,107,source-clause,→ Coverage Customization,architecture,T-DESIGN
+REQ-01-024,1,108,source-clause,→ Purchase,architecture,T-DESIGN
+REQ-01-025,1,109,source-clause,→ Payment,architecture,T-DESIGN
+REQ-01-026,1,110,source-clause,→ Policy Issuance,architecture,T-DESIGN
+REQ-01-027,1,111,source-clause,→ Policy Administration,architecture,T-DESIGN
+REQ-01-028,1,112,source-clause,→ Endorsement,architecture,T-DESIGN
+REQ-01-029,1,113,source-clause,→ Assistance,architecture,T-DESIGN
+REQ-01-030,1,114,source-clause,→ FNOL,architecture,T-DESIGN
+REQ-01-031,1,115,source-clause,→ Claim,architecture,T-DESIGN
+REQ-01-032,1,116,source-clause,→ Assessment,architecture,T-DESIGN
+REQ-01-033,1,117,source-clause,→ Settlement,architecture,T-DESIGN
+REQ-01-034,1,118,source-clause,→ Payment,architecture,T-DESIGN
+REQ-01-035,1,119,source-clause,→ Renewal,architecture,T-DESIGN
+REQ-01-036,1,120,source-clause,→ Retention,architecture,T-DESIGN
+REQ-01-037,1,122,source-clause,For insurers:,architecture,T-DESIGN
+REQ-01-038,1,124,source-clause,Onboarding,architecture,T-DESIGN
+REQ-01-039,1,125,source-clause,→ Product Configuration,architecture,T-DESIGN
+REQ-01-040,1,126,source-clause,→ Product Versioning,architecture,T-DESIGN
+REQ-01-041,1,127,source-clause,→ Pricing,architecture,T-DESIGN
+REQ-01-042,1,128,source-clause,→ Rating,architecture,T-DESIGN
+REQ-01-043,1,129,source-clause,→ Distribution,architecture,T-DESIGN
+REQ-01-044,1,130,source-clause,→ Underwriting,architecture,T-DESIGN
+REQ-01-045,1,131,source-clause,→ Policy Administration,architecture,T-DESIGN
+REQ-01-046,1,132,source-clause,→ Claims,architecture,T-DESIGN
+REQ-01-047,1,133,source-clause,→ Finance,architecture,T-DESIGN
+REQ-01-048,1,134,source-clause,→ Commission,architecture,T-DESIGN
+REQ-01-049,1,135,source-clause,→ Settlement,architecture,T-DESIGN
+REQ-01-050,1,136,source-clause,→ Analytics,architecture,T-DESIGN
+REQ-01-051,1,137,source-clause,→ Compliance,architecture,T-DESIGN
+REQ-02-001,2,139,scope,Non-negotiable technology requirements,platform,T-COMPOSE
+REQ-02-002,2,141,source-clause,Use:,platform,T-COMPOSE
+REQ-02-003,2,143,source-clause,Frontend:,platform,T-COMPOSE
+REQ-02-004,2,144,source-clause,Next.js,platform,T-COMPOSE
+REQ-02-005,2,145,source-clause,React,platform,T-COMPOSE
+REQ-02-006,2,146,source-clause,TypeScript,platform,T-COMPOSE
+REQ-02-007,2,148,source-clause,Backend:,platform,T-COMPOSE
+REQ-02-008,2,149,source-clause,NestJS,platform,T-COMPOSE
+REQ-02-009,2,150,source-clause,TypeScript,platform,T-COMPOSE
+REQ-02-010,2,152,source-clause,Database:,platform,T-COMPOSE
+REQ-02-011,2,153,source-clause,PostgreSQL,platform,T-COMPOSE
+REQ-02-012,2,155,source-clause,Containerization:,platform,T-COMPOSE
+REQ-02-013,2,156,source-clause,Docker,platform,T-COMPOSE
+REQ-02-014,2,157,source-clause,Docker Compose,platform,T-COMPOSE
+REQ-02-015,2,159,source-clause,All first-party application components MUST run in containers.,platform,T-COMPOSE
+REQ-02-016,2,161,source-clause,"The entire local development, integration-test and reference deployment environment must be startable using Docker Compose.",platform,T-COMPOSE
+REQ-02-017,2,163,source-clause,Use the latest stable mutually compatible versions available when implementation begins. Pin exact versions after verifying compatibility.,platform,T-COMPOSE
+REQ-02-018,2,165,source-clause,"Do not blindly use ""latest"" Docker tags.",platform,T-COMPOSE
+REQ-03-001,3,167,scope,Architectural philosophy,architecture,T-DESIGN
+REQ-03-002,3,169,source-clause,Use:,architecture,T-DESIGN
+REQ-03-003,3,171,source-clause,Domain-Driven Design,architecture,T-DESIGN
+REQ-03-004,3,172,source-clause,Bounded Contexts,architecture,T-DESIGN
+REQ-03-005,3,173,source-clause,Clean Architecture,architecture,T-DESIGN
+REQ-03-006,3,174,source-clause,Hexagonal Architecture,architecture,T-DESIGN
+REQ-03-007,3,175,source-clause,SOLID,architecture,T-DESIGN
+REQ-03-008,3,176,source-clause,Dependency Inversion,architecture,T-DESIGN
+REQ-03-009,3,177,source-clause,Composition over inheritance,architecture,T-DESIGN
+REQ-03-010,3,178,source-clause,Explicit domain models,architecture,T-DESIGN
+REQ-03-011,3,179,source-clause,Rich domain behavior where appropriate,architecture,T-DESIGN
+REQ-03-012,3,180,source-clause,Repository abstractions,architecture,T-DESIGN
+REQ-03-013,3,181,source-clause,Ports and adapters,architecture,T-DESIGN
+REQ-03-014,3,182,source-clause,CQRS where complexity justifies it,architecture,T-DESIGN
+REQ-03-015,3,183,source-clause,Event-driven architecture for meaningful domain events,architecture,T-DESIGN
+REQ-03-016,3,184,source-clause,Durable workflows for long-running processes,architecture,T-DESIGN
+REQ-03-017,3,185,source-clause,Transactional Outbox,architecture,T-DESIGN
+REQ-03-018,3,186,source-clause,Inbox/Deduplication,architecture,T-DESIGN
+REQ-03-019,3,187,source-clause,Idempotency,architecture,T-DESIGN
+REQ-03-020,3,188,source-clause,Optimistic concurrency,architecture,T-DESIGN
+REQ-03-021,3,189,source-clause,API-first architecture,architecture,T-DESIGN
+REQ-03-022,3,190,source-clause,Contract-first integrations,architecture,T-DESIGN
+REQ-03-023,3,191,source-clause,Security by design,architecture,T-DESIGN
+REQ-03-024,3,192,source-clause,Privacy by design,architecture,T-DESIGN
+REQ-03-025,3,193,source-clause,Observability by design,architecture,T-DESIGN
+REQ-03-026,3,194,source-clause,Accessibility by design,architecture,T-DESIGN
+REQ-03-027,3,196,source-clause,Do NOT create microservices merely to claim that the architecture is microservice-based.,architecture,T-DESIGN
+REQ-03-028,3,198,source-clause,Begin with an extraction-ready modular monolith supplemented by independently deployable workers and integration processes.,architecture,T-DESIGN
+REQ-03-029,3,200,source-clause,Only recommend extraction into independent services when there is a concrete reason involving:,architecture,T-DESIGN
+REQ-03-030,3,202,source-clause,scaling,architecture,T-DESIGN
+REQ-03-031,3,203,source-clause,isolation,architecture,T-DESIGN
+REQ-03-032,3,204,source-clause,ownership,architecture,T-DESIGN
+REQ-03-033,3,205,source-clause,security boundaries,architecture,T-DESIGN
+REQ-03-034,3,206,source-clause,workload characteristics,architecture,T-DESIGN
+REQ-03-035,3,207,source-clause,release independence,architecture,T-DESIGN
+REQ-03-036,3,208,source-clause,regulatory isolation,architecture,T-DESIGN
+REQ-03-037,3,209,source-clause,failure containment,architecture,T-DESIGN
+REQ-03-038,3,211,source-clause,Document every proposed extraction as an ADR.,architecture,T-DESIGN
+REQ-04-001,4,213,scope,Required frontend applications,frontend,T-A11Y
+REQ-04-002,4,215,source-clause,Design at least:,frontend,T-A11Y
+REQ-04-003,4,217,source-clause,apps/customer-web,frontend,T-A11Y
+REQ-04-004,4,218,source-clause,apps/partner-web,frontend,T-A11Y
+REQ-04-005,4,219,source-clause,apps/admin-web,frontend,T-A11Y
+REQ-04-006,4,220,source-clause,apps/developer-web,frontend,T-A11Y
+REQ-04-007,4,222,source-clause,customer-web must be a PWA.,frontend,T-A11Y
+REQ-04-008,4,224,source-clause,customer-web is used by consumers/policyholders.,frontend,T-A11Y
+REQ-04-009,4,226,source-clause,partner-web supports:,frontend,T-A11Y
+REQ-04-010,4,228,source-clause,insurers,frontend,T-A11Y
+REQ-04-011,4,229,source-clause,branches,frontend,T-A11Y
+REQ-04-012,4,230,source-clause,brokers,frontend,T-A11Y
+REQ-04-013,4,231,source-clause,agents,frontend,T-A11Y
+REQ-04-014,4,232,source-clause,corporate customers,frontend,T-A11Y
+REQ-04-015,4,233,source-clause,healthcare providers,frontend,T-A11Y
+REQ-04-016,4,234,source-clause,repair providers,frontend,T-A11Y
+REQ-04-017,4,235,source-clause,assessors,frontend,T-A11Y
+REQ-04-018,4,236,source-clause,assistance providers,frontend,T-A11Y
+REQ-04-019,4,237,source-clause,other vendors,frontend,T-A11Y
+REQ-04-020,4,239,source-clause,admin-web is the platform operations console.,frontend,T-A11Y
+REQ-04-021,4,241,source-clause,developer-web provides:,frontend,T-A11Y
+REQ-04-022,4,243,source-clause,API documentation,frontend,T-A11Y
+REQ-04-023,4,244,source-clause,API credentials,frontend,T-A11Y
+REQ-04-024,4,245,source-clause,sandbox,frontend,T-A11Y
+REQ-04-025,4,246,source-clause,webhook configuration,frontend,T-A11Y
+REQ-04-026,4,247,source-clause,integration logs,frontend,T-A11Y
+REQ-04-027,4,248,source-clause,SDK documentation,frontend,T-A11Y
+REQ-04-028,4,249,source-clause,usage information,frontend,T-A11Y
+REQ-04-029,4,251,source-clause,Do not place authoritative insurance-domain logic inside Next.js applications.,frontend,T-A11Y
+REQ-04-030,4,253,source-clause,NestJS must remain the authoritative domain/business layer.,frontend,T-A11Y
+REQ-05-001,5,255,scope,Multi-tenancy,tenant,T-TENANT
+REQ-05-002,5,257,source-clause,Design a robust multi-tenant model.,tenant,T-TENANT
+REQ-05-003,5,259,source-clause,Support:,tenant,T-TENANT
+REQ-05-004,5,261,source-clause,Platform,tenant,T-TENANT
+REQ-05-005,5,262,source-clause,Organization,tenant,T-TENANT
+REQ-05-006,5,263,source-clause,Insurance Company,tenant,T-TENANT
+REQ-05-007,5,264,source-clause,Branch,tenant,T-TENANT
+REQ-05-008,5,265,source-clause,Department,tenant,T-TENANT
+REQ-05-009,5,266,source-clause,Team,tenant,T-TENANT
+REQ-05-010,5,267,source-clause,Broker Organization,tenant,T-TENANT
+REQ-05-011,5,268,source-clause,Agency,tenant,T-TENANT
+REQ-05-012,5,269,source-clause,Healthcare Provider,tenant,T-TENANT
+REQ-05-013,5,270,source-clause,Repair Provider,tenant,T-TENANT
+REQ-05-014,5,271,source-clause,Corporate Customer,tenant,T-TENANT
+REQ-05-015,5,272,source-clause,Other partner organizations,tenant,T-TENANT
+REQ-05-016,5,274,source-clause,Explicitly model:,tenant,T-TENANT
+REQ-05-017,5,276,source-clause,tenant_id,tenant,T-TENANT
+REQ-05-018,5,277,source-clause,organization_id,tenant,T-TENANT
+REQ-05-019,5,278,source-clause,branch_id,tenant,T-TENANT
+REQ-05-020,5,280,source-clause,where relevant.,tenant,T-TENANT
+REQ-05-021,5,282,source-clause,Use defense in depth:,tenant,T-TENANT
+REQ-05-022,5,284,source-clause,application authorization,tenant,T-TENANT
+REQ-05-023,5,285,source-clause,+,tenant,T-TENANT
+REQ-05-024,5,286,source-clause,repository-level tenant scoping,tenant,T-TENANT
+REQ-05-025,5,287,source-clause,+,tenant,T-TENANT
+REQ-05-026,5,288,source-clause,PostgreSQL Row-Level Security where appropriate,tenant,T-TENANT
+REQ-05-027,5,290,source-clause,Never trust tenant identifiers supplied directly by clients without deriving/validating them from authorization context.,tenant,T-TENANT
+REQ-05-028,5,292,source-clause,Prevent:,tenant,T-TENANT
+REQ-05-029,5,294,source-clause,cross-tenant reads,tenant,T-TENANT
+REQ-05-030,5,295,source-clause,cross-tenant writes,tenant,T-TENANT
+REQ-05-031,5,296,source-clause,IDOR,tenant,T-TENANT
+REQ-05-032,5,297,source-clause,tenant enumeration,tenant,T-TENANT
+REQ-05-033,5,298,source-clause,insecure exports,tenant,T-TENANT
+REQ-05-034,5,299,source-clause,cross-tenant cache leakage,tenant,T-TENANT
+REQ-05-035,5,300,source-clause,cross-tenant search leakage,tenant,T-TENANT
+REQ-05-036,5,301,source-clause,cross-tenant websocket leakage,tenant,T-TENANT
+REQ-05-037,5,302,source-clause,cross-tenant background-job leakage,tenant,T-TENANT
+REQ-05-038,5,304,source-clause,Define tests specifically targeting tenant isolation.,tenant,T-TENANT
+REQ-06-001,6,306,scope,Identity and Party architecture,party,T-PARTY
+REQ-06-002,6,308,source-clause,"Do not duplicate the same human in separate customer, policyholder, beneficiary, driver and claimant tables.",party,T-PARTY
+REQ-06-003,6,310,source-clause,Design a canonical Party model:,party,T-PARTY
+REQ-06-004,6,312,source-clause,Party,party,T-PARTY
+REQ-06-005,6,314,source-clause,subtypes:,party,T-PARTY
+REQ-06-006,6,315,source-clause,Person,party,T-PARTY
+REQ-06-007,6,316,source-clause,Organization,party,T-PARTY
+REQ-06-008,6,318,source-clause,Relationship/role models should express:,party,T-PARTY
+REQ-06-009,6,320,source-clause,Customer,party,T-PARTY
+REQ-06-010,6,321,source-clause,Policyholder,party,T-PARTY
+REQ-06-011,6,322,source-clause,Insured,party,T-PARTY
+REQ-06-012,6,323,source-clause,Beneficiary,party,T-PARTY
+REQ-06-013,6,324,source-clause,Driver,party,T-PARTY
+REQ-06-014,6,325,source-clause,Claimant,party,T-PARTY
+REQ-06-015,6,326,source-clause,Agent,party,T-PARTY
+REQ-06-016,6,327,source-clause,Broker,party,T-PARTY
+REQ-06-017,6,328,source-clause,Employee,party,T-PARTY
+REQ-06-018,6,329,source-clause,Adjuster,party,T-PARTY
+REQ-06-019,6,330,source-clause,Healthcare Practitioner,party,T-PARTY
+REQ-06-020,6,331,source-clause,Corporate Representative,party,T-PARTY
+REQ-06-021,6,333,source-clause,Support deduplication without unsafe automatic merging.,party,T-PARTY
+REQ-06-022,6,335,source-clause,Create explicit golden-record/data-governance rules.,party,T-PARTY
+REQ-07-001,7,337,scope,Authentication,identity,T-AUTHN
+REQ-07-002,7,339,source-clause,Design:,identity,T-AUTHN
+REQ-07-003,7,341,source-clause,email authentication,identity,T-AUTHN
+REQ-07-004,7,342,source-clause,phone authentication where appropriate,identity,T-AUTHN
+REQ-07-005,7,343,source-clause,password authentication,identity,T-AUTHN
+REQ-07-006,7,344,source-clause,WebAuthn/passkeys,identity,T-AUTHN
+REQ-07-007,7,345,source-clause,TOTP MFA,identity,T-AUTHN
+REQ-07-008,7,346,source-clause,recovery codes,identity,T-AUTHN
+REQ-07-009,7,347,source-clause,enterprise SSO,identity,T-AUTHN
+REQ-07-010,7,348,source-clause,OIDC federation,identity,T-AUTHN
+REQ-07-011,7,349,source-clause,SAML federation where necessary,identity,T-AUTHN
+REQ-07-012,7,350,source-clause,device/session management,identity,T-AUTHN
+REQ-07-013,7,351,source-clause,step-up authentication,identity,T-AUTHN
+REQ-07-014,7,352,source-clause,suspicious-login detection,identity,T-AUTHN
+REQ-07-015,7,353,source-clause,account recovery,identity,T-AUTHN
+REQ-07-016,7,354,source-clause,service accounts,identity,T-AUTHN
+REQ-07-017,7,355,source-clause,machine-to-machine authentication,identity,T-AUTHN
+REQ-07-018,7,357,source-clause,Align the identity design with the current NIST Digital Identity Guidelines where appropriate.,identity,T-AUTHN
+REQ-07-019,7,359,source-clause,Separate authentication from authorization.,identity,T-AUTHN
+REQ-08-001,8,361,scope,Authorization,security,T-SECURITY
+REQ-08-002,8,363,source-clause,Create hybrid:,security,T-SECURITY
+REQ-08-003,8,365,source-clause,RBAC,security,T-SECURITY
+REQ-08-004,8,366,source-clause,+,security,T-SECURITY
+REQ-08-005,8,367,source-clause,ABAC,security,T-SECURITY
+REQ-08-006,8,368,source-clause,+,security,T-SECURITY
+REQ-08-007,8,369,source-clause,tenant boundaries,security,T-SECURITY
+REQ-08-008,8,370,source-clause,+,security,T-SECURITY
+REQ-08-009,8,371,source-clause,resource ownership,security,T-SECURITY
+REQ-08-010,8,372,source-clause,+,security,T-SECURITY
+REQ-08-011,8,373,source-clause,contextual policies,security,T-SECURITY
+REQ-08-012,8,375,source-clause,Support permissions such as:,security,T-SECURITY
+REQ-08-013,8,377,source-clause,claim.read,security,T-SECURITY
+REQ-08-014,8,378,source-clause,claim.update,security,T-SECURITY
+REQ-08-015,8,379,source-clause,claim.approve,security,T-SECURITY
+REQ-08-016,8,380,source-clause,policy.issue,security,T-SECURITY
+REQ-08-017,8,381,source-clause,policy.cancel,security,T-SECURITY
+REQ-08-018,8,382,source-clause,pricing.publish,security,T-SECURITY
+REQ-08-019,8,383,source-clause,underwriting.decide,security,T-SECURITY
+REQ-08-020,8,384,source-clause,settlement.approve,security,T-SECURITY
+REQ-08-021,8,385,source-clause,user.invite,security,T-SECURITY
+REQ-08-022,8,386,source-clause,api-key.rotate,security,T-SECURITY
+REQ-08-023,8,388,source-clause,Support constraints such as:,security,T-SECURITY
+REQ-08-024,8,390,source-clause,region,security,T-SECURITY
+REQ-08-025,8,391,source-clause,branch,security,T-SECURITY
+REQ-08-026,8,392,source-clause,insurance product,security,T-SECURITY
+REQ-08-027,8,393,source-clause,claim assignment,security,T-SECURITY
+REQ-08-028,8,394,source-clause,transaction threshold,security,T-SECURITY
+REQ-08-029,8,395,source-clause,country,security,T-SECURITY
+REQ-08-030,8,396,source-clause,data classification,security,T-SECURITY
+REQ-08-031,8,398,source-clause,Implement separation of duties.,security,T-SECURITY
+REQ-08-032,8,400,source-clause,High-risk operations may require four-eyes approval.,security,T-SECURITY
+REQ-09-001,9,402,scope,Insurance products,product,T-PRODUCT
+REQ-09-002,9,404,source-clause,Create a dynamic insurance product platform.,product,T-PRODUCT
+REQ-09-003,9,406,source-clause,A product must support:,product,T-PRODUCT
+REQ-09-004,9,408,source-clause,identity,product,T-PRODUCT
+REQ-09-005,9,409,source-clause,category,product,T-PRODUCT
+REQ-09-006,9,410,source-clause,insurer,product,T-PRODUCT
+REQ-09-007,9,411,source-clause,jurisdiction,product,T-PRODUCT
+REQ-09-008,9,412,source-clause,distribution channels,product,T-PRODUCT
+REQ-09-009,9,413,source-clause,product version,product,T-PRODUCT
+REQ-09-010,9,414,source-clause,effective dates,product,T-PRODUCT
+REQ-09-011,9,415,source-clause,eligibility rules,product,T-PRODUCT
+REQ-09-012,9,416,source-clause,coverages,product,T-PRODUCT
+REQ-09-013,9,417,source-clause,optional coverages,product,T-PRODUCT
+REQ-09-014,9,418,source-clause,benefits,product,T-PRODUCT
+REQ-09-015,9,419,source-clause,coverage limits,product,T-PRODUCT
+REQ-09-016,9,420,source-clause,deductibles,product,T-PRODUCT
+REQ-09-017,9,421,source-clause,franchises,product,T-PRODUCT
+REQ-09-018,9,422,source-clause,exclusions,product,T-PRODUCT
+REQ-09-019,9,423,source-clause,waiting periods,product,T-PRODUCT
+REQ-09-020,9,424,source-clause,geographic scope,product,T-PRODUCT
+REQ-09-021,9,425,source-clause,insured-object types,product,T-PRODUCT
+REQ-09-022,9,426,source-clause,required questions,product,T-PRODUCT
+REQ-09-023,9,427,source-clause,required documents,product,T-PRODUCT
+REQ-09-024,9,428,source-clause,rating model,product,T-PRODUCT
+REQ-09-025,9,429,source-clause,underwriting rules,product,T-PRODUCT
+REQ-09-026,9,430,source-clause,cancellation rules,product,T-PRODUCT
+REQ-09-027,9,431,source-clause,renewal rules,product,T-PRODUCT
+REQ-09-028,9,432,source-clause,commission rules,product,T-PRODUCT
+REQ-09-029,9,433,source-clause,tax treatment,product,T-PRODUCT
+REQ-09-030,9,434,source-clause,terms and conditions,product,T-PRODUCT
+REQ-09-031,9,435,source-clause,localized descriptions,product,T-PRODUCT
+REQ-09-032,9,436,source-clause,regulatory disclosures,product,T-PRODUCT
+REQ-09-033,9,438,source-clause,Support product families including but not limited to:,product,T-PRODUCT
+REQ-09-034,9,440,source-clause,motor third-party,product,T-PRODUCT
+REQ-09-035,9,441,source-clause,motor comprehensive,product,T-PRODUCT
+REQ-09-036,9,442,source-clause,motorcycle,product,T-PRODUCT
+REQ-09-037,9,443,source-clause,fleet,product,T-PRODUCT
+REQ-09-038,9,444,source-clause,telematics/usage-based,product,T-PRODUCT
+REQ-09-039,9,445,source-clause,health,product,T-PRODUCT
+REQ-09-040,9,446,source-clause,supplemental health,product,T-PRODUCT
+REQ-09-041,9,447,source-clause,dental,product,T-PRODUCT
+REQ-09-042,9,448,source-clause,critical illness,product,T-PRODUCT
+REQ-09-043,9,449,source-clause,accident,product,T-PRODUCT
+REQ-09-044,9,450,source-clause,life,product,T-PRODUCT
+REQ-09-045,9,451,source-clause,investment-linked life,product,T-PRODUCT
+REQ-09-046,9,452,source-clause,disability,product,T-PRODUCT
+REQ-09-047,9,453,source-clause,travel,product,T-PRODUCT
+REQ-09-048,9,454,source-clause,trip cancellation,product,T-PRODUCT
+REQ-09-049,9,455,source-clause,home,product,T-PRODUCT
+REQ-09-050,9,456,source-clause,property,product,T-PRODUCT
+REQ-09-051,9,457,source-clause,fire,product,T-PRODUCT
+REQ-09-052,9,458,source-clause,earthquake,product,T-PRODUCT
+REQ-09-053,9,459,source-clause,flood,product,T-PRODUCT
+REQ-09-054,9,460,source-clause,theft,product,T-PRODUCT
+REQ-09-055,9,461,source-clause,professional liability,product,T-PRODUCT
+REQ-09-056,9,462,source-clause,medical malpractice,product,T-PRODUCT
+REQ-09-057,9,463,source-clause,engineering liability,product,T-PRODUCT
+REQ-09-058,9,464,source-clause,D&O,product,T-PRODUCT
+REQ-09-059,9,465,source-clause,general liability,product,T-PRODUCT
+REQ-09-060,9,466,source-clause,product liability,product,T-PRODUCT
+REQ-09-061,9,467,source-clause,employer liability,product,T-PRODUCT
+REQ-09-062,9,468,source-clause,construction,product,T-PRODUCT
+REQ-09-063,9,469,source-clause,CAR,product,T-PRODUCT
+REQ-09-064,9,470,source-clause,EAR,product,T-PRODUCT
+REQ-09-065,9,471,source-clause,machinery,product,T-PRODUCT
+REQ-09-066,9,472,source-clause,electronic equipment,product,T-PRODUCT
+REQ-09-067,9,473,source-clause,business interruption,product,T-PRODUCT
+REQ-09-068,9,474,source-clause,cyber,product,T-PRODUCT
+REQ-09-069,9,475,source-clause,cargo,product,T-PRODUCT
+REQ-09-070,9,476,source-clause,marine,product,T-PRODUCT
+REQ-09-071,9,477,source-clause,aviation,product,T-PRODUCT
+REQ-09-072,9,478,source-clause,agriculture,product,T-PRODUCT
+REQ-09-073,9,479,source-clause,livestock,product,T-PRODUCT
+REQ-09-074,9,480,source-clause,pet,product,T-PRODUCT
+REQ-09-075,9,481,source-clause,device,product,T-PRODUCT
+REQ-09-076,9,482,source-clause,extended warranty,product,T-PRODUCT
+REQ-09-077,9,483,source-clause,credit,product,T-PRODUCT
+REQ-09-078,9,484,source-clause,loan protection,product,T-PRODUCT
+REQ-09-079,9,485,source-clause,event,product,T-PRODUCT
+REQ-09-080,9,486,source-clause,sports,product,T-PRODUCT
+REQ-09-081,9,487,source-clause,student,product,T-PRODUCT
+REQ-09-082,9,488,source-clause,immigration,product,T-PRODUCT
+REQ-09-083,9,489,source-clause,freelancer,product,T-PRODUCT
+REQ-09-084,9,490,source-clause,microinsurance,product,T-PRODUCT
+REQ-09-085,9,491,source-clause,embedded insurance,product,T-PRODUCT
+REQ-09-086,9,492,source-clause,on-demand insurance,product,T-PRODUCT
+REQ-09-087,9,493,source-clause,parametric insurance,product,T-PRODUCT
+REQ-09-088,9,495,source-clause,The architecture must allow future product types without changing core platform assumptions.,product,T-PRODUCT
+REQ-10-001,10,497,scope,Product versioning,product,T-PRODUCT
+REQ-10-002,10,499,source-clause,Published product definitions must be immutable.,product,T-PRODUCT
+REQ-10-003,10,501,source-clause,Design:,product,T-PRODUCT
+REQ-10-004,10,503,source-clause,Product,product,T-PRODUCT
+REQ-10-005,10,504,source-clause,ProductVersion,product,T-PRODUCT
+REQ-10-006,10,505,source-clause,CoverageVersion,product,T-PRODUCT
+REQ-10-007,10,506,source-clause,TermsVersion,product,T-PRODUCT
+REQ-10-008,10,507,source-clause,RatingVersion,product,T-PRODUCT
+REQ-10-009,10,508,source-clause,UnderwritingVersion,product,T-PRODUCT
+REQ-10-010,10,510,source-clause,Policies and quotes must reference the exact versions used when they were created.,product,T-PRODUCT
+REQ-10-011,10,512,source-clause,Never reinterpret an old policy using today's product rules.,product,T-PRODUCT
+REQ-11-001,11,514,scope,Rating and pricing engine,pricing,T-RATING
+REQ-11-002,11,516,source-clause,Design an extensible rating engine supporting:,pricing,T-RATING
+REQ-11-003,11,518,source-clause,base premium,pricing,T-RATING
+REQ-11-004,11,519,source-clause,rating factors,pricing,T-RATING
+REQ-11-005,11,520,source-clause,lookup tables,pricing,T-RATING
+REQ-11-006,11,521,source-clause,decision tables,pricing,T-RATING
+REQ-11-007,11,522,source-clause,age factors,pricing,T-RATING
+REQ-11-008,11,523,source-clause,location factors,pricing,T-RATING
+REQ-11-009,11,524,source-clause,occupation,pricing,T-RATING
+REQ-11-010,11,525,source-clause,asset factors,pricing,T-RATING
+REQ-11-011,11,526,source-clause,claims history,pricing,T-RATING
+REQ-11-012,11,527,source-clause,driver factors,pricing,T-RATING
+REQ-11-013,11,528,source-clause,health factors where legally permitted,pricing,T-RATING
+REQ-11-014,11,529,source-clause,deductibles,pricing,T-RATING
+REQ-11-015,11,530,source-clause,coverage limits,pricing,T-RATING
+REQ-11-016,11,531,source-clause,surcharges,pricing,T-RATING
+REQ-11-017,11,532,source-clause,discounts,pricing,T-RATING
+REQ-11-018,11,533,source-clause,promotions,pricing,T-RATING
+REQ-11-019,11,534,source-clause,loyalty discounts,pricing,T-RATING
+REQ-11-020,11,535,source-clause,no-claim discounts,pricing,T-RATING
+REQ-11-021,11,536,source-clause,channel-specific adjustments,pricing,T-RATING
+REQ-11-022,11,537,source-clause,taxes,pricing,T-RATING
+REQ-11-023,11,538,source-clause,regulatory fees,pricing,T-RATING
+REQ-11-024,11,539,source-clause,insurer fees,pricing,T-RATING
+REQ-11-025,11,540,source-clause,platform fees,pricing,T-RATING
+REQ-11-026,11,542,source-clause,Provide simulation capability.,pricing,T-RATING
+REQ-11-027,11,544,source-clause,Provide effective dating and versioning.,pricing,T-RATING
+REQ-11-028,11,546,source-clause,Provide pricing explainability.,pricing,T-RATING
+REQ-11-029,11,548,source-clause,Every premium calculation must be reproducible.,pricing,T-RATING
+REQ-11-030,11,550,source-clause,Never use floating-point arithmetic for money.,pricing,T-RATING
+REQ-12-001,12,552,scope,Underwriting,underwriting,T-UW
+REQ-12-002,12,554,source-clause,Design underwriting with:,underwriting,T-UW
+REQ-12-003,12,556,source-clause,straight-through acceptance,underwriting,T-UW
+REQ-12-004,12,557,source-clause,straight-through rejection where legally permissible,underwriting,T-UW
+REQ-12-005,12,558,source-clause,refer-to-underwriter,underwriting,T-UW
+REQ-12-006,12,559,source-clause,additional-document request,underwriting,T-UW
+REQ-12-007,12,560,source-clause,medical review where relevant,underwriting,T-UW
+REQ-12-008,12,561,source-clause,inspection,underwriting,T-UW
+REQ-12-009,12,562,source-clause,manual override,underwriting,T-UW
+REQ-12-010,12,563,source-clause,reason codes,underwriting,T-UW
+REQ-12-011,12,564,source-clause,approval authority,underwriting,T-UW
+REQ-12-012,12,565,source-clause,escalation,underwriting,T-UW
+REQ-12-013,12,566,source-clause,four-eyes approval,underwriting,T-UW
+REQ-12-014,12,567,source-clause,underwriting notes,underwriting,T-UW
+REQ-12-015,12,568,source-clause,audit trail,underwriting,T-UW
+REQ-12-016,12,570,source-clause,Create underwriting decision state machines.,underwriting,T-UW
+REQ-12-017,12,572,source-clause,Maintain full provenance of inputs and rules.,underwriting,T-UW
+REQ-13-001,13,574,scope,Quotes,quote,T-QUOTE
+REQ-13-002,13,576,source-clause,Support:,quote,T-QUOTE
+REQ-13-003,13,578,source-clause,instant quotes,quote,T-QUOTE
+REQ-13-004,13,579,source-clause,indicative quotes,quote,T-QUOTE
+REQ-13-005,13,580,source-clause,firm quotes,quote,T-QUOTE
+REQ-13-006,13,581,source-clause,manual RFQs,quote,T-QUOTE
+REQ-13-007,13,582,source-clause,multi-insurer quote aggregation,quote,T-QUOTE
+REQ-13-008,13,583,source-clause,quote comparison,quote,T-QUOTE
+REQ-13-009,13,584,source-clause,quote expiration,quote,T-QUOTE
+REQ-13-010,13,585,source-clause,quote revisions,quote,T-QUOTE
+REQ-13-011,13,586,source-clause,quote acceptance,quote,T-QUOTE
+REQ-13-012,13,587,source-clause,abandoned quotes,quote,T-QUOTE
+REQ-13-013,13,588,source-clause,quote recovery,quote,T-QUOTE
+REQ-13-014,13,590,source-clause,Every quote must retain the exact:,quote,T-QUOTE
+REQ-13-015,13,592,source-clause,questions,quote,T-QUOTE
+REQ-13-016,13,593,source-clause,responses,quote,T-QUOTE
+REQ-13-017,13,594,source-clause,rating version,quote,T-QUOTE
+REQ-13-018,13,595,source-clause,product version,quote,T-QUOTE
+REQ-13-019,13,596,source-clause,coverage configuration,quote,T-QUOTE
+REQ-13-020,13,597,source-clause,pricing breakdown,quote,T-QUOTE
+REQ-13-021,13,598,source-clause,taxes,quote,T-QUOTE
+REQ-13-022,13,599,source-clause,fees,quote,T-QUOTE
+REQ-13-023,13,600,source-clause,discounts,quote,T-QUOTE
+REQ-13-024,13,601,source-clause,expiry,quote,T-QUOTE
+REQ-14-001,14,603,scope,Marketplace comparison,quote,T-QUOTE
+REQ-14-002,14,605,source-clause,Support comparison by:,quote,T-QUOTE
+REQ-14-003,14,607,source-clause,total premium,quote,T-QUOTE
+REQ-14-004,14,608,source-clause,installment amount,quote,T-QUOTE
+REQ-14-005,14,609,source-clause,coverage,quote,T-QUOTE
+REQ-14-006,14,610,source-clause,limit,quote,T-QUOTE
+REQ-14-007,14,611,source-clause,deductible,quote,T-QUOTE
+REQ-14-008,14,612,source-clause,exclusions,quote,T-QUOTE
+REQ-14-009,14,613,source-clause,insurer,quote,T-QUOTE
+REQ-14-010,14,614,source-clause,insurer rating,quote,T-QUOTE
+REQ-14-011,14,615,source-clause,claim satisfaction,quote,T-QUOTE
+REQ-14-012,14,616,source-clause,settlement speed,quote,T-QUOTE
+REQ-14-013,14,617,source-clause,provider network,quote,T-QUOTE
+REQ-14-014,14,618,source-clause,policy terms,quote,T-QUOTE
+REQ-14-015,14,619,source-clause,payment options,quote,T-QUOTE
+REQ-14-016,14,620,source-clause,additional services,quote,T-QUOTE
+REQ-14-017,14,622,source-clause,Prevent misleading comparisons.,quote,T-QUOTE
+REQ-14-018,14,624,source-clause,Clearly separate:,quote,T-QUOTE
+REQ-14-019,14,626,source-clause,price,quote,T-QUOTE
+REQ-14-020,14,627,source-clause,coverage,quote,T-QUOTE
+REQ-14-021,14,628,source-clause,quality,quote,T-QUOTE
+REQ-14-022,14,629,source-clause,insurer service metrics,quote,T-QUOTE
+REQ-15-001,15,631,scope,Policy administration,policy,T-HISTORY
+REQ-15-002,15,633,source-clause,Design the complete policy lifecycle.,policy,T-HISTORY
+REQ-15-003,15,635,source-clause,States should cover concepts such as:,policy,T-HISTORY
+REQ-15-004,15,637,source-clause,draft,policy,T-HISTORY
+REQ-15-005,15,638,source-clause,pending-payment,policy,T-HISTORY
+REQ-15-006,15,639,source-clause,pending-underwriting,policy,T-HISTORY
+REQ-15-007,15,640,source-clause,bound,policy,T-HISTORY
+REQ-15-008,15,641,source-clause,issued,policy,T-HISTORY
+REQ-15-009,15,642,source-clause,active,policy,T-HISTORY
+REQ-15-010,15,643,source-clause,suspended,policy,T-HISTORY
+REQ-15-011,15,644,source-clause,cancelled,policy,T-HISTORY
+REQ-15-012,15,645,source-clause,expired,policy,T-HISTORY
+REQ-15-013,15,646,source-clause,renewed,policy,T-HISTORY
+REQ-15-014,15,648,source-clause,Do not treat state names as final until domain experts validate them.,policy,T-HISTORY
+REQ-15-015,15,650,source-clause,Support:,policy,T-HISTORY
+REQ-15-016,15,652,source-clause,binding,policy,T-HISTORY
+REQ-15-017,15,653,source-clause,issuance,policy,T-HISTORY
+REQ-15-018,15,654,source-clause,effective periods,policy,T-HISTORY
+REQ-15-019,15,655,source-clause,policy documents,policy,T-HISTORY
+REQ-15-020,15,656,source-clause,certificates,policy,T-HISTORY
+REQ-15-021,15,657,source-clause,insured objects,policy,T-HISTORY
+REQ-15-022,15,658,source-clause,insured parties,policy,T-HISTORY
+REQ-15-023,15,659,source-clause,beneficiaries,policy,T-HISTORY
+REQ-15-024,15,660,source-clause,endorsements,policy,T-HISTORY
+REQ-15-025,15,661,source-clause,cancellations,policy,T-HISTORY
+REQ-15-026,15,662,source-clause,reinstatement,policy,T-HISTORY
+REQ-15-027,15,663,source-clause,lapse,policy,T-HISTORY
+REQ-15-028,15,664,source-clause,renewal,policy,T-HISTORY
+REQ-15-029,15,665,source-clause,policy replacement,policy,T-HISTORY
+REQ-15-030,15,666,source-clause,history,policy,T-HISTORY
+REQ-15-031,15,667,source-clause,versioning,policy,T-HISTORY
+REQ-16-001,16,669,scope,Endorsements,policy,T-HISTORY
+REQ-16-002,16,671,source-clause,Create an endorsement engine supporting:,policy,T-HISTORY
+REQ-16-003,16,673,source-clause,address changes,policy,T-HISTORY
+REQ-16-004,16,674,source-clause,vehicle changes,policy,T-HISTORY
+REQ-16-005,16,675,source-clause,insured-party changes,policy,T-HISTORY
+REQ-16-006,16,676,source-clause,beneficiary changes,policy,T-HISTORY
+REQ-16-007,16,677,source-clause,coverage additions,policy,T-HISTORY
+REQ-16-008,16,678,source-clause,coverage removals,policy,T-HISTORY
+REQ-16-009,16,679,source-clause,limit changes,policy,T-HISTORY
+REQ-16-010,16,680,source-clause,deductible changes,policy,T-HISTORY
+REQ-16-011,16,681,source-clause,corrections,policy,T-HISTORY
+REQ-16-012,16,683,source-clause,Calculate premium impact and refund/additional premium.,policy,T-HISTORY
+REQ-16-013,16,685,source-clause,Maintain immutable historical policy versions.,policy,T-HISTORY
+REQ-17-001,17,687,scope,Renewals,policy,T-HISTORY
+REQ-17-002,17,689,source-clause,Support:,policy,T-HISTORY
+REQ-17-003,17,691,source-clause,renewal eligibility,policy,T-HISTORY
+REQ-17-004,17,692,source-clause,renewal quotation,policy,T-HISTORY
+REQ-17-005,17,693,source-clause,repricing,policy,T-HISTORY
+REQ-17-006,17,694,source-clause,re-underwriting,policy,T-HISTORY
+REQ-17-007,17,695,source-clause,customer consent,policy,T-HISTORY
+REQ-17-008,17,696,source-clause,auto-renewal where allowed,policy,T-HISTORY
+REQ-17-009,17,697,source-clause,payment retry,policy,T-HISTORY
+REQ-17-010,17,698,source-clause,renewal reminders,policy,T-HISTORY
+REQ-17-011,17,699,source-clause,alternative marketplace quotations,policy,T-HISTORY
+REQ-17-012,17,700,source-clause,retention offers,policy,T-HISTORY
+REQ-17-013,17,701,source-clause,non-renewal,policy,T-HISTORY
+REQ-17-014,17,702,source-clause,renewal notices,policy,T-HISTORY
+REQ-18-001,18,704,scope,Claims,claims,T-CLAIM
+REQ-18-002,18,706,source-clause,Create a full claims platform.,claims,T-CLAIM
+REQ-18-003,18,708,source-clause,Support:,claims,T-CLAIM
+REQ-18-004,18,710,source-clause,FNOL,claims,T-CLAIM
+REQ-18-005,18,711,source-clause,→ Validation,claims,T-CLAIM
+REQ-18-006,18,712,source-clause,→ Coverage Check,claims,T-CLAIM
+REQ-18-007,18,713,source-clause,→ Evidence Collection,claims,T-CLAIM
+REQ-18-008,18,714,source-clause,→ Fraud Screening,claims,T-CLAIM
+REQ-18-009,18,715,source-clause,→ Assignment,claims,T-CLAIM
+REQ-18-010,18,716,source-clause,→ Investigation,claims,T-CLAIM
+REQ-18-011,18,717,source-clause,→ Assessment,claims,T-CLAIM
+REQ-18-012,18,718,source-clause,→ Reserve,claims,T-CLAIM
+REQ-18-013,18,719,source-clause,→ Decision,claims,T-CLAIM
+REQ-18-014,18,720,source-clause,→ Settlement,claims,T-CLAIM
+REQ-18-015,18,721,source-clause,→ Payment,claims,T-CLAIM
+REQ-18-016,18,722,source-clause,→ Recovery,claims,T-CLAIM
+REQ-18-017,18,723,source-clause,→ Closure,claims,T-CLAIM
+REQ-18-018,18,725,source-clause,Also support:,claims,T-CLAIM
+REQ-18-019,18,727,source-clause,partial approval,claims,T-CLAIM
+REQ-18-020,18,728,source-clause,partial payment,claims,T-CLAIM
+REQ-18-021,18,729,source-clause,multiple claim items,claims,T-CLAIM
+REQ-18-022,18,730,source-clause,multiple payees,claims,T-CLAIM
+REQ-18-023,18,731,source-clause,reopening,claims,T-CLAIM
+REQ-18-024,18,732,source-clause,appeals,claims,T-CLAIM
+REQ-18-025,18,733,source-clause,disputes,claims,T-CLAIM
+REQ-18-026,18,734,source-clause,subrogation,claims,T-CLAIM
+REQ-18-027,18,735,source-clause,salvage,claims,T-CLAIM
+REQ-18-028,18,736,source-clause,recoveries,claims,T-CLAIM
+REQ-18-029,18,737,source-clause,third-party claims,claims,T-CLAIM
+REQ-18-030,18,738,source-clause,claim withdrawal,claims,T-CLAIM
+REQ-18-031,18,739,source-clause,duplicate detection,claims,T-CLAIM
+REQ-19-001,19,741,scope,FNOL UX,claims,T-CLAIM
+REQ-19-002,19,743,source-clause,FNOL must be optimized for stressful situations.,claims,T-CLAIM
+REQ-19-003,19,745,source-clause,Design:,claims,T-CLAIM
+REQ-19-004,19,747,source-clause,progressive disclosure,claims,T-CLAIM
+REQ-19-005,19,748,source-clause,minimal first-step information,claims,T-CLAIM
+REQ-19-006,19,749,source-clause,save/resume,claims,T-CLAIM
+REQ-19-007,19,750,source-clause,camera capture,claims,T-CLAIM
+REQ-19-008,19,751,source-clause,video,claims,T-CLAIM
+REQ-19-009,19,752,source-clause,voice notes,claims,T-CLAIM
+REQ-19-010,19,753,source-clause,geolocation with consent,claims,T-CLAIM
+REQ-19-011,19,754,source-clause,offline drafts where appropriate,claims,T-CLAIM
+REQ-19-012,19,755,source-clause,emergency contact,claims,T-CLAIM
+REQ-19-013,19,756,source-clause,police report,claims,T-CLAIM
+REQ-19-014,19,757,source-clause,third-party details,claims,T-CLAIM
+REQ-19-015,19,758,source-clause,witnesses,claims,T-CLAIM
+REQ-19-016,19,759,source-clause,document upload,claims,T-CLAIM
+REQ-20-001,20,761,scope,Provider networks,providers,T-ASSIST
+REQ-20-002,20,763,source-clause,Support:,providers,T-ASSIST
+REQ-20-003,20,765,source-clause,hospitals,providers,T-ASSIST
+REQ-20-004,20,766,source-clause,clinics,providers,T-ASSIST
+REQ-20-005,20,767,source-clause,doctors,providers,T-ASSIST
+REQ-20-006,20,768,source-clause,pharmacies,providers,T-ASSIST
+REQ-20-007,20,769,source-clause,laboratories,providers,T-ASSIST
+REQ-20-008,20,770,source-clause,repair shops,providers,T-ASSIST
+REQ-20-009,20,771,source-clause,roadside providers,providers,T-ASSIST
+REQ-20-010,20,772,source-clause,tow trucks,providers,T-ASSIST
+REQ-20-011,20,773,source-clause,home-repair services,providers,T-ASSIST
+REQ-20-012,20,774,source-clause,surveyors,providers,T-ASSIST
+REQ-20-013,20,775,source-clause,adjusters,providers,T-ASSIST
+REQ-20-014,20,776,source-clause,legal providers,providers,T-ASSIST
+REQ-20-015,20,778,source-clause,Model:,providers,T-ASSIST
+REQ-20-016,20,780,source-clause,service areas,providers,T-ASSIST
+REQ-20-017,20,781,source-clause,availability,providers,T-ASSIST
+REQ-20-018,20,782,source-clause,contracts,providers,T-ASSIST
+REQ-20-019,20,783,source-clause,prices,providers,T-ASSIST
+REQ-20-020,20,784,source-clause,specialties,providers,T-ASSIST
+REQ-20-021,20,785,source-clause,insurer networks,providers,T-ASSIST
+REQ-20-022,20,786,source-clause,appointment/booking availability,providers,T-ASSIST
+REQ-20-023,20,787,source-clause,ratings,providers,T-ASSIST
+REQ-20-024,20,788,source-clause,SLAs,providers,T-ASSIST
+REQ-21-001,21,790,scope,Assistance,providers,T-ASSIST
+REQ-21-002,21,792,source-clause,Design:,providers,T-ASSIST
+REQ-21-003,21,794,source-clause,roadside assistance,providers,T-ASSIST
+REQ-21-004,21,795,source-clause,emergency medical assistance,providers,T-ASSIST
+REQ-21-005,21,796,source-clause,travel assistance,providers,T-ASSIST
+REQ-21-006,21,797,source-clause,home assistance,providers,T-ASSIST
+REQ-21-007,21,799,source-clause,Support:,providers,T-ASSIST
+REQ-21-008,21,801,source-clause,request,providers,T-ASSIST
+REQ-21-009,21,802,source-clause,→ dispatch,providers,T-ASSIST
+REQ-21-010,21,803,source-clause,→ provider acceptance,providers,T-ASSIST
+REQ-21-011,21,804,source-clause,→ tracking,providers,T-ASSIST
+REQ-21-012,21,805,source-clause,→ completion,providers,T-ASSIST
+REQ-21-013,21,806,source-clause,→ rating,providers,T-ASSIST
+REQ-21-014,21,807,source-clause,→ settlement,providers,T-ASSIST
+REQ-22-001,22,809,scope,Payments,payments,T-PAYMENT
+REQ-22-002,22,811,source-clause,Create payment-provider abstraction.,payments,T-PAYMENT
+REQ-22-003,22,813,source-clause,Support:,payments,T-PAYMENT
+REQ-22-004,22,815,source-clause,card,payments,T-PAYMENT
+REQ-22-005,22,816,source-clause,bank transfer,payments,T-PAYMENT
+REQ-22-006,22,817,source-clause,direct debit,payments,T-PAYMENT
+REQ-22-007,22,818,source-clause,wallet,payments,T-PAYMENT
+REQ-22-008,22,819,source-clause,local payment methods,payments,T-PAYMENT
+REQ-22-009,22,820,source-clause,installments,payments,T-PAYMENT
+REQ-22-010,22,821,source-clause,recurring payment,payments,T-PAYMENT
+REQ-22-011,22,822,source-clause,refund,payments,T-PAYMENT
+REQ-22-012,22,823,source-clause,partial refund,payments,T-PAYMENT
+REQ-22-013,22,824,source-clause,chargeback,payments,T-PAYMENT
+REQ-22-014,22,825,source-clause,payout,payments,T-PAYMENT
+REQ-22-015,22,827,source-clause,Use payment-provider tokenization.,payments,T-PAYMENT
+REQ-22-016,22,829,source-clause,Avoid storing raw payment-card credentials.,payments,T-PAYMENT
+REQ-23-001,23,831,scope,Financial ledger,ledger,T-LEDGER
+REQ-23-002,23,833,source-clause,Create an append-only double-entry ledger.,ledger,T-LEDGER
+REQ-23-003,23,835,source-clause,Every financial mutation must generate balanced journal entries.,ledger,T-LEDGER
+REQ-23-004,23,837,source-clause,Support:,ledger,T-LEDGER
+REQ-23-005,23,839,source-clause,premium,ledger,T-LEDGER
+REQ-23-006,23,840,source-clause,commission,ledger,T-LEDGER
+REQ-23-007,23,841,source-clause,platform fee,ledger,T-LEDGER
+REQ-23-008,23,842,source-clause,tax,ledger,T-LEDGER
+REQ-23-009,23,843,source-clause,refund,ledger,T-LEDGER
+REQ-23-010,23,844,source-clause,chargeback,ledger,T-LEDGER
+REQ-23-011,23,845,source-clause,payout,ledger,T-LEDGER
+REQ-23-012,23,846,source-clause,claim payment,ledger,T-LEDGER
+REQ-23-013,23,847,source-clause,wallet movement,ledger,T-LEDGER
+REQ-23-014,23,848,source-clause,adjustment,ledger,T-LEDGER
+REQ-23-015,23,849,source-clause,settlement,ledger,T-LEDGER
+REQ-23-016,23,850,source-clause,recovery,ledger,T-LEDGER
+REQ-23-017,23,852,source-clause,Define:,ledger,T-LEDGER
+REQ-23-018,23,854,source-clause,LedgerAccount,ledger,T-LEDGER
+REQ-23-019,23,855,source-clause,JournalEntry,ledger,T-LEDGER
+REQ-23-020,23,856,source-clause,Posting,ledger,T-LEDGER
+REQ-23-021,23,857,source-clause,Balance,ledger,T-LEDGER
+REQ-23-022,23,858,source-clause,Reconciliation,ledger,T-LEDGER
+REQ-23-023,23,860,source-clause,Do not derive authoritative financial state from mutable transaction rows.,ledger,T-LEDGER
+REQ-24-001,24,862,scope,Commission,commission,T-COMMISSION
+REQ-24-002,24,864,source-clause,Support:,commission,T-COMMISSION
+REQ-24-003,24,866,source-clause,percentage commission,commission,T-COMMISSION
+REQ-24-004,24,867,source-clause,fixed commission,commission,T-COMMISSION
+REQ-24-005,24,868,source-clause,tiered commission,commission,T-COMMISSION
+REQ-24-006,24,869,source-clause,product-specific commission,commission,T-COMMISSION
+REQ-24-007,24,870,source-clause,insurer-specific commission,commission,T-COMMISSION
+REQ-24-008,24,871,source-clause,broker commission,commission,T-COMMISSION
+REQ-24-009,24,872,source-clause,agent commission,commission,T-COMMISSION
+REQ-24-010,24,873,source-clause,affiliate commission,commission,T-COMMISSION
+REQ-24-011,24,874,source-clause,platform commission,commission,T-COMMISSION
+REQ-24-012,24,875,source-clause,provider commission,commission,T-COMMISSION
+REQ-24-013,24,876,source-clause,commission clawbacks,commission,T-COMMISSION
+REQ-24-014,24,877,source-clause,commission adjustments,commission,T-COMMISSION
+REQ-24-015,24,879,source-clause,Commission configuration must be versioned.,commission,T-COMMISSION
+REQ-25-001,25,881,scope,Settlement,settlement,T-SETTLEMENT
+REQ-25-002,25,883,source-clause,Support:,settlement,T-SETTLEMENT
+REQ-25-003,25,885,source-clause,insurer settlement,settlement,T-SETTLEMENT
+REQ-25-004,25,886,source-clause,broker settlement,settlement,T-SETTLEMENT
+REQ-25-005,25,887,source-clause,agent payout,settlement,T-SETTLEMENT
+REQ-25-006,25,888,source-clause,provider payout,settlement,T-SETTLEMENT
+REQ-25-007,25,889,source-clause,affiliate payout,settlement,T-SETTLEMENT
+REQ-25-008,25,891,source-clause,Provide:,settlement,T-SETTLEMENT
+REQ-25-009,25,893,source-clause,settlement periods,settlement,T-SETTLEMENT
+REQ-25-010,25,894,source-clause,reconciliation,settlement,T-SETTLEMENT
+REQ-25-011,25,895,source-clause,statements,settlement,T-SETTLEMENT
+REQ-25-012,25,896,source-clause,invoices,settlement,T-SETTLEMENT
+REQ-25-013,25,897,source-clause,withholding/tax adjustments,settlement,T-SETTLEMENT
+REQ-25-014,25,898,source-clause,disputes,settlement,T-SETTLEMENT
+REQ-25-015,25,899,source-clause,corrections,settlement,T-SETTLEMENT
+REQ-25-016,25,900,source-clause,reserves/holds,settlement,T-SETTLEMENT
+REQ-25-017,25,901,source-clause,approval workflow,settlement,T-SETTLEMENT
+REQ-26-001,26,903,scope,Corporate B2B,distribution,T-IMPORT
+REQ-26-002,26,905,source-clause,Corporate insurance customers should support:,distribution,T-IMPORT
+REQ-26-003,26,907,source-clause,organization management,distribution,T-IMPORT
+REQ-26-004,26,908,source-clause,employee enrollment,distribution,T-IMPORT
+REQ-26-005,26,909,source-clause,dependent enrollment,distribution,T-IMPORT
+REQ-26-006,26,910,source-clause,fleet import,distribution,T-IMPORT
+REQ-26-007,26,911,source-clause,asset import,distribution,T-IMPORT
+REQ-26-008,26,912,source-clause,bulk policies,distribution,T-IMPORT
+REQ-26-009,26,913,source-clause,bulk claims,distribution,T-IMPORT
+REQ-26-010,26,914,source-clause,employee benefits,distribution,T-IMPORT
+REQ-26-011,26,915,source-clause,cost centers,distribution,T-IMPORT
+REQ-26-012,26,916,source-clause,departments,distribution,T-IMPORT
+REQ-26-013,26,917,source-clause,reporting,distribution,T-IMPORT
+REQ-26-014,26,918,source-clause,approval chains,distribution,T-IMPORT
+REQ-27-001,27,920,scope,Agent and broker platform,distribution,T-IMPORT
+REQ-27-002,27,922,source-clause,Support:,distribution,T-IMPORT
+REQ-27-003,27,924,source-clause,licensing,distribution,T-IMPORT
+REQ-27-004,27,925,source-clause,appointment,distribution,T-IMPORT
+REQ-27-005,27,926,source-clause,carrier relationships,distribution,T-IMPORT
+REQ-27-006,27,927,source-clause,territories,distribution,T-IMPORT
+REQ-27-007,27,928,source-clause,products,distribution,T-IMPORT
+REQ-27-008,27,929,source-clause,leads,distribution,T-IMPORT
+REQ-27-009,27,930,source-clause,customers,distribution,T-IMPORT
+REQ-27-010,27,931,source-clause,quotes,distribution,T-IMPORT
+REQ-27-011,27,932,source-clause,policies,distribution,T-IMPORT
+REQ-27-012,27,933,source-clause,renewals,distribution,T-IMPORT
+REQ-27-013,27,934,source-clause,commissions,distribution,T-IMPORT
+REQ-27-014,27,935,source-clause,targets,distribution,T-IMPORT
+REQ-27-015,27,936,source-clause,performance,distribution,T-IMPORT
+REQ-27-016,27,937,source-clause,compliance,distribution,T-IMPORT
+REQ-27-017,27,938,source-clause,documents,distribution,T-IMPORT
+REQ-28-001,28,940,scope,Affiliate platform,distribution,T-IMPORT
+REQ-28-002,28,942,source-clause,Support:,distribution,T-IMPORT
+REQ-28-003,28,944,source-clause,campaigns,distribution,T-IMPORT
+REQ-28-004,28,945,source-clause,referral URLs,distribution,T-IMPORT
+REQ-28-005,28,946,source-clause,referral codes,distribution,T-IMPORT
+REQ-28-006,28,947,source-clause,attribution,distribution,T-IMPORT
+REQ-28-007,28,948,source-clause,conversions,distribution,T-IMPORT
+REQ-28-008,28,949,source-clause,commissions,distribution,T-IMPORT
+REQ-28-009,28,950,source-clause,fraud checks,distribution,T-IMPORT
+REQ-28-010,28,951,source-clause,payouts,distribution,T-IMPORT
+REQ-29-001,29,953,scope,Embedded insurance,distribution,T-IMPORT
+REQ-29-002,29,955,source-clause,Create APIs allowing third parties to:,distribution,T-IMPORT
+REQ-29-003,29,957,source-clause,retrieve product eligibility,distribution,T-IMPORT
+REQ-29-004,29,958,source-clause,request quotes,distribution,T-IMPORT
+REQ-29-005,29,959,source-clause,present offers,distribution,T-IMPORT
+REQ-29-006,29,960,source-clause,purchase policies,distribution,T-IMPORT
+REQ-29-007,29,961,source-clause,check policy status,distribution,T-IMPORT
+REQ-29-008,29,962,source-clause,initiate claims,distribution,T-IMPORT
+REQ-29-009,29,964,source-clause,Support embedded widgets where appropriate.,distribution,T-IMPORT
+REQ-30-001,30,966,scope,Developer platform,integrations,T-CONTRACT
+REQ-30-002,30,968,source-clause,Provide:,integrations,T-CONTRACT
+REQ-30-003,30,970,source-clause,API keys,integrations,T-CONTRACT
+REQ-30-004,30,971,source-clause,OAuth clients,integrations,T-CONTRACT
+REQ-30-005,30,972,source-clause,client credentials,integrations,T-CONTRACT
+REQ-30-006,30,973,source-clause,sandbox,integrations,T-CONTRACT
+REQ-30-007,30,974,source-clause,test data,integrations,T-CONTRACT
+REQ-30-008,30,975,source-clause,request logs,integrations,T-CONTRACT
+REQ-30-009,30,976,source-clause,webhook configuration,integrations,T-CONTRACT
+REQ-30-010,30,977,source-clause,signing secrets,integrations,T-CONTRACT
+REQ-30-011,30,978,source-clause,credential rotation,integrations,T-CONTRACT
+REQ-30-012,30,979,source-clause,rate limits,integrations,T-CONTRACT
+REQ-30-013,30,980,source-clause,quotas,integrations,T-CONTRACT
+REQ-30-014,30,981,source-clause,OpenAPI documentation,integrations,T-CONTRACT
+REQ-30-015,30,982,source-clause,SDK generation,integrations,T-CONTRACT
+REQ-30-016,30,983,source-clause,API changelog,integrations,T-CONTRACT
+REQ-31-001,31,985,scope,Integration platform,integrations,T-CONTRACT
+REQ-31-002,31,987,source-clause,Use anti-corruption layers.,integrations,T-CONTRACT
+REQ-31-003,31,989,source-clause,External insurer formats must never leak into core domain objects.,integrations,T-CONTRACT
+REQ-31-004,31,991,source-clause,Create provider abstractions for:,integrations,T-CONTRACT
+REQ-31-005,31,993,source-clause,insurers,integrations,T-CONTRACT
+REQ-31-006,31,994,source-clause,payment processors,integrations,T-CONTRACT
+REQ-31-007,31,995,source-clause,banks,integrations,T-CONTRACT
+REQ-31-008,31,996,source-clause,KYC,integrations,T-CONTRACT
+REQ-31-009,31,997,source-clause,KYB,integrations,T-CONTRACT
+REQ-31-010,31,998,source-clause,AML,integrations,T-CONTRACT
+REQ-31-011,31,999,source-clause,sanctions,integrations,T-CONTRACT
+REQ-31-012,31,1000,source-clause,identity verification,integrations,T-CONTRACT
+REQ-31-013,31,1001,source-clause,digital signatures,integrations,T-CONTRACT
+REQ-31-014,31,1002,source-clause,notifications,integrations,T-CONTRACT
+REQ-31-015,31,1003,source-clause,maps,integrations,T-CONTRACT
+REQ-31-016,31,1004,source-clause,telematics,integrations,T-CONTRACT
+REQ-31-017,31,1005,source-clause,healthcare,integrations,T-CONTRACT
+REQ-31-018,31,1006,source-clause,OCR,integrations,T-CONTRACT
+REQ-31-019,31,1007,source-clause,currency conversion,integrations,T-CONTRACT
+REQ-31-020,31,1008,source-clause,regulators where appropriate,integrations,T-CONTRACT
+REQ-31-021,31,1010,source-clause,Consider ACORD-compatible adapters for relevant insurance integrations.,integrations,T-CONTRACT
+REQ-31-022,31,1012,source-clause,Consider FHIR-compatible adapters for health-insurance interoperability.,integrations,T-CONTRACT
+REQ-32-001,32,1014,scope,API design,integrations,T-CONTRACT
+REQ-32-002,32,1016,source-clause,Use REST/OpenAPI as the primary external API.,integrations,T-CONTRACT
+REQ-32-003,32,1018,source-clause,Version public APIs.,integrations,T-CONTRACT
+REQ-32-004,32,1020,source-clause,Design:,integrations,T-CONTRACT
+REQ-32-005,32,1022,source-clause,/api/v1/public,integrations,T-CONTRACT
+REQ-32-006,32,1023,source-clause,/api/v1/customer,integrations,T-CONTRACT
+REQ-32-007,32,1024,source-clause,/api/v1/partner,integrations,T-CONTRACT
+REQ-32-008,32,1025,source-clause,/api/v1/admin,integrations,T-CONTRACT
+REQ-32-009,32,1026,source-clause,/api/v1/integrations,integrations,T-CONTRACT
+REQ-32-010,32,1028,source-clause,Exact routing may differ if architecture analysis recommends a superior scheme.,integrations,T-CONTRACT
+REQ-32-011,32,1030,source-clause,Generate typed API clients.,integrations,T-CONTRACT
+REQ-32-012,32,1032,source-clause,"Design pagination, filtering, sorting and sparse responses consistently.",integrations,T-CONTRACT
+REQ-32-013,32,1034,source-clause,Use machine-readable errors.,integrations,T-CONTRACT
+REQ-32-014,32,1036,source-clause,Create a standardized error envelope.,integrations,T-CONTRACT
+REQ-33-001,33,1038,scope,Idempotency,payments,T-PAYMENT
+REQ-33-002,33,1040,source-clause,Implement idempotency for all operations that could cause duplicate business side effects.,payments,T-PAYMENT
+REQ-33-003,33,1042,source-clause,Examples:,payments,T-PAYMENT
+REQ-33-004,33,1044,source-clause,payment,payments,T-PAYMENT
+REQ-33-005,33,1045,source-clause,refund,payments,T-PAYMENT
+REQ-33-006,33,1046,source-clause,policy issue,payments,T-PAYMENT
+REQ-33-007,33,1047,source-clause,endorsement,payments,T-PAYMENT
+REQ-33-008,33,1048,source-clause,claim submission,payments,T-PAYMENT
+REQ-33-009,33,1049,source-clause,settlement,payments,T-PAYMENT
+REQ-33-010,33,1050,source-clause,payout,payments,T-PAYMENT
+REQ-33-011,33,1051,source-clause,webhook processing,payments,T-PAYMENT
+REQ-33-012,33,1053,source-clause,"Specify key storage, retention, replay semantics and response behavior.",payments,T-PAYMENT
+REQ-34-001,34,1055,scope,Event-driven architecture,platform,T-COMPOSE
+REQ-34-002,34,1057,source-clause,Define meaningful domain events.,platform,T-COMPOSE
+REQ-34-003,34,1059,source-clause,Use a durable message system such as NATS JetStream unless analysis justifies another technology.,platform,T-COMPOSE
+REQ-34-004,34,1061,source-clause,Implement:,platform,T-COMPOSE
+REQ-34-005,34,1063,source-clause,Transactional Outbox,platform,T-COMPOSE
+REQ-34-006,34,1064,source-clause,Inbox,platform,T-COMPOSE
+REQ-34-007,34,1065,source-clause,Consumer deduplication,platform,T-COMPOSE
+REQ-34-008,34,1066,source-clause,Retries,platform,T-COMPOSE
+REQ-34-009,34,1067,source-clause,Dead-letter strategy,platform,T-COMPOSE
+REQ-34-010,34,1068,source-clause,Schema versioning,platform,T-COMPOSE
+REQ-34-011,34,1069,source-clause,Correlation IDs,platform,T-COMPOSE
+REQ-34-012,34,1070,source-clause,Causation IDs,platform,T-COMPOSE
+REQ-34-013,34,1071,source-clause,Trace IDs,platform,T-COMPOSE
+REQ-34-014,34,1073,source-clause,Do not attempt distributed ACID transactions.,platform,T-COMPOSE
+REQ-34-015,34,1075,source-clause,Use eventual consistency deliberately.,platform,T-COMPOSE
+REQ-34-016,34,1077,source-clause,Document consistency boundaries.,platform,T-COMPOSE
+REQ-35-001,35,1079,scope,Durable workflows,platform,T-COMPOSE
+REQ-35-002,35,1081,source-clause,Use Temporal or a demonstrably superior equivalent compatible with the Docker requirement.,platform,T-COMPOSE
+REQ-35-003,35,1083,source-clause,Use durable workflows for long-running operations including:,platform,T-COMPOSE
+REQ-35-004,35,1085,source-clause,insurer onboarding,platform,T-COMPOSE
+REQ-35-005,35,1086,source-clause,KYC,platform,T-COMPOSE
+REQ-35-006,35,1087,source-clause,KYB,platform,T-COMPOSE
+REQ-35-007,35,1088,source-clause,quote-to-policy,platform,T-COMPOSE
+REQ-35-008,35,1089,source-clause,underwriting,platform,T-COMPOSE
+REQ-35-009,35,1090,source-clause,document collection,platform,T-COMPOSE
+REQ-35-010,35,1091,source-clause,policy issuance,platform,T-COMPOSE
+REQ-35-011,35,1092,source-clause,claims,platform,T-COMPOSE
+REQ-35-012,35,1093,source-clause,endorsement,platform,T-COMPOSE
+REQ-35-013,35,1094,source-clause,renewal,platform,T-COMPOSE
+REQ-35-014,35,1095,source-clause,installment collection,platform,T-COMPOSE
+REQ-35-015,35,1096,source-clause,settlement,platform,T-COMPOSE
+REQ-35-016,35,1097,source-clause,dispute resolution,platform,T-COMPOSE
+REQ-35-017,35,1098,source-clause,corporate onboarding,platform,T-COMPOSE
+REQ-35-018,35,1100,source-clause,"Design compensation, retries, timeouts, human tasks and SLA escalation.",platform,T-COMPOSE
+REQ-36-001,36,1102,scope,Caching,platform,T-COMPOSE
+REQ-36-002,36,1104,source-clause,Use Valkey/Redis where suitable.,platform,T-COMPOSE
+REQ-36-003,36,1106,source-clause,Cache only when there is a demonstrated purpose.,platform,T-COMPOSE
+REQ-36-004,36,1108,source-clause,Never allow tenant leakage through cache keys.,platform,T-COMPOSE
+REQ-36-005,36,1110,source-clause,Define:,platform,T-COMPOSE
+REQ-36-006,36,1112,source-clause,TTL,platform,T-COMPOSE
+REQ-36-007,36,1113,source-clause,invalidation,platform,T-COMPOSE
+REQ-36-008,36,1114,source-clause,namespaces,platform,T-COMPOSE
+REQ-36-009,36,1115,source-clause,stampede protection,platform,T-COMPOSE
+REQ-36-010,36,1116,source-clause,sensitive-data restrictions,platform,T-COMPOSE
+REQ-37-001,37,1118,scope,Document architecture,documents,T-DOC
+REQ-37-002,37,1120,source-clause,Store files in S3-compatible object storage such as MinIO.,documents,T-DOC
+REQ-37-003,37,1122,source-clause,Use:,documents,T-DOC
+REQ-37-004,37,1124,source-clause,temporary upload,documents,T-DOC
+REQ-37-005,37,1125,source-clause,→ quarantine,documents,T-DOC
+REQ-37-006,37,1126,source-clause,→ validation,documents,T-DOC
+REQ-37-007,37,1127,source-clause,→ malware scan,documents,T-DOC
+REQ-37-008,37,1128,source-clause,→ metadata extraction,documents,T-DOC
+REQ-37-009,37,1129,source-clause,→ optional OCR,documents,T-DOC
+REQ-37-010,37,1130,source-clause,→ classification,documents,T-DOC
+REQ-37-011,37,1131,source-clause,→ encryption,documents,T-DOC
+REQ-37-012,37,1132,source-clause,→ permanent storage,documents,T-DOC
+REQ-37-013,37,1134,source-clause,"Validate actual file content, not only extension or client-provided MIME type.",documents,T-DOC
+REQ-37-014,37,1136,source-clause,Use signed URLs.,documents,T-DOC
+REQ-37-015,37,1138,source-clause,Design strict access control.,documents,T-DOC
+REQ-38-001,38,1140,scope,Search,platform,T-COMPOSE
+REQ-38-002,38,1142,source-clause,Use PostgreSQL search where sufficient.,platform,T-COMPOSE
+REQ-38-003,38,1144,source-clause,Use OpenSearch for advanced marketplace/provider/search workloads where justified.,platform,T-COMPOSE
+REQ-38-004,38,1146,source-clause,"Search indexes are projections, never the authoritative database.",platform,T-COMPOSE
+REQ-38-005,38,1148,source-clause,Design reindexing.,platform,T-COMPOSE
+REQ-38-006,38,1150,source-clause,Design tenant isolation in search.,platform,T-COMPOSE
+REQ-39-001,39,1152,scope,Analytics,analytics,T-ANALYTICS
+REQ-39-002,39,1154,source-clause,Do not run heavy business-intelligence workloads against OLTP PostgreSQL.,analytics,T-ANALYTICS
+REQ-39-003,39,1156,source-clause,Design an analytics pipeline using events/CDC as appropriate.,analytics,T-ANALYTICS
+REQ-39-004,39,1158,source-clause,Use ClickHouse or another justified analytical store.,analytics,T-ANALYTICS
+REQ-39-005,39,1160,source-clause,Metrics must include insurance KPIs such as:,analytics,T-ANALYTICS
+REQ-39-006,39,1162,source-clause,written premium,analytics,T-ANALYTICS
+REQ-39-007,39,1163,source-clause,earned premium,analytics,T-ANALYTICS
+REQ-39-008,39,1164,source-clause,loss ratio,analytics,T-ANALYTICS
+REQ-39-009,39,1165,source-clause,expense ratio,analytics,T-ANALYTICS
+REQ-39-010,39,1166,source-clause,combined ratio,analytics,T-ANALYTICS
+REQ-39-011,39,1167,source-clause,claim frequency,analytics,T-ANALYTICS
+REQ-39-012,39,1168,source-clause,claim severity,analytics,T-ANALYTICS
+REQ-39-013,39,1169,source-clause,renewal rate,analytics,T-ANALYTICS
+REQ-39-014,39,1170,source-clause,retention,analytics,T-ANALYTICS
+REQ-39-015,39,1171,source-clause,conversion,analytics,T-ANALYTICS
+REQ-39-016,39,1172,source-clause,average premium,analytics,T-ANALYTICS
+REQ-39-017,39,1173,source-clause,outstanding claims,analytics,T-ANALYTICS
+REQ-39-018,39,1174,source-clause,insurer performance,analytics,T-ANALYTICS
+REQ-39-019,39,1175,source-clause,settlement time,analytics,T-ANALYTICS
+REQ-39-020,39,1176,source-clause,claim cycle time,analytics,T-ANALYTICS
+REQ-39-021,39,1177,source-clause,fraud rate,analytics,T-ANALYTICS
+REQ-39-022,39,1179,source-clause,Every metric must contain a precise mathematical definition.,analytics,T-ANALYTICS
+REQ-40-001,40,1181,scope,Fraud,fraud,T-FRAUD
+REQ-40-002,40,1183,source-clause,Design fraud architecture using:,fraud,T-FRAUD
+REQ-40-003,40,1185,source-clause,rules,fraud,T-FRAUD
+REQ-40-004,40,1186,source-clause,+,fraud,T-FRAUD
+REQ-40-005,40,1187,source-clause,graph/network signals,fraud,T-FRAUD
+REQ-40-006,40,1188,source-clause,+,fraud,T-FRAUD
+REQ-40-007,40,1189,source-clause,behavior,fraud,T-FRAUD
+REQ-40-008,40,1190,source-clause,+,fraud,T-FRAUD
+REQ-40-009,40,1191,source-clause,device information,fraud,T-FRAUD
+REQ-40-010,40,1192,source-clause,+,fraud,T-FRAUD
+REQ-40-011,40,1193,source-clause,document signals,fraud,T-FRAUD
+REQ-40-012,40,1194,source-clause,+,fraud,T-FRAUD
+REQ-40-013,40,1195,source-clause,statistical/ML models where justified,fraud,T-FRAUD
+REQ-40-014,40,1197,source-clause,Support:,fraud,T-FRAUD
+REQ-40-015,40,1199,source-clause,FraudSignal,fraud,T-FRAUD
+REQ-40-016,40,1200,source-clause,FraudScore,fraud,T-FRAUD
+REQ-40-017,40,1201,source-clause,FraudCase,fraud,T-FRAUD
+REQ-40-018,40,1202,source-clause,Investigation,fraud,T-FRAUD
+REQ-40-019,40,1203,source-clause,Evidence,fraud,T-FRAUD
+REQ-40-020,40,1204,source-clause,Disposition,fraud,T-FRAUD
+REQ-40-021,40,1206,source-clause,Do not allow opaque ML to become the only basis for consequential decisions.,fraud,T-FRAUD
+REQ-41-001,41,1208,scope,AI,ai,T-AI
+REQ-41-002,41,1210,source-clause,Create an AI Gateway.,ai,T-AI
+REQ-41-003,41,1212,source-clause,Potential functions:,ai,T-AI
+REQ-41-004,41,1214,source-clause,insurance assistant,ai,T-AI
+REQ-41-005,41,1215,source-clause,policy explanation,ai,T-AI
+REQ-41-006,41,1216,source-clause,policy comparison,ai,T-AI
+REQ-41-007,41,1217,source-clause,recommendation,ai,T-AI
+REQ-41-008,41,1218,source-clause,coverage-gap analysis,ai,T-AI
+REQ-41-009,41,1219,source-clause,insurance-needs assessment,ai,T-AI
+REQ-41-010,41,1220,source-clause,document extraction,ai,T-AI
+REQ-41-011,41,1221,source-clause,claim assistance,ai,T-AI
+REQ-41-012,41,1222,source-clause,support-agent assistance,ai,T-AI
+REQ-41-013,41,1223,source-clause,fraud signals,ai,T-AI
+REQ-41-014,41,1225,source-clause,For every AI feature identify:,ai,T-AI
+REQ-41-015,41,1227,source-clause,purpose,ai,T-AI
+REQ-41-016,41,1228,source-clause,permitted inputs,ai,T-AI
+REQ-41-017,41,1229,source-clause,prohibited inputs,ai,T-AI
+REQ-41-018,41,1230,source-clause,PII handling,ai,T-AI
+REQ-41-019,41,1231,source-clause,retention,ai,T-AI
+REQ-41-020,41,1232,source-clause,model/provider,ai,T-AI
+REQ-41-021,41,1233,source-clause,prompt/version,ai,T-AI
+REQ-41-022,41,1234,source-clause,confidence,ai,T-AI
+REQ-41-023,41,1235,source-clause,evidence,ai,T-AI
+REQ-41-024,41,1236,source-clause,fallback,ai,T-AI
+REQ-41-025,41,1237,source-clause,human review,ai,T-AI
+REQ-41-026,41,1238,source-clause,monitoring,ai,T-AI
+REQ-41-027,41,1240,source-clause,Do not allow LLM output directly to modify authoritative insurance or financial records.,ai,T-AI
+REQ-41-028,41,1242,source-clause,Use deterministic validated commands between AI systems and domain systems.,ai,T-AI
+REQ-42-001,42,1244,scope,Recommendation engine,ai,T-AI
+REQ-42-002,42,1246,source-clause,Recommendations must be explainable.,ai,T-AI
+REQ-42-003,42,1248,source-clause,Output examples:,ai,T-AI
+REQ-42-004,42,1250,source-clause,Best Value,ai,T-AI
+REQ-42-005,42,1251,source-clause,Lowest Price,ai,T-AI
+REQ-42-006,42,1252,source-clause,Best Coverage,ai,T-AI
+REQ-42-007,42,1253,source-clause,Best for Family,ai,T-AI
+REQ-42-008,42,1254,source-clause,Best for Frequent Travelers,ai,T-AI
+REQ-42-009,42,1256,source-clause,Clearly distinguish algorithmic recommendation from regulated financial/insurance advice.,ai,T-AI
+REQ-42-010,42,1258,source-clause,Provide reasons for ranking.,ai,T-AI
+REQ-42-011,42,1260,source-clause,Avoid discriminatory protected-attribute use unless explicitly lawful and required.,ai,T-AI
+REQ-43-001,43,1262,scope,OCR/document intelligence,documents,T-DOC
+REQ-43-002,43,1264,source-clause,Support:,documents,T-DOC
+REQ-43-003,43,1266,source-clause,identity documents,documents,T-DOC
+REQ-43-004,43,1267,source-clause,passport,documents,T-DOC
+REQ-43-005,43,1268,source-clause,driver's license,documents,T-DOC
+REQ-43-006,43,1269,source-clause,vehicle documents,documents,T-DOC
+REQ-43-007,43,1270,source-clause,invoice,documents,T-DOC
+REQ-43-008,43,1271,source-clause,receipts,documents,T-DOC
+REQ-43-009,43,1272,source-clause,medical documents,documents,T-DOC
+REQ-43-010,43,1273,source-clause,existing insurance policies,documents,T-DOC
+REQ-43-011,43,1275,source-clause,Store:,documents,T-DOC
+REQ-43-012,43,1277,source-clause,raw extraction,documents,T-DOC
+REQ-43-013,43,1278,source-clause,normalized extraction,documents,T-DOC
+REQ-43-014,43,1279,source-clause,confidence,documents,T-DOC
+REQ-43-015,43,1280,source-clause,source positions,documents,T-DOC
+REQ-43-016,43,1281,source-clause,human corrections,documents,T-DOC
+REQ-43-017,43,1282,source-clause,model/version,documents,T-DOC
+REQ-43-018,43,1284,source-clause,Never overwrite raw evidence.,documents,T-DOC
+REQ-44-001,44,1286,scope,Privacy,privacy,T-PRIVACY
+REQ-44-002,44,1288,source-clause,Implement:,privacy,T-PRIVACY
+REQ-44-003,44,1290,source-clause,consent,privacy,T-PRIVACY
+REQ-44-004,44,1291,source-clause,purpose,privacy,T-PRIVACY
+REQ-44-005,44,1292,source-clause,legal basis where required,privacy,T-PRIVACY
+REQ-44-006,44,1293,source-clause,data classification,privacy,T-PRIVACY
+REQ-44-007,44,1294,source-clause,retention,privacy,T-PRIVACY
+REQ-44-008,44,1295,source-clause,deletion/anonymization where lawful,privacy,T-PRIVACY
+REQ-44-009,44,1296,source-clause,export,privacy,T-PRIVACY
+REQ-44-010,44,1297,source-clause,access history,privacy,T-PRIVACY
+REQ-44-011,44,1298,source-clause,sensitive-data segregation,privacy,T-PRIVACY
+REQ-44-012,44,1300,source-clause,Treat health information as highly sensitive.,privacy,T-PRIVACY
+REQ-44-013,44,1302,source-clause,Do not assume GDPR is the only applicable privacy regime.,privacy,T-PRIVACY
+REQ-44-014,44,1304,source-clause,Create jurisdiction-specific compliance policies.,privacy,T-PRIVACY
+REQ-45-001,45,1306,scope,Security baseline,security,T-SECURITY
+REQ-45-002,45,1308,source-clause,Design against current versions of applicable standards including:,security,T-SECURITY
+REQ-45-003,45,1310,source-clause,OWASP ASVS,security,T-SECURITY
+REQ-45-004,45,1311,source-clause,OWASP API Security guidance,security,T-SECURITY
+REQ-45-005,45,1312,source-clause,NIST Digital Identity Guidelines,security,T-SECURITY
+REQ-45-006,45,1313,source-clause,PCI DSS when card data is in scope,security,T-SECURITY
+REQ-45-007,45,1315,source-clause,Verify current versions when executing this prompt.,security,T-SECURITY
+REQ-45-008,45,1317,source-clause,Perform formal threat modeling.,security,T-SECURITY
+REQ-45-009,45,1319,source-clause,Use STRIDE or an equivalent methodology.,security,T-SECURITY
+REQ-45-010,45,1321,source-clause,Address:,security,T-SECURITY
+REQ-45-011,45,1323,source-clause,authentication bypass,security,T-SECURITY
+REQ-45-012,45,1324,source-clause,authorization bypass,security,T-SECURITY
+REQ-45-013,45,1325,source-clause,IDOR,security,T-SECURITY
+REQ-45-014,45,1326,source-clause,broken object-level authorization,security,T-SECURITY
+REQ-45-015,45,1327,source-clause,privilege escalation,security,T-SECURITY
+REQ-45-016,45,1328,source-clause,tenant breakout,security,T-SECURITY
+REQ-45-017,45,1329,source-clause,XSS,security,T-SECURITY
+REQ-45-018,45,1330,source-clause,CSRF,security,T-SECURITY
+REQ-45-019,45,1331,source-clause,injection,security,T-SECURITY
+REQ-45-020,45,1332,source-clause,SSRF,security,T-SECURITY
+REQ-45-021,45,1333,source-clause,request smuggling,security,T-SECURITY
+REQ-45-022,45,1334,source-clause,deserialization,security,T-SECURITY
+REQ-45-023,45,1335,source-clause,file upload attacks,security,T-SECURITY
+REQ-45-024,45,1336,source-clause,webhook forgery,security,T-SECURITY
+REQ-45-025,45,1337,source-clause,replay,security,T-SECURITY
+REQ-45-026,45,1338,source-clause,race conditions,security,T-SECURITY
+REQ-45-027,45,1339,source-clause,duplicate payments,security,T-SECURITY
+REQ-45-028,45,1340,source-clause,business logic abuse,security,T-SECURITY
+REQ-45-029,45,1341,source-clause,enumeration,security,T-SECURITY
+REQ-45-030,45,1342,source-clause,credential stuffing,security,T-SECURITY
+REQ-45-031,45,1343,source-clause,bot attacks,security,T-SECURITY
+REQ-45-032,45,1344,source-clause,API scraping,security,T-SECURITY
+REQ-45-033,45,1345,source-clause,secret leakage,security,T-SECURITY
+REQ-45-034,45,1346,source-clause,supply-chain attacks,security,T-SECURITY
+REQ-45-035,45,1347,source-clause,dependency compromise,security,T-SECURITY
+REQ-45-036,45,1348,source-clause,malicious containers,security,T-SECURITY
+REQ-45-037,45,1349,source-clause,insider risk,security,T-SECURITY
+REQ-46-001,46,1351,scope,Audit,compliance,T-COMPLIANCE
+REQ-46-002,46,1353,source-clause,"Create immutable, searchable audit trails.",compliance,T-COMPLIANCE
+REQ-46-003,46,1355,source-clause,Record:,compliance,T-COMPLIANCE
+REQ-46-004,46,1357,source-clause,actor,compliance,T-COMPLIANCE
+REQ-46-005,46,1358,source-clause,tenant,compliance,T-COMPLIANCE
+REQ-46-006,46,1359,source-clause,organization,compliance,T-COMPLIANCE
+REQ-46-007,46,1360,source-clause,action,compliance,T-COMPLIANCE
+REQ-46-008,46,1361,source-clause,resource,compliance,T-COMPLIANCE
+REQ-46-009,46,1362,source-clause,resource ID,compliance,T-COMPLIANCE
+REQ-46-010,46,1363,source-clause,timestamp,compliance,T-COMPLIANCE
+REQ-46-011,46,1364,source-clause,request ID,compliance,T-COMPLIANCE
+REQ-46-012,46,1365,source-clause,IP where legally appropriate,compliance,T-COMPLIANCE
+REQ-46-013,46,1366,source-clause,device/session,compliance,T-COMPLIANCE
+REQ-46-014,46,1367,source-clause,before/after references,compliance,T-COMPLIANCE
+REQ-46-015,46,1368,source-clause,reason,compliance,T-COMPLIANCE
+REQ-46-016,46,1369,source-clause,delegation/impersonation,compliance,T-COMPLIANCE
+REQ-46-017,46,1370,source-clause,approval context,compliance,T-COMPLIANCE
+REQ-46-018,46,1372,source-clause,"Audit sensitive reads where required, not only writes.",compliance,T-COMPLIANCE
+REQ-46-019,46,1374,source-clause,Never allow application administrators to silently alter audit history.,compliance,T-COMPLIANCE
+REQ-47-001,47,1376,scope,Observability,platform,T-COMPOSE
+REQ-47-002,47,1378,source-clause,Design distributed observability.,platform,T-COMPOSE
+REQ-47-003,47,1380,source-clause,Use:,platform,T-COMPOSE
+REQ-47-004,47,1382,source-clause,OpenTelemetry,platform,T-COMPOSE
+REQ-47-005,47,1383,source-clause,Prometheus,platform,T-COMPOSE
+REQ-47-006,47,1384,source-clause,Grafana,platform,T-COMPOSE
+REQ-47-007,47,1385,source-clause,Tempo or equivalent,platform,T-COMPOSE
+REQ-47-008,47,1386,source-clause,Loki or equivalent,platform,T-COMPOSE
+REQ-47-009,47,1388,source-clause,Implement:,platform,T-COMPOSE
+REQ-47-010,47,1390,source-clause,structured logs,platform,T-COMPOSE
+REQ-47-011,47,1391,source-clause,metrics,platform,T-COMPOSE
+REQ-47-012,47,1392,source-clause,traces,platform,T-COMPOSE
+REQ-47-013,47,1393,source-clause,correlation IDs,platform,T-COMPOSE
+REQ-47-014,47,1394,source-clause,workflow IDs,platform,T-COMPOSE
+REQ-47-015,47,1395,source-clause,business IDs,platform,T-COMPOSE
+REQ-47-016,47,1397,source-clause,Never place secrets or sensitive health/identity information into logs.,platform,T-COMPOSE
+REQ-47-017,47,1399,source-clause,Create dashboards for:,platform,T-COMPOSE
+REQ-47-018,47,1401,source-clause,API,platform,T-COMPOSE
+REQ-47-019,47,1402,source-clause,database,platform,T-COMPOSE
+REQ-47-020,47,1403,source-clause,queues,platform,T-COMPOSE
+REQ-47-021,47,1404,source-clause,workflows,platform,T-COMPOSE
+REQ-47-022,47,1405,source-clause,integrations,platform,T-COMPOSE
+REQ-47-023,47,1406,source-clause,payments,platform,T-COMPOSE
+REQ-47-024,47,1407,source-clause,claims,platform,T-COMPOSE
+REQ-47-025,47,1408,source-clause,policy issuance,platform,T-COMPOSE
+REQ-47-026,47,1409,source-clause,background workers,platform,T-COMPOSE
+REQ-48-001,48,1411,scope,Reliability,platform,T-COMPOSE
+REQ-48-002,48,1413,source-clause,Define explicit SLOs.,platform,T-COMPOSE
+REQ-48-003,48,1415,source-clause,Cover:,platform,T-COMPOSE
+REQ-48-004,48,1417,source-clause,availability,platform,T-COMPOSE
+REQ-48-005,48,1418,source-clause,latency,platform,T-COMPOSE
+REQ-48-006,48,1419,source-clause,error rate,platform,T-COMPOSE
+REQ-48-007,48,1420,source-clause,queue delay,platform,T-COMPOSE
+REQ-48-008,48,1421,source-clause,workflow delay,platform,T-COMPOSE
+REQ-48-009,48,1422,source-clause,third-party failures,platform,T-COMPOSE
+REQ-48-010,48,1424,source-clause,Design:,platform,T-COMPOSE
+REQ-48-011,48,1426,source-clause,retries,platform,T-COMPOSE
+REQ-48-012,48,1427,source-clause,jitter,platform,T-COMPOSE
+REQ-48-013,48,1428,source-clause,exponential backoff,platform,T-COMPOSE
+REQ-48-014,48,1429,source-clause,circuit breakers,platform,T-COMPOSE
+REQ-48-015,48,1430,source-clause,bulkheads,platform,T-COMPOSE
+REQ-48-016,48,1431,source-clause,graceful degradation,platform,T-COMPOSE
+REQ-48-017,48,1432,source-clause,timeout budgets,platform,T-COMPOSE
+REQ-48-018,48,1433,source-clause,dead-letter handling,platform,T-COMPOSE
+REQ-48-019,48,1434,source-clause,health checks,platform,T-COMPOSE
+REQ-48-020,48,1435,source-clause,readiness checks,platform,T-COMPOSE
+REQ-48-021,48,1436,source-clause,liveness checks,platform,T-COMPOSE
+REQ-49-001,49,1438,scope,Backup and disaster recovery,platform,T-COMPOSE
+REQ-49-002,49,1440,source-clause,Design:,platform,T-COMPOSE
+REQ-49-003,49,1442,source-clause,database backups,platform,T-COMPOSE
+REQ-49-004,49,1443,source-clause,point-in-time recovery,platform,T-COMPOSE
+REQ-49-005,49,1444,source-clause,object-storage backup,platform,T-COMPOSE
+REQ-49-006,49,1445,source-clause,configuration backup,platform,T-COMPOSE
+REQ-49-007,49,1446,source-clause,encryption-key recovery strategy,platform,T-COMPOSE
+REQ-49-008,49,1447,source-clause,workflow-state recovery,platform,T-COMPOSE
+REQ-49-009,49,1448,source-clause,recovery exercises,platform,T-COMPOSE
+REQ-49-010,49,1450,source-clause,Define:,platform,T-COMPOSE
+REQ-49-011,49,1452,source-clause,RPO,platform,T-COMPOSE
+REQ-49-012,49,1453,source-clause,RTO,platform,T-COMPOSE
+REQ-49-013,49,1455,source-clause,for each major service class.,platform,T-COMPOSE
+REQ-49-014,49,1457,source-clause,Do not invent universal RPO/RTO values; propose initial targets and identify which require business approval.,platform,T-COMPOSE
+REQ-50-001,50,1459,scope,Docker,platform,T-COMPOSE
+REQ-50-002,50,1461,source-clause,Everything must be containerized.,platform,T-COMPOSE
+REQ-50-003,50,1463,source-clause,Provide production-quality multi-stage Dockerfiles.,platform,T-COMPOSE
+REQ-50-004,50,1465,source-clause,Containers must:,platform,T-COMPOSE
+REQ-50-005,50,1467,source-clause,run as non-root,platform,T-COMPOSE
+REQ-50-006,50,1468,source-clause,use minimal base images,platform,T-COMPOSE
+REQ-50-007,50,1469,source-clause,expose health checks,platform,T-COMPOSE
+REQ-50-008,50,1470,source-clause,handle SIGTERM,platform,T-COMPOSE
+REQ-50-009,50,1471,source-clause,support graceful shutdown,platform,T-COMPOSE
+REQ-50-010,50,1472,source-clause,avoid secrets in images,platform,T-COMPOSE
+REQ-50-011,50,1473,source-clause,avoid unnecessary packages,platform,T-COMPOSE
+REQ-50-012,50,1474,source-clause,have reproducible builds,platform,T-COMPOSE
+REQ-50-013,50,1476,source-clause,Create:,platform,T-COMPOSE
+REQ-50-014,50,1478,source-clause,compose.yaml,platform,T-COMPOSE
+REQ-50-015,50,1479,source-clause,compose.dev.yaml,platform,T-COMPOSE
+REQ-50-016,50,1480,source-clause,compose.test.yaml,platform,T-COMPOSE
+REQ-50-017,50,1481,source-clause,compose.prod.yaml,platform,T-COMPOSE
+REQ-50-018,50,1483,source-clause,Use Docker Compose profiles where useful:,platform,T-COMPOSE
+REQ-50-019,50,1485,source-clause,core,platform,T-COMPOSE
+REQ-50-020,50,1486,source-clause,observability,platform,T-COMPOSE
+REQ-50-021,50,1487,source-clause,full,platform,T-COMPOSE
+REQ-50-022,50,1488,source-clause,testing,platform,T-COMPOSE
+REQ-50-023,50,1490,source-clause,Expected services may include:,platform,T-COMPOSE
+REQ-50-024,50,1492,source-clause,reverse-proxy,platform,T-COMPOSE
+REQ-50-025,50,1493,source-clause,customer-web,platform,T-COMPOSE
+REQ-50-026,50,1494,source-clause,partner-web,platform,T-COMPOSE
+REQ-50-027,50,1495,source-clause,admin-web,platform,T-COMPOSE
+REQ-50-028,50,1496,source-clause,developer-web,platform,T-COMPOSE
+REQ-50-029,50,1497,source-clause,api,platform,T-COMPOSE
+REQ-50-030,50,1498,source-clause,worker,platform,T-COMPOSE
+REQ-50-031,50,1499,source-clause,workflow-worker,platform,T-COMPOSE
+REQ-50-032,50,1500,source-clause,integration-worker,platform,T-COMPOSE
+REQ-50-033,50,1501,source-clause,postgres,platform,T-COMPOSE
+REQ-50-034,50,1502,source-clause,valkey,platform,T-COMPOSE
+REQ-50-035,50,1503,source-clause,nats,platform,T-COMPOSE
+REQ-50-036,50,1504,source-clause,temporal,platform,T-COMPOSE
+REQ-50-037,50,1505,source-clause,temporal-ui,platform,T-COMPOSE
+REQ-50-038,50,1506,source-clause,minio,platform,T-COMPOSE
+REQ-50-039,50,1507,source-clause,opensearch,platform,T-COMPOSE
+REQ-50-040,50,1508,source-clause,clickhouse,platform,T-COMPOSE
+REQ-50-041,50,1509,source-clause,clamav,platform,T-COMPOSE
+REQ-50-042,50,1510,source-clause,identity-provider,platform,T-COMPOSE
+REQ-50-043,50,1511,source-clause,otel-collector,platform,T-COMPOSE
+REQ-50-044,50,1512,source-clause,prometheus,platform,T-COMPOSE
+REQ-50-045,50,1513,source-clause,grafana,platform,T-COMPOSE
+REQ-50-046,50,1514,source-clause,tempo,platform,T-COMPOSE
+REQ-50-047,50,1515,source-clause,loki,platform,T-COMPOSE
+REQ-50-048,50,1517,source-clause,Do not include infrastructure without explaining why it is necessary.,platform,T-COMPOSE
+REQ-51-001,51,1519,scope,Development experience,platform,T-COMPOSE
+REQ-51-002,51,1521,source-clause,A new developer should be able to run:,platform,T-COMPOSE
+REQ-51-003,51,1523,source-clause,docker compose up,platform,T-COMPOSE
+REQ-51-004,51,1525,source-clause,or an equivalently simple documented command.,platform,T-COMPOSE
+REQ-51-005,51,1527,source-clause,Provide:,platform,T-COMPOSE
+REQ-51-006,51,1529,source-clause,`.env.example`,platform,T-COMPOSE
+REQ-51-007,51,1530,source-clause,seed data,platform,T-COMPOSE
+REQ-51-008,51,1531,source-clause,mock integrations,platform,T-COMPOSE
+REQ-51-009,51,1532,source-clause,local mail server,platform,T-COMPOSE
+REQ-51-010,51,1533,source-clause,mock insurer,platform,T-COMPOSE
+REQ-51-011,51,1534,source-clause,mock KYC,platform,T-COMPOSE
+REQ-51-012,51,1535,source-clause,mock payment service,platform,T-COMPOSE
+REQ-51-013,51,1536,source-clause,predictable demo accounts,platform,T-COMPOSE
+REQ-51-014,51,1538,source-clause,Never commit secrets.,platform,T-COMPOSE
+REQ-52-001,52,1540,scope,Database design,architecture,T-DESIGN
+REQ-52-002,52,1542,source-clause,Produce a conceptual ER model.,architecture,T-DESIGN
+REQ-52-003,52,1544,source-clause,Identify aggregates and ownership.,architecture,T-DESIGN
+REQ-52-004,52,1546,source-clause,Avoid a single gigantic interconnected schema.,architecture,T-DESIGN
+REQ-52-005,52,1548,source-clause,Each bounded context owns its data.,architecture,T-DESIGN
+REQ-52-006,52,1550,source-clause,Cross-context writes are prohibited.,architecture,T-DESIGN
+REQ-52-007,52,1552,source-clause,Use migrations.,architecture,T-DESIGN
+REQ-52-008,52,1554,source-clause,Design indexes intentionally.,architecture,T-DESIGN
+REQ-52-009,52,1556,source-clause,Use:,architecture,T-DESIGN
+REQ-52-010,52,1558,source-clause,UUIDv7 or similarly appropriate identifiers,architecture,T-DESIGN
+REQ-52-011,52,1559,source-clause,timestamps,architecture,T-DESIGN
+REQ-52-012,52,1560,source-clause,effective periods,architecture,T-DESIGN
+REQ-52-013,52,1561,source-clause,concurrency/version fields,architecture,T-DESIGN
+REQ-52-014,52,1562,source-clause,audit metadata,architecture,T-DESIGN
+REQ-52-015,52,1564,source-clause,Justify identifier strategy.,architecture,T-DESIGN
+REQ-53-001,53,1566,scope,Time,policy,T-HISTORY
+REQ-53-002,53,1568,source-clause,Insurance is extremely time-sensitive.,policy,T-HISTORY
+REQ-53-003,53,1570,source-clause,Explicitly distinguish:,policy,T-HISTORY
+REQ-53-004,53,1572,source-clause,event timestamp,policy,T-HISTORY
+REQ-53-005,53,1573,source-clause,created timestamp,policy,T-HISTORY
+REQ-53-006,53,1574,source-clause,effective date,policy,T-HISTORY
+REQ-53-007,53,1575,source-clause,expiration date,policy,T-HISTORY
+REQ-53-008,53,1576,source-clause,accounting date,policy,T-HISTORY
+REQ-53-009,53,1577,source-clause,settlement date,policy,T-HISTORY
+REQ-53-010,53,1578,source-clause,timezone,policy,T-HISTORY
+REQ-53-011,53,1580,source-clause,Store absolute timestamps appropriately.,policy,T-HISTORY
+REQ-53-012,53,1582,source-clause,Handle jurisdictional/local date concepts correctly.,policy,T-HISTORY
+REQ-54-001,54,1584,scope,Money,ledger,T-LEDGER
+REQ-54-002,54,1586,source-clause,Represent money using explicit:,ledger,T-LEDGER
+REQ-54-003,54,1588,source-clause,amount,ledger,T-LEDGER
+REQ-54-004,54,1589,source-clause,currency,ledger,T-LEDGER
+REQ-54-005,54,1591,source-clause,Never use JavaScript binary floating-point for authoritative financial calculations.,ledger,T-LEDGER
+REQ-54-006,54,1593,source-clause,Define rounding rules.,ledger,T-LEDGER
+REQ-54-007,54,1595,source-clause,Define tax rounding.,ledger,T-LEDGER
+REQ-54-008,54,1597,source-clause,Define currency conversion behavior.,ledger,T-LEDGER
+REQ-54-009,54,1599,source-clause,Historical transactions must preserve the exchange rate used.,ledger,T-LEDGER
+REQ-55-001,55,1601,scope,Localization,frontend,T-A11Y
+REQ-55-002,55,1603,source-clause,Architect for multilingual operation from day one.,frontend,T-A11Y
+REQ-55-003,55,1605,source-clause,Separate:,frontend,T-A11Y
+REQ-55-004,55,1607,source-clause,message translation,frontend,T-A11Y
+REQ-55-005,55,1608,source-clause,insurance terminology,frontend,T-A11Y
+REQ-55-006,55,1609,source-clause,legal text,frontend,T-A11Y
+REQ-55-007,55,1610,source-clause,product content,frontend,T-A11Y
+REQ-55-008,55,1611,source-clause,document templates,frontend,T-A11Y
+REQ-55-009,55,1613,source-clause,Support:,frontend,T-A11Y
+REQ-55-010,55,1615,source-clause,RTL,frontend,T-A11Y
+REQ-55-011,55,1616,source-clause,LTR,frontend,T-A11Y
+REQ-55-012,55,1617,source-clause,locale-sensitive dates,frontend,T-A11Y
+REQ-55-013,55,1618,source-clause,currencies,frontend,T-A11Y
+REQ-55-014,55,1619,source-clause,numbers,frontend,T-A11Y
+REQ-55-015,55,1620,source-clause,addresses,frontend,T-A11Y
+REQ-55-016,55,1621,source-clause,names,frontend,T-A11Y
+REQ-55-017,55,1623,source-clause,Do not assume every person has a Western name/address format.,frontend,T-A11Y
+REQ-56-001,56,1625,scope,Accessibility,frontend,T-A11Y
+REQ-56-002,56,1627,source-clause,Target WCAG 2.2 AA or a newer applicable stable equivalent after verification.,frontend,T-A11Y
+REQ-56-003,56,1629,source-clause,Pay special attention to:,frontend,T-A11Y
+REQ-56-004,56,1631,source-clause,complex forms,frontend,T-A11Y
+REQ-56-005,56,1632,source-clause,quote comparison,frontend,T-A11Y
+REQ-56-006,56,1633,source-clause,claim submission,frontend,T-A11Y
+REQ-56-007,56,1634,source-clause,document upload,frontend,T-A11Y
+REQ-56-008,56,1635,source-clause,tables,frontend,T-A11Y
+REQ-56-009,56,1636,source-clause,dialogs,frontend,T-A11Y
+REQ-56-010,56,1637,source-clause,charts,frontend,T-A11Y
+REQ-56-011,56,1638,source-clause,error messages,frontend,T-A11Y
+REQ-56-012,56,1639,source-clause,keyboard use,frontend,T-A11Y
+REQ-56-013,56,1640,source-clause,screen readers,frontend,T-A11Y
+REQ-57-001,57,1642,scope,UX,frontend,T-A11Y
+REQ-57-002,57,1644,source-clause,Design distinct journeys for:,frontend,T-A11Y
+REQ-57-003,57,1646,source-clause,Consumer,frontend,T-A11Y
+REQ-57-004,57,1647,source-clause,Corporate Administrator,frontend,T-A11Y
+REQ-57-005,57,1648,source-clause,Insurer Product Manager,frontend,T-A11Y
+REQ-57-006,57,1649,source-clause,Underwriter,frontend,T-A11Y
+REQ-57-007,57,1650,source-clause,Claims Adjuster,frontend,T-A11Y
+REQ-57-008,57,1651,source-clause,Finance User,frontend,T-A11Y
+REQ-57-009,57,1652,source-clause,Agent/Broker,frontend,T-A11Y
+REQ-57-010,57,1653,source-clause,Healthcare Provider,frontend,T-A11Y
+REQ-57-011,57,1654,source-clause,Repair Provider,frontend,T-A11Y
+REQ-57-012,57,1655,source-clause,Platform Administrator,frontend,T-A11Y
+REQ-57-013,57,1657,source-clause,Do not merely reuse the same dashboard with different permissions.,frontend,T-A11Y
+REQ-57-014,57,1659,source-clause,Each role requires task-oriented UX.,frontend,T-A11Y
+REQ-58-001,58,1661,scope,Design system,frontend,T-A11Y
+REQ-58-002,58,1663,source-clause,Create a common design system.,frontend,T-A11Y
+REQ-58-003,58,1665,source-clause,Define:,frontend,T-A11Y
+REQ-58-004,58,1667,source-clause,typography,frontend,T-A11Y
+REQ-58-005,58,1668,source-clause,spacing,frontend,T-A11Y
+REQ-58-006,58,1669,source-clause,tokens,frontend,T-A11Y
+REQ-58-007,58,1670,source-clause,forms,frontend,T-A11Y
+REQ-58-008,58,1671,source-clause,tables,frontend,T-A11Y
+REQ-58-009,58,1672,source-clause,cards,frontend,T-A11Y
+REQ-58-010,58,1673,source-clause,status indicators,frontend,T-A11Y
+REQ-58-011,58,1674,source-clause,notifications,frontend,T-A11Y
+REQ-58-012,58,1675,source-clause,dialogs,frontend,T-A11Y
+REQ-58-013,58,1676,source-clause,navigation,frontend,T-A11Y
+REQ-58-014,58,1677,source-clause,responsive rules,frontend,T-A11Y
+REQ-58-015,58,1678,source-clause,accessibility behavior,frontend,T-A11Y
+REQ-58-016,58,1680,source-clause,Insurance status must never depend on color alone.,frontend,T-A11Y
+REQ-59-001,59,1682,scope,Real-time communication,frontend,T-A11Y
+REQ-59-002,59,1684,source-clause,Use WebSocket or SSE where appropriate for:,frontend,T-A11Y
+REQ-59-003,59,1686,source-clause,claim updates,frontend,T-A11Y
+REQ-59-004,59,1687,source-clause,assistance tracking,frontend,T-A11Y
+REQ-59-005,59,1688,source-clause,chat,frontend,T-A11Y
+REQ-59-006,59,1689,source-clause,workflow status,frontend,T-A11Y
+REQ-59-007,59,1691,source-clause,Do not use WebSockets for simple CRUD unnecessarily.,frontend,T-A11Y
+REQ-60-001,60,1693,scope,Notifications,notifications,T-NOTIFY
+REQ-60-002,60,1695,source-clause,Create a notification orchestration subsystem.,notifications,T-NOTIFY
+REQ-60-003,60,1697,source-clause,Channels:,notifications,T-NOTIFY
+REQ-60-004,60,1699,source-clause,email,notifications,T-NOTIFY
+REQ-60-005,60,1700,source-clause,SMS,notifications,T-NOTIFY
+REQ-60-006,60,1701,source-clause,push,notifications,T-NOTIFY
+REQ-60-007,60,1702,source-clause,in-app,notifications,T-NOTIFY
+REQ-60-008,60,1703,source-clause,WhatsApp adapters,notifications,T-NOTIFY
+REQ-60-009,60,1704,source-clause,Telegram adapters,notifications,T-NOTIFY
+REQ-60-010,60,1705,source-clause,other country-specific messaging,notifications,T-NOTIFY
+REQ-60-011,60,1707,source-clause,Support:,notifications,T-NOTIFY
+REQ-60-012,60,1709,source-clause,templates,notifications,T-NOTIFY
+REQ-60-013,60,1710,source-clause,localization,notifications,T-NOTIFY
+REQ-60-014,60,1711,source-clause,user preferences,notifications,T-NOTIFY
+REQ-60-015,60,1712,source-clause,transactional vs marketing,notifications,T-NOTIFY
+REQ-60-016,60,1713,source-clause,delivery reports,notifications,T-NOTIFY
+REQ-60-017,60,1714,source-clause,retry,notifications,T-NOTIFY
+REQ-60-018,60,1715,source-clause,fallback,notifications,T-NOTIFY
+REQ-60-019,60,1716,source-clause,quiet hours,notifications,T-NOTIFY
+REQ-60-020,60,1717,source-clause,consent,notifications,T-NOTIFY
+REQ-60-021,60,1718,source-clause,deduplication,notifications,T-NOTIFY
+REQ-61-001,61,1720,scope,CRM and communication,customer,T-CRM
+REQ-61-002,61,1722,source-clause,Support Customer 360.,customer,T-CRM
+REQ-61-003,61,1724,source-clause,Include:,customer,T-CRM
+REQ-61-004,61,1726,source-clause,policies,customer,T-CRM
+REQ-61-005,61,1727,source-clause,quotes,customer,T-CRM
+REQ-61-006,61,1728,source-clause,claims,customer,T-CRM
+REQ-61-007,61,1729,source-clause,payments,customer,T-CRM
+REQ-61-008,61,1730,source-clause,communications,customer,T-CRM
+REQ-61-009,61,1731,source-clause,tickets,customer,T-CRM
+REQ-61-010,61,1732,source-clause,complaints,customer,T-CRM
+REQ-61-011,61,1733,source-clause,notes,customer,T-CRM
+REQ-61-012,61,1734,source-clause,tasks,customer,T-CRM
+REQ-61-013,61,1735,source-clause,documents,customer,T-CRM
+REQ-61-014,61,1736,source-clause,risk information subject to authorization,customer,T-CRM
+REQ-61-015,61,1737,source-clause,consent,customer,T-CRM
+REQ-62-001,62,1739,scope,Complaints/disputes,compliance,T-COMPLIANCE
+REQ-62-002,62,1741,source-clause,Design:,compliance,T-COMPLIANCE
+REQ-62-003,62,1743,source-clause,complaint,compliance,T-COMPLIANCE
+REQ-62-004,62,1744,source-clause,→ acknowledgement,compliance,T-COMPLIANCE
+REQ-62-005,62,1745,source-clause,→ investigation,compliance,T-COMPLIANCE
+REQ-62-006,62,1746,source-clause,→ resolution,compliance,T-COMPLIANCE
+REQ-62-007,62,1747,source-clause,→ appeal/escalation,compliance,T-COMPLIANCE
+REQ-62-008,62,1748,source-clause,→ closure,compliance,T-COMPLIANCE
+REQ-62-009,62,1750,source-clause,Support SLA timers and regulatory reporting.,compliance,T-COMPLIANCE
+REQ-63-001,63,1752,scope,Reviews and reputation,customer,T-CRM
+REQ-63-002,63,1754,source-clause,Support review of:,customer,T-CRM
+REQ-63-003,63,1756,source-clause,insurer,customer,T-CRM
+REQ-63-004,63,1757,source-clause,product,customer,T-CRM
+REQ-63-005,63,1758,source-clause,claims experience,customer,T-CRM
+REQ-63-006,63,1759,source-clause,provider,customer,T-CRM
+REQ-63-007,63,1760,source-clause,repair shop,customer,T-CRM
+REQ-63-008,63,1762,source-clause,Implement anti-abuse controls.,customer,T-CRM
+REQ-63-009,63,1764,source-clause,Do not permit reviews from users with no relevant relationship where verification is required.,customer,T-CRM
+REQ-64-001,64,1766,scope,Marketing,distribution,T-IMPORT
+REQ-64-002,64,1768,source-clause,Design:,distribution,T-IMPORT
+REQ-64-003,64,1770,source-clause,campaigns,distribution,T-IMPORT
+REQ-64-004,64,1771,source-clause,coupons,distribution,T-IMPORT
+REQ-64-005,64,1772,source-clause,referral,distribution,T-IMPORT
+REQ-64-006,64,1773,source-clause,cashback,distribution,T-IMPORT
+REQ-64-007,64,1774,source-clause,loyalty,distribution,T-IMPORT
+REQ-64-008,64,1775,source-clause,bundles,distribution,T-IMPORT
+REQ-64-009,64,1776,source-clause,cross-sell,distribution,T-IMPORT
+REQ-64-010,64,1777,source-clause,upsell,distribution,T-IMPORT
+REQ-64-011,64,1778,source-clause,retention,distribution,T-IMPORT
+REQ-64-012,64,1780,source-clause,Marketing permissions must respect consent.,distribution,T-IMPORT
+REQ-65-001,65,1782,scope,Parametric insurance,claims,T-CLAIM
+REQ-65-002,65,1784,source-clause,Support event-driven automatic claims where appropriate.,claims,T-CLAIM
+REQ-65-003,65,1786,source-clause,Example:,claims,T-CLAIM
+REQ-65-004,65,1788,source-clause,Verified external event,claims,T-CLAIM
+REQ-65-005,65,1789,source-clause,→ Contract condition met,claims,T-CLAIM
+REQ-65-006,65,1790,source-clause,→ Claim automatically created,claims,T-CLAIM
+REQ-65-007,65,1791,source-clause,→ Verification,claims,T-CLAIM
+REQ-65-008,65,1792,source-clause,→ Payout,claims,T-CLAIM
+REQ-65-009,65,1794,source-clause,All external event sources require provenance and dispute mechanisms.,claims,T-CLAIM
+REQ-66-001,66,1796,scope,Telematics/usage-based insurance,risk,T-RATING
+REQ-66-002,66,1798,source-clause,Create optional telematics architecture supporting:,risk,T-RATING
+REQ-66-003,66,1800,source-clause,mileage,risk,T-RATING
+REQ-66-004,66,1801,source-clause,driving events,risk,T-RATING
+REQ-66-005,66,1802,source-clause,trip summaries,risk,T-RATING
+REQ-66-006,66,1803,source-clause,harsh braking,risk,T-RATING
+REQ-66-007,66,1804,source-clause,acceleration,risk,T-RATING
+REQ-66-008,66,1805,source-clause,time of use,risk,T-RATING
+REQ-66-009,66,1807,source-clause,Apply privacy controls.,risk,T-RATING
+REQ-66-010,66,1809,source-clause,Do not assume raw location history should be retained indefinitely.,risk,T-RATING
+REQ-67-001,67,1811,scope,Reinsurance/co-insurance,policy,T-HISTORY
+REQ-67-002,67,1813,source-clause,Architect extension points for:,policy,T-HISTORY
+REQ-67-003,67,1815,source-clause,facultative reinsurance,policy,T-HISTORY
+REQ-67-004,67,1816,source-clause,treaties,policy,T-HISTORY
+REQ-67-005,67,1817,source-clause,cessions,policy,T-HISTORY
+REQ-67-006,67,1818,source-clause,recoverables,policy,T-HISTORY
+REQ-67-007,67,1819,source-clause,risk sharing,policy,T-HISTORY
+REQ-67-008,67,1820,source-clause,multiple insurers,policy,T-HISTORY
+REQ-67-009,67,1822,source-clause,These may initially be disabled by feature flags but architecture must not make them impossible.,policy,T-HISTORY
+REQ-68-001,68,1824,scope,Feature flags,architecture,T-DESIGN
+REQ-68-002,68,1826,source-clause,Support flags scoped by:,architecture,T-DESIGN
+REQ-68-003,68,1828,source-clause,platform,architecture,T-DESIGN
+REQ-68-004,68,1829,source-clause,country,architecture,T-DESIGN
+REQ-68-005,68,1830,source-clause,tenant,architecture,T-DESIGN
+REQ-68-006,68,1831,source-clause,organization,architecture,T-DESIGN
+REQ-68-007,68,1832,source-clause,product,architecture,T-DESIGN
+REQ-68-008,68,1833,source-clause,user cohort,architecture,T-DESIGN
+REQ-68-009,68,1835,source-clause,Security-sensitive functionality must not rely solely on frontend feature flags.,architecture,T-DESIGN
+REQ-69-001,69,1837,scope,Configuration,architecture,T-DESIGN
+REQ-69-002,69,1839,source-clause,Separate:,architecture,T-DESIGN
+REQ-69-003,69,1841,source-clause,code,architecture,T-DESIGN
+REQ-69-004,69,1842,source-clause,configuration,architecture,T-DESIGN
+REQ-69-005,69,1843,source-clause,business rules,architecture,T-DESIGN
+REQ-69-006,69,1844,source-clause,secrets,architecture,T-DESIGN
+REQ-69-007,69,1846,source-clause,Version business configuration.,architecture,T-DESIGN
+REQ-69-008,69,1848,source-clause,Audit configuration changes.,architecture,T-DESIGN
+REQ-70-001,70,1850,scope,Testing strategy,architecture,T-DESIGN
+REQ-70-002,70,1852,source-clause,Define the complete test pyramid.,architecture,T-DESIGN
+REQ-70-003,70,1854,source-clause,Require:,architecture,T-DESIGN
+REQ-70-004,70,1856,source-clause,unit tests,architecture,T-DESIGN
+REQ-70-005,70,1857,source-clause,domain tests,architecture,T-DESIGN
+REQ-70-006,70,1858,source-clause,property-based tests where valuable,architecture,T-DESIGN
+REQ-70-007,70,1859,source-clause,integration tests,architecture,T-DESIGN
+REQ-70-008,70,1860,source-clause,repository tests,architecture,T-DESIGN
+REQ-70-009,70,1861,source-clause,API tests,architecture,T-DESIGN
+REQ-70-010,70,1862,source-clause,contract tests,architecture,T-DESIGN
+REQ-70-011,70,1863,source-clause,workflow tests,architecture,T-DESIGN
+REQ-70-012,70,1864,source-clause,event tests,architecture,T-DESIGN
+REQ-70-013,70,1865,source-clause,end-to-end tests,architecture,T-DESIGN
+REQ-70-014,70,1866,source-clause,tenant-isolation tests,architecture,T-DESIGN
+REQ-70-015,70,1867,source-clause,security tests,architecture,T-DESIGN
+REQ-70-016,70,1868,source-clause,accessibility tests,architecture,T-DESIGN
+REQ-70-017,70,1869,source-clause,visual-regression tests,architecture,T-DESIGN
+REQ-70-018,70,1870,source-clause,performance tests,architecture,T-DESIGN
+REQ-70-019,70,1871,source-clause,load tests,architecture,T-DESIGN
+REQ-70-020,70,1872,source-clause,stress tests,architecture,T-DESIGN
+REQ-70-021,70,1873,source-clause,soak tests,architecture,T-DESIGN
+REQ-70-022,70,1874,source-clause,chaos/failure tests where justified,architecture,T-DESIGN
+REQ-70-023,70,1875,source-clause,migration tests,architecture,T-DESIGN
+REQ-70-024,70,1876,source-clause,backup/restore tests,architecture,T-DESIGN
+REQ-70-025,70,1878,source-clause,Financial calculations require deterministic test vectors.,architecture,T-DESIGN
+REQ-70-026,70,1880,source-clause,Pricing and actuarial formulas require independent verification.,architecture,T-DESIGN
+REQ-71-001,71,1882,scope,Contract testing,integrations,T-CONTRACT
+REQ-71-002,71,1884,source-clause,External insurer/provider integrations must use contract tests.,integrations,T-CONTRACT
+REQ-71-003,71,1886,source-clause,Include mock provider implementations.,integrations,T-CONTRACT
+REQ-71-004,71,1888,source-clause,Do not allow an external carrier's temporary outage to corrupt core state.,integrations,T-CONTRACT
+REQ-72-001,72,1890,scope,Performance,platform,T-COMPOSE
+REQ-72-002,72,1892,source-clause,Define performance budgets for:,platform,T-COMPOSE
+REQ-72-003,72,1894,source-clause,customer pages,platform,T-COMPOSE
+REQ-72-004,72,1895,source-clause,quote retrieval,platform,T-COMPOSE
+REQ-72-005,72,1896,source-clause,product search,platform,T-COMPOSE
+REQ-72-006,72,1897,source-clause,API latency,platform,T-COMPOSE
+REQ-72-007,72,1898,source-clause,payment flows,platform,T-COMPOSE
+REQ-72-008,72,1899,source-clause,claims,platform,T-COMPOSE
+REQ-72-009,72,1900,source-clause,insurer portal,platform,T-COMPOSE
+REQ-72-010,72,1901,source-clause,asynchronous queues,platform,T-COMPOSE
+REQ-72-011,72,1903,source-clause,Use load models based on realistic user behavior.,platform,T-COMPOSE
+REQ-72-012,72,1905,source-clause,Do not optimize blindly.,platform,T-COMPOSE
+REQ-73-001,73,1907,scope,CI/CD,platform,T-COMPOSE
+REQ-73-002,73,1909,source-clause,Design pipelines for:,platform,T-COMPOSE
+REQ-73-003,73,1911,source-clause,lint,platform,T-COMPOSE
+REQ-73-004,73,1912,source-clause,type check,platform,T-COMPOSE
+REQ-73-005,73,1913,source-clause,unit tests,platform,T-COMPOSE
+REQ-73-006,73,1914,source-clause,integration tests,platform,T-COMPOSE
+REQ-73-007,73,1915,source-clause,contract tests,platform,T-COMPOSE
+REQ-73-008,73,1916,source-clause,security scanning,platform,T-COMPOSE
+REQ-73-009,73,1917,source-clause,dependency scanning,platform,T-COMPOSE
+REQ-73-010,73,1918,source-clause,container scanning,platform,T-COMPOSE
+REQ-73-011,73,1919,source-clause,SBOM generation,platform,T-COMPOSE
+REQ-73-012,73,1920,source-clause,build,platform,T-COMPOSE
+REQ-73-013,73,1921,source-clause,sign,platform,T-COMPOSE
+REQ-73-014,73,1922,source-clause,deploy,platform,T-COMPOSE
+REQ-73-015,73,1923,source-clause,smoke testing,platform,T-COMPOSE
+REQ-73-016,73,1924,source-clause,migration verification,platform,T-COMPOSE
+REQ-73-017,73,1925,source-clause,rollback,platform,T-COMPOSE
+REQ-73-018,73,1927,source-clause,Use immutable images.,platform,T-COMPOSE
+REQ-74-001,74,1929,scope,Monorepo,architecture,T-DESIGN
+REQ-74-002,74,1931,source-clause,Design a TypeScript monorepo.,architecture,T-DESIGN
+REQ-74-003,74,1933,source-clause,A reasonable starting structure is:,architecture,T-DESIGN
+REQ-74-004,74,1935,source-clause,apps/,architecture,T-DESIGN
+REQ-74-005,74,1936,source-clause,customer-web/,architecture,T-DESIGN
+REQ-74-006,74,1937,source-clause,partner-web/,architecture,T-DESIGN
+REQ-74-007,74,1938,source-clause,admin-web/,architecture,T-DESIGN
+REQ-74-008,74,1939,source-clause,developer-web/,architecture,T-DESIGN
+REQ-74-009,74,1940,source-clause,api/,architecture,T-DESIGN
+REQ-74-010,74,1941,source-clause,worker/,architecture,T-DESIGN
+REQ-74-011,74,1942,source-clause,workflow-worker/,architecture,T-DESIGN
+REQ-74-012,74,1943,source-clause,integration-worker/,architecture,T-DESIGN
+REQ-74-013,74,1945,source-clause,packages/,architecture,T-DESIGN
+REQ-74-014,74,1946,source-clause,ui/,architecture,T-DESIGN
+REQ-74-015,74,1947,source-clause,design-system/,architecture,T-DESIGN
+REQ-74-016,74,1948,source-clause,api-client/,architecture,T-DESIGN
+REQ-74-017,74,1949,source-clause,contracts/,architecture,T-DESIGN
+REQ-74-018,74,1950,source-clause,localization/,architecture,T-DESIGN
+REQ-74-019,74,1951,source-clause,config/,architecture,T-DESIGN
+REQ-74-020,74,1952,source-clause,observability/,architecture,T-DESIGN
+REQ-74-021,74,1953,source-clause,testing/,architecture,T-DESIGN
+REQ-74-022,74,1955,source-clause,domains/,architecture,T-DESIGN
+REQ-74-023,74,1956,source-clause,identity/,architecture,T-DESIGN
+REQ-74-024,74,1957,source-clause,tenant/,architecture,T-DESIGN
+REQ-74-025,74,1958,source-clause,party/,architecture,T-DESIGN
+REQ-74-026,74,1959,source-clause,customer/,architecture,T-DESIGN
+REQ-74-027,74,1960,source-clause,vendor/,architecture,T-DESIGN
+REQ-74-028,74,1961,source-clause,product/,architecture,T-DESIGN
+REQ-74-029,74,1962,source-clause,pricing/,architecture,T-DESIGN
+REQ-74-030,74,1963,source-clause,quote/,architecture,T-DESIGN
+REQ-74-031,74,1964,source-clause,underwriting/,architecture,T-DESIGN
+REQ-74-032,74,1965,source-clause,risk/,architecture,T-DESIGN
+REQ-74-033,74,1966,source-clause,policy/,architecture,T-DESIGN
+REQ-74-034,74,1967,source-clause,claims/,architecture,T-DESIGN
+REQ-74-035,74,1968,source-clause,providers/,architecture,T-DESIGN
+REQ-74-036,74,1969,source-clause,billing/,architecture,T-DESIGN
+REQ-74-037,74,1970,source-clause,payments/,architecture,T-DESIGN
+REQ-74-038,74,1971,source-clause,ledger/,architecture,T-DESIGN
+REQ-74-039,74,1972,source-clause,commission/,architecture,T-DESIGN
+REQ-74-040,74,1973,source-clause,settlement/,architecture,T-DESIGN
+REQ-74-041,74,1974,source-clause,distribution/,architecture,T-DESIGN
+REQ-74-042,74,1975,source-clause,documents/,architecture,T-DESIGN
+REQ-74-043,74,1976,source-clause,compliance/,architecture,T-DESIGN
+REQ-74-044,74,1977,source-clause,fraud/,architecture,T-DESIGN
+REQ-74-045,74,1978,source-clause,notifications/,architecture,T-DESIGN
+REQ-74-046,74,1979,source-clause,integrations/,architecture,T-DESIGN
+REQ-74-047,74,1980,source-clause,analytics/,architecture,T-DESIGN
+REQ-74-048,74,1982,source-clause,infrastructure/,architecture,T-DESIGN
+REQ-74-049,74,1983,source-clause,docs/,architecture,T-DESIGN
+REQ-74-050,74,1984,source-clause,tests/,architecture,T-DESIGN
+REQ-74-051,74,1986,source-clause,You may refine this structure if your reasoning produces a cleaner result.,architecture,T-DESIGN
+REQ-75-001,75,1988,scope,Dependency rules,architecture,T-DESIGN
+REQ-75-002,75,1990,source-clause,Create enforceable architectural boundaries.,architecture,T-DESIGN
+REQ-75-003,75,1992,source-clause,Examples:,architecture,T-DESIGN
+REQ-75-004,75,1994,source-clause,domain,architecture,T-DESIGN
+REQ-75-005,75,1995,source-clause,must not depend on infrastructure.,architecture,T-DESIGN
+REQ-75-006,75,1997,source-clause,application,architecture,T-DESIGN
+REQ-75-007,75,1998,source-clause,may depend on domain.,architecture,T-DESIGN
+REQ-75-008,75,2000,source-clause,infrastructure,architecture,T-DESIGN
+REQ-75-009,75,2001,source-clause,implements application/domain ports.,architecture,T-DESIGN
+REQ-75-010,75,2003,source-clause,presentation,architecture,T-DESIGN
+REQ-75-011,75,2004,source-clause,depends on application services.,architecture,T-DESIGN
+REQ-75-012,75,2006,source-clause,No controller should contain business logic.,architecture,T-DESIGN
+REQ-75-013,75,2008,source-clause,No ORM model should automatically become a domain entity.,architecture,T-DESIGN
+REQ-75-014,75,2010,source-clause,No domain object should import NestJS.,architecture,T-DESIGN
+REQ-75-015,75,2012,source-clause,No domain object should import database packages.,architecture,T-DESIGN
+REQ-76-001,76,2014,scope,Coding standards,architecture,T-DESIGN
+REQ-76-002,76,2016,source-clause,Require:,architecture,T-DESIGN
+REQ-76-003,76,2018,source-clause,strict TypeScript,architecture,T-DESIGN
+REQ-76-004,76,2019,source-clause,no `any` without explicit justification,architecture,T-DESIGN
+REQ-76-005,76,2020,source-clause,small cohesive classes,architecture,T-DESIGN
+REQ-76-006,76,2021,source-clause,descriptive naming,architecture,T-DESIGN
+REQ-76-007,76,2022,source-clause,no God services,architecture,T-DESIGN
+REQ-76-008,76,2023,source-clause,no circular dependencies,architecture,T-DESIGN
+REQ-76-009,76,2024,source-clause,no hidden side effects,architecture,T-DESIGN
+REQ-76-010,76,2025,source-clause,explicit error handling,architecture,T-DESIGN
+REQ-76-011,76,2026,source-clause,explicit business invariants,architecture,T-DESIGN
+REQ-76-012,76,2027,source-clause,immutable value objects where appropriate,architecture,T-DESIGN
+REQ-76-013,76,2029,source-clause,Avoid premature abstractions.,architecture,T-DESIGN
+REQ-76-014,76,2031,source-clause,Avoid generic BaseRepository/BaseService architectures that erase domain meaning.,architecture,T-DESIGN
+REQ-77-001,77,2033,scope,Architecture Decision Records,architecture,T-DESIGN
+REQ-77-002,77,2035,source-clause,Create ADRs for at least:,architecture,T-DESIGN
+REQ-77-003,77,2037,source-clause,modular monolith vs microservices,architecture,T-DESIGN
+REQ-77-004,77,2038,source-clause,REST vs GraphQL,architecture,T-DESIGN
+REQ-77-005,77,2039,source-clause,PostgreSQL,architecture,T-DESIGN
+REQ-77-006,77,2040,source-clause,ORM/query strategy,architecture,T-DESIGN
+REQ-77-007,77,2041,source-clause,event broker,architecture,T-DESIGN
+REQ-77-008,77,2042,source-clause,Temporal/workflow engine,architecture,T-DESIGN
+REQ-77-009,77,2043,source-clause,authentication provider,architecture,T-DESIGN
+REQ-77-010,77,2044,source-clause,authorization architecture,architecture,T-DESIGN
+REQ-77-011,77,2045,source-clause,tenant model,architecture,T-DESIGN
+REQ-77-012,77,2046,source-clause,object storage,architecture,T-DESIGN
+REQ-77-013,77,2047,source-clause,search,architecture,T-DESIGN
+REQ-77-014,77,2048,source-clause,analytics store,architecture,T-DESIGN
+REQ-77-015,77,2049,source-clause,observability,architecture,T-DESIGN
+REQ-77-016,77,2050,source-clause,AI provider abstraction,architecture,T-DESIGN
+REQ-77-017,77,2051,source-clause,monorepo tooling,architecture,T-DESIGN
+REQ-77-018,77,2052,source-clause,financial ledger,architecture,T-DESIGN
+REQ-77-019,77,2054,source-clause,For each ADR state:,architecture,T-DESIGN
+REQ-77-020,77,2056,source-clause,context,architecture,T-DESIGN
+REQ-77-021,77,2057,source-clause,decision,architecture,T-DESIGN
+REQ-77-022,77,2058,source-clause,alternatives,architecture,T-DESIGN
+REQ-77-023,77,2059,source-clause,advantages,architecture,T-DESIGN
+REQ-77-024,77,2060,source-clause,disadvantages,architecture,T-DESIGN
+REQ-77-025,77,2061,source-clause,consequences,architecture,T-DESIGN
+REQ-77-026,77,2062,source-clause,migration path,architecture,T-DESIGN
+REQ-78-001,78,2064,scope,Required diagrams,architecture,T-DESIGN
+REQ-78-002,78,2066,source-clause,Produce Mermaid or PlantUML source for:,architecture,T-DESIGN
+REQ-78-003,78,2068,source-clause,C4 System Context,architecture,T-DESIGN
+REQ-78-004,78,2069,source-clause,C4 Container,architecture,T-DESIGN
+REQ-78-005,78,2070,source-clause,C4 Component,architecture,T-DESIGN
+REQ-78-006,78,2071,source-clause,Tenant model,architecture,T-DESIGN
+REQ-78-007,78,2072,source-clause,Domain/bounded-context map,architecture,T-DESIGN
+REQ-78-008,78,2073,source-clause,Quote sequence,architecture,T-DESIGN
+REQ-78-009,78,2074,source-clause,Underwriting sequence,architecture,T-DESIGN
+REQ-78-010,78,2075,source-clause,Purchase/policy issuance sequence,architecture,T-DESIGN
+REQ-78-011,78,2076,source-clause,Claim sequence,architecture,T-DESIGN
+REQ-78-012,78,2077,source-clause,Payment sequence,architecture,T-DESIGN
+REQ-78-013,78,2078,source-clause,Settlement sequence,architecture,T-DESIGN
+REQ-78-014,78,2079,source-clause,Renewal sequence,architecture,T-DESIGN
+REQ-78-015,78,2080,source-clause,Integration architecture,architecture,T-DESIGN
+REQ-78-016,78,2081,source-clause,Event architecture,architecture,T-DESIGN
+REQ-78-017,78,2082,source-clause,Docker architecture,architecture,T-DESIGN
+REQ-78-018,78,2083,source-clause,Security trust boundaries,architecture,T-DESIGN
+REQ-78-019,78,2084,source-clause,Deployment topology,architecture,T-DESIGN
+REQ-79-001,79,2086,scope,State machines,architecture,T-DESIGN
+REQ-79-002,79,2088,source-clause,Explicitly design state machines for:,architecture,T-DESIGN
+REQ-79-003,79,2090,source-clause,Quote,architecture,T-DESIGN
+REQ-79-004,79,2091,source-clause,Underwriting Case,architecture,T-DESIGN
+REQ-79-005,79,2092,source-clause,Policy,architecture,T-DESIGN
+REQ-79-006,79,2093,source-clause,Endorsement,architecture,T-DESIGN
+REQ-79-007,79,2094,source-clause,Claim,architecture,T-DESIGN
+REQ-79-008,79,2095,source-clause,Payment,architecture,T-DESIGN
+REQ-79-009,79,2096,source-clause,Refund,architecture,T-DESIGN
+REQ-79-010,79,2097,source-clause,Settlement,architecture,T-DESIGN
+REQ-79-011,79,2098,source-clause,KYC,architecture,T-DESIGN
+REQ-79-012,79,2099,source-clause,Vendor Onboarding,architecture,T-DESIGN
+REQ-79-013,79,2100,source-clause,Complaint,architecture,T-DESIGN
+REQ-79-014,79,2101,source-clause,Assistance Request,architecture,T-DESIGN
+REQ-79-015,79,2103,source-clause,For each state machine specify:,architecture,T-DESIGN
+REQ-79-016,79,2105,source-clause,states,architecture,T-DESIGN
+REQ-79-017,79,2106,source-clause,transitions,architecture,T-DESIGN
+REQ-79-018,79,2107,source-clause,guards,architecture,T-DESIGN
+REQ-79-019,79,2108,source-clause,side effects,architecture,T-DESIGN
+REQ-79-020,79,2109,source-clause,events,architecture,T-DESIGN
+REQ-79-021,79,2110,source-clause,timeouts,architecture,T-DESIGN
+REQ-79-022,79,2111,source-clause,terminal states,architecture,T-DESIGN
+REQ-79-023,79,2112,source-clause,invalid transitions,architecture,T-DESIGN
+REQ-80-001,80,2114,scope,Data classification,privacy,T-PRIVACY
+REQ-80-002,80,2116,source-clause,Define at least:,privacy,T-PRIVACY
+REQ-80-003,80,2118,source-clause,Public,privacy,T-PRIVACY
+REQ-80-004,80,2119,source-clause,Internal,privacy,T-PRIVACY
+REQ-80-005,80,2120,source-clause,Confidential,privacy,T-PRIVACY
+REQ-80-006,80,2121,source-clause,Restricted,privacy,T-PRIVACY
+REQ-80-007,80,2122,source-clause,Highly Restricted,privacy,T-PRIVACY
+REQ-80-008,80,2124,source-clause,Classify:,privacy,T-PRIVACY
+REQ-80-009,80,2126,source-clause,identity data,privacy,T-PRIVACY
+REQ-80-010,80,2127,source-clause,health data,privacy,T-PRIVACY
+REQ-80-011,80,2128,source-clause,financial data,privacy,T-PRIVACY
+REQ-80-012,80,2129,source-clause,claims data,privacy,T-PRIVACY
+REQ-80-013,80,2130,source-clause,authentication secrets,privacy,T-PRIVACY
+REQ-80-014,80,2131,source-clause,documents,privacy,T-PRIVACY
+REQ-80-015,80,2132,source-clause,payment data,privacy,T-PRIVACY
+REQ-80-016,80,2133,source-clause,audit data,privacy,T-PRIVACY
+REQ-80-017,80,2135,source-clause,Map classifications to security controls.,privacy,T-PRIVACY
+REQ-81-001,81,2137,scope,Regulatory architecture,compliance,T-COMPLIANCE
+REQ-81-002,81,2139,source-clause,Do not hard-code a single country's laws into core modules.,compliance,T-COMPLIANCE
+REQ-81-003,81,2141,source-clause,Create jurisdiction configuration.,compliance,T-COMPLIANCE
+REQ-81-004,81,2143,source-clause,Separate:,compliance,T-COMPLIANCE
+REQ-81-005,81,2145,source-clause,global platform rules,compliance,T-COMPLIANCE
+REQ-81-006,81,2146,source-clause,country rules,compliance,T-COMPLIANCE
+REQ-81-007,81,2147,source-clause,insurer rules,compliance,T-COMPLIANCE
+REQ-81-008,81,2148,source-clause,product rules,compliance,T-COMPLIANCE
+REQ-81-009,81,2150,source-clause,Explicitly mark every requirement that requires country-specific legal validation.,compliance,T-COMPLIANCE
+REQ-82-001,82,2152,scope,Scalability,platform,T-COMPOSE
+REQ-82-002,82,2154,source-clause,Define scaling dimensions separately:,platform,T-COMPOSE
+REQ-82-003,82,2156,source-clause,customers,platform,T-COMPOSE
+REQ-82-004,82,2157,source-clause,tenants,platform,T-COMPOSE
+REQ-82-005,82,2158,source-clause,insurance products,platform,T-COMPOSE
+REQ-82-006,82,2159,source-clause,quotes,platform,T-COMPOSE
+REQ-82-007,82,2160,source-clause,policies,platform,T-COMPOSE
+REQ-82-008,82,2161,source-clause,claims,platform,T-COMPOSE
+REQ-82-009,82,2162,source-clause,files,platform,T-COMPOSE
+REQ-82-010,82,2163,source-clause,webhook traffic,platform,T-COMPOSE
+REQ-82-011,82,2164,source-clause,events,platform,T-COMPOSE
+REQ-82-012,82,2165,source-clause,analytics,platform,T-COMPOSE
+REQ-82-013,82,2166,source-clause,provider network,platform,T-COMPOSE
+REQ-82-014,82,2168,source-clause,Identify likely hotspots.,platform,T-COMPOSE
+REQ-82-015,82,2170,source-clause,Explain which components may eventually become independent services.,platform,T-COMPOSE
+REQ-82-016,82,2172,source-clause,Do not prematurely extract them.,platform,T-COMPOSE
+REQ-83-001,83,2174,scope,Failure analysis,platform,T-COMPOSE
+REQ-83-002,83,2176,source-clause,Perform failure-mode analysis for:,platform,T-COMPOSE
+REQ-83-003,83,2178,source-clause,insurer unavailable,platform,T-COMPOSE
+REQ-83-004,83,2179,source-clause,payment provider unavailable,platform,T-COMPOSE
+REQ-83-005,83,2180,source-clause,KYC unavailable,platform,T-COMPOSE
+REQ-83-006,83,2181,source-clause,event broker unavailable,platform,T-COMPOSE
+REQ-83-007,83,2182,source-clause,workflow engine unavailable,platform,T-COMPOSE
+REQ-83-008,83,2183,source-clause,database unavailable,platform,T-COMPOSE
+REQ-83-009,83,2184,source-clause,object storage unavailable,platform,T-COMPOSE
+REQ-83-010,83,2185,source-clause,duplicate webhook,platform,T-COMPOSE
+REQ-83-011,83,2186,source-clause,webhook out of order,platform,T-COMPOSE
+REQ-83-012,83,2187,source-clause,payment succeeds but callback fails,platform,T-COMPOSE
+REQ-83-013,83,2188,source-clause,policy issues but response is lost,platform,T-COMPOSE
+REQ-83-014,83,2189,source-clause,insurer accepts quote but platform times out,platform,T-COMPOSE
+REQ-83-015,83,2190,source-clause,claim documents partially upload,platform,T-COMPOSE
+REQ-83-016,83,2191,source-clause,settlement partially succeeds,platform,T-COMPOSE
+REQ-83-017,83,2193,source-clause,For every scenario specify recovery.,platform,T-COMPOSE
+REQ-84-001,84,2195,scope,Concurrency,architecture,T-DESIGN
+REQ-84-002,84,2197,source-clause,Identify race conditions involving:,architecture,T-DESIGN
+REQ-84-003,84,2199,source-clause,quote acceptance,architecture,T-DESIGN
+REQ-84-004,84,2200,source-clause,policy issuance,architecture,T-DESIGN
+REQ-84-005,84,2201,source-clause,claim decisions,architecture,T-DESIGN
+REQ-84-006,84,2202,source-clause,payment,architecture,T-DESIGN
+REQ-84-007,84,2203,source-clause,refund,architecture,T-DESIGN
+REQ-84-008,84,2204,source-clause,inventory/capacity where relevant,architecture,T-DESIGN
+REQ-84-009,84,2205,source-clause,settlement,architecture,T-DESIGN
+REQ-84-010,84,2206,source-clause,endorsement,architecture,T-DESIGN
+REQ-84-011,84,2207,source-clause,renewal,architecture,T-DESIGN
+REQ-84-012,84,2209,source-clause,Specify concurrency-control mechanisms.,architecture,T-DESIGN
+REQ-85-001,85,2211,scope,Auditability and explainability,compliance,T-COMPLIANCE
+REQ-85-002,85,2213,source-clause,The system must answer questions such as:,compliance,T-COMPLIANCE
+REQ-85-003,85,2215,source-clause,"""Why was this premium calculated?""",compliance,T-COMPLIANCE
+REQ-85-004,85,2217,source-clause,"""Which rules were applied?""",compliance,T-COMPLIANCE
+REQ-85-005,85,2219,source-clause,"""Which version of those rules?""",compliance,T-COMPLIANCE
+REQ-85-006,85,2221,source-clause,"""Who approved this policy?""",compliance,T-COMPLIANCE
+REQ-85-007,85,2223,source-clause,"""Why was this claim rejected?""",compliance,T-COMPLIANCE
+REQ-85-008,85,2225,source-clause,"""Which evidence was considered?""",compliance,T-COMPLIANCE
+REQ-85-009,85,2227,source-clause,"""Who changed this coverage?""",compliance,T-COMPLIANCE
+REQ-85-010,85,2229,source-clause,"""What commission rule generated this amount?""",compliance,T-COMPLIANCE
+REQ-85-011,85,2231,source-clause,"""Which model generated this recommendation?""",compliance,T-COMPLIANCE
+REQ-85-012,85,2233,source-clause,Design data structures that make these answers possible.,compliance,T-COMPLIANCE
+REQ-86-001,86,2235,scope,Production readiness,architecture,T-DESIGN
+REQ-86-002,86,2237,source-clause,The final architecture must address:,architecture,T-DESIGN
+REQ-86-003,86,2239,source-clause,security,architecture,T-DESIGN
+REQ-86-004,86,2240,source-clause,privacy,architecture,T-DESIGN
+REQ-86-005,86,2241,source-clause,performance,architecture,T-DESIGN
+REQ-86-006,86,2242,source-clause,scalability,architecture,T-DESIGN
+REQ-86-007,86,2243,source-clause,maintainability,architecture,T-DESIGN
+REQ-86-008,86,2244,source-clause,availability,architecture,T-DESIGN
+REQ-86-009,86,2245,source-clause,observability,architecture,T-DESIGN
+REQ-86-010,86,2246,source-clause,operability,architecture,T-DESIGN
+REQ-86-011,86,2247,source-clause,recoverability,architecture,T-DESIGN
+REQ-86-012,86,2248,source-clause,internationalization,architecture,T-DESIGN
+REQ-86-013,86,2249,source-clause,accessibility,architecture,T-DESIGN
+REQ-86-014,86,2250,source-clause,auditability,architecture,T-DESIGN
+REQ-86-015,86,2251,source-clause,compliance,architecture,T-DESIGN
+REQ-86-016,86,2252,source-clause,developer experience,architecture,T-DESIGN
+REQ-86-017,86,2253,source-clause,testing,architecture,T-DESIGN
+REQ-86-018,86,2255,source-clause,Do not call the design production-ready unless each category has been addressed.,architecture,T-DESIGN
+REQ-87-001,87,2257,scope,Execution method,architecture,T-DESIGN
+REQ-87-002,87,2259,source-clause,Work in explicit phases.,architecture,T-DESIGN
+REQ-87-003,87,2261,source-clause,PHASE 1 — Requirement normalization,architecture,T-DESIGN
+REQ-87-004,87,2263,source-clause,Reconstruct all requirements into a traceable requirement catalogue.,architecture,T-DESIGN
+REQ-87-005,87,2265,source-clause,Give every requirement an ID.,architecture,T-DESIGN
+REQ-87-006,87,2267,source-clause,Example:,architecture,T-DESIGN
+REQ-87-007,87,2269,source-clause,INS-POL-001,architecture,T-DESIGN
+REQ-87-008,87,2270,source-clause,INS-CLM-001,architecture,T-DESIGN
+REQ-87-009,87,2271,source-clause,SEC-IAM-001,architecture,T-DESIGN
+REQ-87-010,87,2272,source-clause,FIN-LEDGER-001,architecture,T-DESIGN
+REQ-87-011,87,2274,source-clause,Identify conflicts and missing dependencies.,architecture,T-DESIGN
+REQ-87-012,87,2276,source-clause,Do not silently discard requirements.,architecture,T-DESIGN
+REQ-87-013,87,2278,source-clause,PHASE 2 — Domain discovery,architecture,T-DESIGN
+REQ-87-014,87,2280,source-clause,Identify:,architecture,T-DESIGN
+REQ-87-015,87,2282,source-clause,domains,architecture,T-DESIGN
+REQ-87-016,87,2283,source-clause,subdomains,architecture,T-DESIGN
+REQ-87-017,87,2284,source-clause,bounded contexts,architecture,T-DESIGN
+REQ-87-018,87,2285,source-clause,aggregates,architecture,T-DESIGN
+REQ-87-019,87,2286,source-clause,entities,architecture,T-DESIGN
+REQ-87-020,87,2287,source-clause,value objects,architecture,T-DESIGN
+REQ-87-021,87,2288,source-clause,domain services,architecture,T-DESIGN
+REQ-87-022,87,2289,source-clause,domain events,architecture,T-DESIGN
+REQ-87-023,87,2290,source-clause,invariants,architecture,T-DESIGN
+REQ-87-024,87,2291,source-clause,policies,architecture,T-DESIGN
+REQ-87-025,87,2293,source-clause,PHASE 3 — Actor analysis,architecture,T-DESIGN
+REQ-87-026,87,2295,source-clause,Identify every actor and permission relationship.,architecture,T-DESIGN
+REQ-87-027,87,2297,source-clause,PHASE 4 — Process modeling,architecture,T-DESIGN
+REQ-87-028,87,2299,source-clause,Model all critical workflows.,architecture,T-DESIGN
+REQ-87-029,87,2301,source-clause,PHASE 5 — Architecture,architecture,T-DESIGN
+REQ-87-030,87,2303,source-clause,"Produce logical, application, data, integration, security and deployment architectures.",architecture,T-DESIGN
+REQ-87-031,87,2305,source-clause,PHASE 6 — Data design,architecture,T-DESIGN
+REQ-87-032,87,2307,source-clause,Design conceptual ERDs and ownership.,architecture,T-DESIGN
+REQ-87-033,87,2309,source-clause,PHASE 7 — API design,architecture,T-DESIGN
+REQ-87-034,87,2311,source-clause,"Design resources, contracts, errors, idempotency and versioning.",architecture,T-DESIGN
+REQ-87-035,87,2313,source-clause,PHASE 8 — Event design,architecture,T-DESIGN
+REQ-87-036,87,2315,source-clause,Create event catalogue and schema conventions.,architecture,T-DESIGN
+REQ-87-037,87,2317,source-clause,PHASE 9 — Security/privacy,architecture,T-DESIGN
+REQ-87-038,87,2319,source-clause,Perform threat model and privacy analysis.,architecture,T-DESIGN
+REQ-87-039,87,2321,source-clause,PHASE 10 — Infrastructure,architecture,T-DESIGN
+REQ-87-040,87,2323,source-clause,"Design Docker topology, networking, volumes, secrets, observability and environment profiles.",architecture,T-DESIGN
+REQ-87-041,87,2325,source-clause,PHASE 11 — UX architecture,architecture,T-DESIGN
+REQ-87-042,87,2327,source-clause,Map role-specific journeys and frontend architecture.,architecture,T-DESIGN
+REQ-87-043,87,2329,source-clause,PHASE 12 — Testing,architecture,T-DESIGN
+REQ-87-044,87,2331,source-clause,Create comprehensive quality strategy.,architecture,T-DESIGN
+REQ-87-045,87,2333,source-clause,PHASE 13 — Review,architecture,T-DESIGN
+REQ-87-046,87,2335,source-clause,Every specialist persona must review architecture relevant to their expertise.,architecture,T-DESIGN
+REQ-87-047,87,2337,source-clause,Record findings.,architecture,T-DESIGN
+REQ-87-048,87,2339,source-clause,PHASE 14 — Cross-disciplinary review,architecture,T-DESIGN
+REQ-87-049,87,2341,source-clause,Specifically search for conflicts between:,architecture,T-DESIGN
+REQ-87-050,87,2343,source-clause,insurance correctness,architecture,T-DESIGN
+REQ-87-051,87,2344,source-clause,security,architecture,T-DESIGN
+REQ-87-052,87,2345,source-clause,UX,architecture,T-DESIGN
+REQ-87-053,87,2346,source-clause,performance,architecture,T-DESIGN
+REQ-87-054,87,2347,source-clause,financial correctness,architecture,T-DESIGN
+REQ-87-055,87,2348,source-clause,compliance,architecture,T-DESIGN
+REQ-87-056,87,2349,source-clause,maintainability,architecture,T-DESIGN
+REQ-87-057,87,2351,source-clause,PHASE 15 — Final architecture,architecture,T-DESIGN
+REQ-87-058,87,2353,source-clause,Resolve findings and produce final implementation-ready architecture.,architecture,T-DESIGN
+REQ-88-001,88,2355,scope,Mandatory cross-review,architecture,T-DESIGN
+REQ-88-002,88,2357,source-clause,"Before finalizing, perform the following review passes:",architecture,T-DESIGN
+REQ-88-003,88,2359,source-clause,Insurance SME review,architecture,T-DESIGN
+REQ-88-004,88,2361,source-clause,Actuarial review,architecture,T-DESIGN
+REQ-88-005,88,2363,source-clause,Underwriting review,architecture,T-DESIGN
+REQ-88-006,88,2365,source-clause,Claims review,architecture,T-DESIGN
+REQ-88-007,88,2367,source-clause,Financial/ledger review,architecture,T-DESIGN
+REQ-88-008,88,2369,source-clause,Security review,architecture,T-DESIGN
+REQ-88-009,88,2371,source-clause,Privacy review,architecture,T-DESIGN
+REQ-88-010,88,2373,source-clause,Architecture review,architecture,T-DESIGN
+REQ-88-011,88,2375,source-clause,Database review,architecture,T-DESIGN
+REQ-88-012,88,2377,source-clause,Integration review,architecture,T-DESIGN
+REQ-88-013,88,2379,source-clause,UX review,architecture,T-DESIGN
+REQ-88-014,88,2381,source-clause,Accessibility review,architecture,T-DESIGN
+REQ-88-015,88,2383,source-clause,SRE review,architecture,T-DESIGN
+REQ-88-016,88,2385,source-clause,QA review,architecture,T-DESIGN
+REQ-88-017,88,2387,source-clause,Compliance review,architecture,T-DESIGN
+REQ-88-018,88,2389,source-clause,Each review must identify:,architecture,T-DESIGN
+REQ-88-019,88,2391,source-clause,critical defects,architecture,T-DESIGN
+REQ-88-020,88,2392,source-clause,high-risk omissions,architecture,T-DESIGN
+REQ-88-021,88,2393,source-clause,medium issues,architecture,T-DESIGN
+REQ-88-022,88,2394,source-clause,improvements,architecture,T-DESIGN
+REQ-88-023,88,2396,source-clause,Resolve critical and high issues before presenting the final design.,architecture,T-DESIGN
+REQ-89-001,89,2398,scope,Traceability,architecture,T-DESIGN
+REQ-89-002,89,2400,source-clause,Build a matrix:,architecture,T-DESIGN
+REQ-89-003,89,2402,source-clause,Requirement,architecture,T-DESIGN
+REQ-89-004,89,2403,source-clause,→ Domain,architecture,T-DESIGN
+REQ-89-005,89,2404,source-clause,→ Component,architecture,T-DESIGN
+REQ-89-006,89,2405,source-clause,→ API,architecture,T-DESIGN
+REQ-89-007,89,2406,source-clause,→ Database owner,architecture,T-DESIGN
+REQ-89-008,89,2407,source-clause,→ Workflow,architecture,T-DESIGN
+REQ-89-009,89,2408,source-clause,→ Test,architecture,T-DESIGN
+REQ-89-010,89,2409,source-clause,→ Security controls,architecture,T-DESIGN
+REQ-89-011,89,2411,source-clause,No major feature may be left without ownership.,architecture,T-DESIGN
+REQ-90-001,90,2413,scope,Required final output,architecture,T-DESIGN
+REQ-90-002,90,2415,source-clause,Deliver the final result in this exact high-level order:,architecture,T-DESIGN
+REQ-90-003,90,2417,source-clause,Executive Architecture Summary,architecture,T-DESIGN
+REQ-90-004,90,2418,source-clause,Assumptions,architecture,T-DESIGN
+REQ-90-005,90,2419,source-clause,Functional Requirement Catalogue,architecture,T-DESIGN
+REQ-90-006,90,2420,source-clause,Non-Functional Requirements,architecture,T-DESIGN
+REQ-90-007,90,2421,source-clause,Actor Catalogue,architecture,T-DESIGN
+REQ-90-008,90,2422,source-clause,Roles and Permissions,architecture,T-DESIGN
+REQ-90-009,90,2423,source-clause,Domain Map,architecture,T-DESIGN
+REQ-90-010,90,2424,source-clause,Bounded Contexts,architecture,T-DESIGN
+REQ-90-011,90,2425,source-clause,Context Relationships,architecture,T-DESIGN
+REQ-90-012,90,2426,source-clause,Aggregate Catalogue,architecture,T-DESIGN
+REQ-90-013,90,2427,source-clause,Domain Event Catalogue,architecture,T-DESIGN
+REQ-90-014,90,2428,source-clause,Product Architecture,architecture,T-DESIGN
+REQ-90-015,90,2429,source-clause,Rating Architecture,architecture,T-DESIGN
+REQ-90-016,90,2430,source-clause,Underwriting Architecture,architecture,T-DESIGN
+REQ-90-017,90,2431,source-clause,Quote Architecture,architecture,T-DESIGN
+REQ-90-018,90,2432,source-clause,Policy Architecture,architecture,T-DESIGN
+REQ-90-019,90,2433,source-clause,Claims Architecture,architecture,T-DESIGN
+REQ-90-020,90,2434,source-clause,Finance/Ledger Architecture,architecture,T-DESIGN
+REQ-90-021,90,2435,source-clause,Commission Architecture,architecture,T-DESIGN
+REQ-90-022,90,2436,source-clause,Settlement Architecture,architecture,T-DESIGN
+REQ-90-023,90,2437,source-clause,Provider Architecture,architecture,T-DESIGN
+REQ-90-024,90,2438,source-clause,Distribution Architecture,architecture,T-DESIGN
+REQ-90-025,90,2439,source-clause,Integration Architecture,architecture,T-DESIGN
+REQ-90-026,90,2440,source-clause,AI Architecture,architecture,T-DESIGN
+REQ-90-027,90,2441,source-clause,Fraud Architecture,architecture,T-DESIGN
+REQ-90-028,90,2442,source-clause,Security Architecture,architecture,T-DESIGN
+REQ-90-029,90,2443,source-clause,Privacy Architecture,architecture,T-DESIGN
+REQ-90-030,90,2444,source-clause,Data Architecture,architecture,T-DESIGN
+REQ-90-031,90,2445,source-clause,API Architecture,architecture,T-DESIGN
+REQ-90-032,90,2446,source-clause,Event Architecture,architecture,T-DESIGN
+REQ-90-033,90,2447,source-clause,Workflow Architecture,architecture,T-DESIGN
+REQ-90-034,90,2448,source-clause,Frontend Architecture,architecture,T-DESIGN
+REQ-90-035,90,2449,source-clause,UX Architecture,architecture,T-DESIGN
+REQ-90-036,90,2450,source-clause,PWA Architecture,architecture,T-DESIGN
+REQ-90-037,90,2451,source-clause,Docker Architecture,architecture,T-DESIGN
+REQ-90-038,90,2452,source-clause,Network Architecture,architecture,T-DESIGN
+REQ-90-039,90,2453,source-clause,Observability Architecture,architecture,T-DESIGN
+REQ-90-040,90,2454,source-clause,Analytics Architecture,architecture,T-DESIGN
+REQ-90-041,90,2455,source-clause,Backup and Disaster Recovery,architecture,T-DESIGN
+REQ-90-042,90,2456,source-clause,Repository Structure,architecture,T-DESIGN
+REQ-90-043,90,2457,source-clause,Dependency Rules,architecture,T-DESIGN
+REQ-90-044,90,2458,source-clause,State Machines,architecture,T-DESIGN
+REQ-90-045,90,2459,source-clause,C4 Diagrams,architecture,T-DESIGN
+REQ-90-046,90,2460,source-clause,Sequence Diagrams,architecture,T-DESIGN
+REQ-90-047,90,2461,source-clause,ER Diagrams,architecture,T-DESIGN
+REQ-90-048,90,2462,source-clause,ADRs,architecture,T-DESIGN
+REQ-90-049,90,2463,source-clause,Testing Strategy,architecture,T-DESIGN
+REQ-90-050,90,2464,source-clause,CI/CD Architecture,architecture,T-DESIGN
+REQ-90-051,90,2465,source-clause,Performance Strategy,architecture,T-DESIGN
+REQ-90-052,90,2466,source-clause,Scaling Strategy,architecture,T-DESIGN
+REQ-90-053,90,2467,source-clause,Threat Model,architecture,T-DESIGN
+REQ-90-054,90,2468,source-clause,Failure-Mode Analysis,architecture,T-DESIGN
+REQ-90-055,90,2469,source-clause,Compliance Matrix,architecture,T-DESIGN
+REQ-90-056,90,2470,source-clause,Requirement Traceability Matrix,architecture,T-DESIGN
+REQ-90-057,90,2471,source-clause,Implementation Roadmap,architecture,T-DESIGN
+REQ-90-058,90,2472,source-clause,Risk Register,architecture,T-DESIGN
+REQ-90-059,90,2473,source-clause,Open Decisions Requiring Jurisdiction-Specific Input,architecture,T-DESIGN
+REQ-90-060,90,2474,source-clause,Final Architecture Review,architecture,T-DESIGN
+REQ-91-001,91,2476,scope,Implementation roadmap,architecture,T-DESIGN
+REQ-91-002,91,2478,source-clause,"Although the task is architecture/design, provide a realistic dependency-aware implementation roadmap.",architecture,T-DESIGN
+REQ-91-003,91,2480,source-clause,Do NOT group work merely by UI page.,architecture,T-DESIGN
+REQ-91-004,91,2482,source-clause,Organize around vertical domain slices.,architecture,T-DESIGN
+REQ-91-005,91,2484,source-clause,Suggested progression to evaluate:,architecture,T-DESIGN
+REQ-91-006,91,2486,source-clause,Foundation,architecture,T-DESIGN
+REQ-91-007,91,2487,source-clause,→ Identity/Tenant,architecture,T-DESIGN
+REQ-91-008,91,2488,source-clause,→ Party/Organization,architecture,T-DESIGN
+REQ-91-009,91,2489,source-clause,→ Product,architecture,T-DESIGN
+REQ-91-010,91,2490,source-clause,→ Pricing,architecture,T-DESIGN
+REQ-91-011,91,2491,source-clause,→ Quote,architecture,T-DESIGN
+REQ-91-012,91,2492,source-clause,→ Underwriting,architecture,T-DESIGN
+REQ-91-013,91,2493,source-clause,→ Payments/Ledger,architecture,T-DESIGN
+REQ-91-014,91,2494,source-clause,→ Policy,architecture,T-DESIGN
+REQ-91-015,91,2495,source-clause,→ Documents,architecture,T-DESIGN
+REQ-91-016,91,2496,source-clause,→ Claims,architecture,T-DESIGN
+REQ-91-017,91,2497,source-clause,→ Settlement,architecture,T-DESIGN
+REQ-91-018,91,2498,source-clause,→ Distribution,architecture,T-DESIGN
+REQ-91-019,91,2499,source-clause,→ Integrations,architecture,T-DESIGN
+REQ-91-020,91,2500,source-clause,→ Analytics,architecture,T-DESIGN
+REQ-91-021,91,2501,source-clause,→ AI,architecture,T-DESIGN
+REQ-91-022,91,2502,source-clause,→ Advanced insurance features,architecture,T-DESIGN
+REQ-91-023,91,2504,source-clause,You may alter this after analyzing dependencies.,architecture,T-DESIGN
+REQ-91-024,91,2506,source-clause,For each phase provide:,architecture,T-DESIGN
+REQ-91-025,91,2508,source-clause,deliverables,architecture,T-DESIGN
+REQ-91-026,91,2509,source-clause,dependencies,architecture,T-DESIGN
+REQ-91-027,91,2510,source-clause,architecture changes,architecture,T-DESIGN
+REQ-91-028,91,2511,source-clause,database changes,architecture,T-DESIGN
+REQ-91-029,91,2512,source-clause,APIs,architecture,T-DESIGN
+REQ-91-030,91,2513,source-clause,tests,architecture,T-DESIGN
+REQ-91-031,91,2514,source-clause,security requirements,architecture,T-DESIGN
+REQ-91-032,91,2515,source-clause,definition of done,architecture,T-DESIGN
+REQ-92-001,92,2517,scope,Anti-patterns to explicitly prevent,architecture,T-DESIGN
+REQ-92-002,92,2519,source-clause,Reject:,architecture,T-DESIGN
+REQ-92-003,92,2521,source-clause,gigantic `AppService`,architecture,T-DESIGN
+REQ-92-004,92,2522,source-clause,controllers containing business logic,architecture,T-DESIGN
+REQ-92-005,92,2523,source-clause,database tables accessed by every module,architecture,T-DESIGN
+REQ-92-006,92,2524,source-clause,shared mutable entities across domains,architecture,T-DESIGN
+REQ-92-007,92,2525,source-clause,generic CRUD architecture for complex insurance operations,architecture,T-DESIGN
+REQ-92-008,92,2526,source-clause,`any` everywhere,architecture,T-DESIGN
+REQ-92-009,92,2527,source-clause,financial floats,architecture,T-DESIGN
+REQ-92-010,92,2528,source-clause,authorization only in the frontend,architecture,T-DESIGN
+REQ-92-011,92,2529,source-clause,trusting tenant IDs from request bodies,architecture,T-DESIGN
+REQ-92-012,92,2530,source-clause,storing raw card data unnecessarily,architecture,T-DESIGN
+REQ-92-013,92,2531,source-clause,synchronous coupling to every external insurer,architecture,T-DESIGN
+REQ-92-014,92,2532,source-clause,distributed transactions,architecture,T-DESIGN
+REQ-92-015,92,2533,source-clause,event-driven everything,architecture,T-DESIGN
+REQ-92-016,92,2534,source-clause,premature microservices,architecture,T-DESIGN
+REQ-92-017,92,2535,source-clause,giant generic BaseService,architecture,T-DESIGN
+REQ-92-018,92,2536,source-clause,undocumented magic rules,architecture,T-DESIGN
+REQ-92-019,92,2537,source-clause,destructive policy edits,architecture,T-DESIGN
+REQ-92-020,92,2538,source-clause,unversioned product/pricing rules,architecture,T-DESIGN
+REQ-92-021,92,2539,source-clause,opaque AI decisions,architecture,T-DESIGN
+REQ-92-022,92,2540,source-clause,AI directly changing financial records,architecture,T-DESIGN
+REQ-92-023,92,2541,source-clause,sensitive information in logs,architecture,T-DESIGN
+REQ-92-024,92,2542,source-clause,public object-storage buckets,architecture,T-DESIGN
+REQ-92-025,92,2543,source-clause,long-lived signed URLs,architecture,T-DESIGN
+REQ-92-026,92,2544,source-clause,silent admin impersonation,architecture,T-DESIGN
+REQ-92-027,92,2545,source-clause,unaudited privileged actions,architecture,T-DESIGN
+REQ-92-028,92,2546,source-clause,global database queries without tenant scope,architecture,T-DESIGN
+REQ-93-001,93,2548,scope,Decision quality,architecture,T-DESIGN
+REQ-93-002,93,2550,source-clause,Never select technology merely because it is popular.,architecture,T-DESIGN
+REQ-93-003,93,2552,source-clause,For every significant technology choice explain:,architecture,T-DESIGN
+REQ-93-004,93,2554,source-clause,Why?,architecture,T-DESIGN
+REQ-93-005,93,2555,source-clause,What problem does it solve?,architecture,T-DESIGN
+REQ-93-006,93,2556,source-clause,What alternatives exist?,architecture,T-DESIGN
+REQ-93-007,93,2557,source-clause,What complexity does it introduce?,architecture,T-DESIGN
+REQ-93-008,93,2558,source-clause,What would trigger replacing it?,architecture,T-DESIGN
+REQ-93-009,93,2560,source-clause,Favor the simplest architecture that satisfies the actual requirements.,architecture,T-DESIGN
+REQ-94-001,94,2562,scope,Research requirement,architecture,T-DESIGN
+REQ-94-002,94,2564,source-clause,"Before locking decisions involving evolving technology or standards, verify current authoritative documentation.",architecture,T-DESIGN
+REQ-94-003,94,2566,source-clause,Prefer:,architecture,T-DESIGN
+REQ-94-004,94,2568,source-clause,official framework documentation,architecture,T-DESIGN
+REQ-94-005,94,2569,source-clause,official standards bodies,architecture,T-DESIGN
+REQ-94-006,94,2570,source-clause,official security standards,architecture,T-DESIGN
+REQ-94-007,94,2571,source-clause,primary technical specifications,architecture,T-DESIGN
+REQ-94-008,94,2573,source-clause,Do not rely on stale assumptions.,architecture,T-DESIGN
+REQ-94-009,94,2575,source-clause,Examples include:,architecture,T-DESIGN
+REQ-94-010,94,2577,source-clause,Next.js,architecture,T-DESIGN
+REQ-94-011,94,2578,source-clause,NestJS,architecture,T-DESIGN
+REQ-94-012,94,2579,source-clause,Docker,architecture,T-DESIGN
+REQ-94-013,94,2580,source-clause,PostgreSQL,architecture,T-DESIGN
+REQ-94-014,94,2581,source-clause,OpenTelemetry,architecture,T-DESIGN
+REQ-94-015,94,2582,source-clause,Temporal,architecture,T-DESIGN
+REQ-94-016,94,2583,source-clause,OWASP,architecture,T-DESIGN
+REQ-94-017,94,2584,source-clause,NIST,architecture,T-DESIGN
+REQ-94-018,94,2585,source-clause,PCI SSC,architecture,T-DESIGN
+REQ-94-019,94,2586,source-clause,ACORD,architecture,T-DESIGN
+REQ-94-020,94,2587,source-clause,HL7 FHIR,architecture,T-DESIGN
+REQ-95-001,95,2589,scope,No superficial output,architecture,T-DESIGN
+REQ-95-002,95,2591,source-clause,Do not produce a generic SaaS architecture decorated with insurance terminology.,architecture,T-DESIGN
+REQ-95-003,95,2593,source-clause,Domain behavior must be explicit.,architecture,T-DESIGN
+REQ-95-004,95,2595,source-clause,Financial accounting must be mathematically sound.,architecture,T-DESIGN
+REQ-95-005,95,2597,source-clause,State transitions must be explicit.,architecture,T-DESIGN
+REQ-95-006,95,2599,source-clause,Multi-tenancy must be enforceable.,architecture,T-DESIGN
+REQ-95-007,95,2601,source-clause,Authorization must be resource-aware.,architecture,T-DESIGN
+REQ-95-008,95,2603,source-clause,Claims must model real operational complexity.,architecture,T-DESIGN
+REQ-95-009,95,2605,source-clause,Products and pricing must be versioned.,architecture,T-DESIGN
+REQ-95-010,95,2607,source-clause,Policy history must be reproducible.,architecture,T-DESIGN
+REQ-95-011,95,2609,source-clause,All consequential decisions must be auditable.,architecture,T-DESIGN
+REQ-96-001,96,2611,scope,Handling uncertainty,compliance,T-COMPLIANCE
+REQ-96-002,96,2613,source-clause,If jurisdiction-specific rules are unknown:,compliance,T-COMPLIANCE
+REQ-96-003,96,2615,source-clause,Do not fabricate them.,compliance,T-COMPLIANCE
+REQ-96-004,96,2616,source-clause,Create an abstraction point.,compliance,T-COMPLIANCE
+REQ-96-005,96,2617,source-clause,Label the requirement as jurisdiction-dependent.,compliance,T-COMPLIANCE
+REQ-96-006,96,2618,source-clause,Explain exactly what legal/domain input is required.,compliance,T-COMPLIANCE
+REQ-96-007,96,2619,source-clause,Continue designing everything that does not depend on that answer.,compliance,T-COMPLIANCE
+REQ-96-008,96,2621,source-clause,Do not stop the overall architecture because a jurisdiction-specific detail is unresolved.,compliance,T-COMPLIANCE
+REQ-97-001,97,2623,scope,Final quality gate,architecture,T-DESIGN
+REQ-97-002,97,2625,source-clause,"Before completing the response, verify:",architecture,T-DESIGN
+REQ-97-003,97,2627,source-clause,Can multiple insurers safely coexist?,architecture,T-DESIGN
+REQ-97-004,97,2629,source-clause,Can one insurer access another insurer's private data?,architecture,T-DESIGN
+REQ-97-005,97,2631,source-clause,Can one customer hold policies from multiple insurers?,architecture,T-DESIGN
+REQ-97-006,97,2633,source-clause,Can one person have multiple insurance roles?,architecture,T-DESIGN
+REQ-97-007,97,2635,source-clause,Can pricing from five years ago be reproduced?,architecture,T-DESIGN
+REQ-97-008,97,2637,source-clause,Can an old policy still be interpreted correctly?,architecture,T-DESIGN
+REQ-97-009,97,2639,source-clause,Can a payment safely be retried?,architecture,T-DESIGN
+REQ-97-010,97,2641,source-clause,Can policy issuance safely be retried?,architecture,T-DESIGN
+REQ-97-011,97,2643,source-clause,Can webhooks safely be replayed?,architecture,T-DESIGN
+REQ-97-012,97,2645,source-clause,Can claims remain open for months?,architecture,T-DESIGN
+REQ-97-013,97,2647,source-clause,Can workflows survive process restarts?,architecture,T-DESIGN
+REQ-97-014,97,2649,source-clause,Can insurer integrations fail without corrupting core data?,architecture,T-DESIGN
+REQ-97-015,97,2651,source-clause,Can tenant isolation be tested?,architecture,T-DESIGN
+REQ-97-016,97,2653,source-clause,Can every consequential action be audited?,architecture,T-DESIGN
+REQ-97-017,97,2655,source-clause,Can commissions be reconciled?,architecture,T-DESIGN
+REQ-97-018,97,2657,source-clause,Can financial balances be reconstructed from the ledger?,architecture,T-DESIGN
+REQ-97-019,97,2659,source-clause,Can a vendor be onboarded without code changes?,architecture,T-DESIGN
+REQ-97-020,97,2661,source-clause,Can product rules change without rewriting historical policies?,architecture,T-DESIGN
+REQ-97-021,97,2663,source-clause,Can a new country be introduced without contaminating core domain logic?,architecture,T-DESIGN
+REQ-97-022,97,2665,source-clause,Can another payment provider be introduced through an adapter?,architecture,T-DESIGN
+REQ-97-023,97,2667,source-clause,Can another insurer be added through an anti-corruption layer?,architecture,T-DESIGN
+REQ-97-024,97,2669,source-clause,Can advanced modules later be extracted into services?,architecture,T-DESIGN
+REQ-97-025,97,2671,source-clause,Can the entire system start using Docker?,architecture,T-DESIGN
+REQ-97-026,97,2673,source-clause,Can the system be operated and observed in production?,architecture,T-DESIGN
+REQ-97-027,97,2675,source-clause,"If the answer to any of these is ""no"", revise the design before finalizing it.",architecture,T-DESIGN
+REQ-98-001,98,2677,scope,Final instruction,architecture,T-DESIGN
+REQ-98-002,98,2679,source-clause,Produce an architecture that a senior engineering organization could actually implement.,architecture,T-DESIGN
+REQ-98-003,98,2681,source-clause,Be rigorous rather than verbose for its own sake.,architecture,T-DESIGN
+REQ-98-004,98,2683,source-clause,Every abstraction must solve a concrete problem.,architecture,T-DESIGN
+REQ-98-005,98,2685,source-clause,Every domain must have clear ownership.,architecture,T-DESIGN
+REQ-98-006,98,2687,source-clause,Every integration must have a failure strategy.,architecture,T-DESIGN
+REQ-98-007,98,2689,source-clause,Every financial action must be traceable.,architecture,T-DESIGN
+REQ-98-008,98,2691,source-clause,Every sensitive operation must be authorized and audited.,architecture,T-DESIGN
+REQ-98-009,98,2693,source-clause,Every long-running workflow must be durable.,architecture,T-DESIGN
+REQ-98-010,98,2695,source-clause,Every tenant boundary must be defensible.,architecture,T-DESIGN
+REQ-98-011,98,2697,source-clause,Every historical insurance decision must remain reproducible.,architecture,T-DESIGN
+REQ-98-012,98,2699,source-clause,"The final deliverable should constitute the authoritative technical blueprint for implementing this multi-vendor B2B/B2C insurance platform using Next.js, NestJS and Docker.",architecture,T-DESIGN

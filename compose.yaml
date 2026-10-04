@@ -1,0 +1,146 @@
+name: insurance-platform
+x-app: &app
+  build: {context: ., dockerfile: infrastructure/Dockerfile, target: backend}
+  image: insurance-platform/backend:0.1.0
+  init: true
+  restart: unless-stopped
+  read_only: true
+  tmpfs: [/tmp]
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  environment: &env
+    DEPLOYMENT_MODE: sandbox
+    PROVIDER_MODE: sandbox
+    DATABASE_URL_FILE: /run/secrets/database_url
+    WORKER_DATABASE_URL_FILE: /run/secrets/worker_database_url
+    ENCRYPTION_KEY_FILE: /run/secrets/encryption_key
+    S3_ACCESS_KEY_FILE: /run/secrets/s3_access_key
+    S3_SECRET_KEY_FILE: /run/secrets/s3_secret
+    S3_ENDPOINT: http://storage:8333
+    S3_BUCKET: insurance-private
+    NATS_URL: nats://nats:4222
+    NATS_TOKEN_FILE: /run/secrets/nats_token
+    TEMPORAL_ADDRESS: temporal:7233
+    PROVIDER_URL: http://mock:3000
+    PROVIDER_SECRET_FILE: /run/secrets/provider_secret
+    ALLOWED_ORIGINS: http://localhost:3100,http://localhost:3101,http://localhost:3102,http://localhost:3103,http://127.0.0.1:3100,http://127.0.0.1:3101,http://127.0.0.1:3102,http://127.0.0.1:3103
+    WEBHOOK_ALLOWED_HOSTS: hooks.example.invalid
+  secrets: [database_url,worker_database_url,encryption_key,s3_access_key,s3_secret,nats_token,provider_secret]
+  depends_on:
+    migrate: {condition: service_completed_successfully}
+x-web: &web
+  init: true
+  restart: unless-stopped
+  read_only: true
+  tmpfs: [/tmp]
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  environment: {API_INTERNAL_ORIGIN: 'http://api:3000'}
+  depends_on: {api: {condition: service_healthy}}
+services:
+  postgres:
+    image: postgres:18.6-bookworm@sha256:3725f4e2499eef5134592b3b4ab79a543ed7f8e533b05b5b637af926630f6650
+    restart: unless-stopped
+    environment: {POSTGRES_DB: insurance,POSTGRES_PASSWORD_FILE: /run/secrets/db_password}
+    secrets: [db_password]
+    volumes: [postgres:/var/lib/postgresql]
+    healthcheck: {test: ['CMD-SHELL','pg_isready -U postgres -d insurance'],interval: 5s,timeout: 5s,retries: 20}
+  storage:
+    image: chrislusf/seaweedfs:4.48@sha256:4e61d15fd35994cb1e43e1e553dff106794841fd9a99ade2fc8c8bfce4d7872d
+    restart: unless-stopped
+    env_file: [.local/storage.env]
+    command: ['mini','-dir=/data','-ip=storage','-ip.bind=0.0.0.0']
+    volumes: [storage:/data]
+    healthcheck: {test: ['CMD-SHELL','wget -q -O /dev/null http://127.0.0.1:9333/cluster/status'],interval: 10s,timeout: 5s,retries: 12}
+  nats:
+    image: nats:2.15.0@sha256:cd3fcd4ecdda44e3a66728a5334af0a959bc3979b32810e033d1c547241cd0f4
+    restart: unless-stopped
+    command: ['-c','/etc/nats/nats.conf']
+    volumes: [nats:/data,./.local/nats.conf:/etc/nats/nats.conf:ro]
+  temporal:
+    image: temporalio/auto-setup:1.29.7@sha256:f14912b699cf73015ad5c4fc18d522d4b014db90e794039214dfb7c022c2644f
+    restart: unless-stopped
+    environment: {DB: postgres12,DB_PORT: '5432',POSTGRES_USER: postgres,POSTGRES_SEEDS: postgres,SKIP_DEFAULT_NAMESPACE_CREATION: 'false',DYNAMIC_CONFIG_FILE_PATH: config/dynamicconfig/development-sql.yaml}
+    env_file: [.local/temporal.env]
+    volumes: [./infrastructure/temporal-dynamic.yaml:/etc/temporal/config/dynamicconfig/development-sql.yaml:ro]
+    depends_on: {postgres: {condition: service_healthy}}
+    healthcheck: {test: ['CMD','temporal','operator','cluster','health','--address','temporal:7233'],interval: 10s,timeout: 10s,retries: 30,start_period: 30s}
+  clamav:
+    image: clamav/clamav:1.5.4-debian@sha256:9bb8712a50f0e75166e936c452cd82dd5e5be0b85586598930b5bbb84a99a578
+    restart: unless-stopped
+    volumes: [clamav:/var/lib/clamav]
+    environment: {CLAMAV_NO_FRESHCLAMD: 'false'}
+  migrate:
+    <<: *app
+    restart: 'no'
+    command: ['node','dist/apps/api/src/migrate.js']
+    healthcheck: {disable: true}
+    environment:
+      <<: *env
+      MIGRATION_DATABASE_URL_FILE: /run/secrets/migration_database_url
+      APP_DB_PASSWORD_FILE: /run/secrets/app_db_password
+      WORKER_DB_PASSWORD_FILE: /run/secrets/worker_db_password
+      DEMO_PASSWORD_FILE: /run/secrets/demo_password
+      SEED_DEMO: 'true'
+    secrets: [database_url,worker_database_url,encryption_key,s3_access_key,s3_secret,migration_database_url,app_db_password,worker_db_password,demo_password]
+    depends_on: {postgres: {condition: service_healthy},storage: {condition: service_healthy}}
+  api:
+    <<: *app
+    ports: ['127.0.0.1:3104:3000']
+    environment:
+      <<: *env
+      WORKER_DATABASE_URL_FILE: /run/secrets/database_url
+    secrets: [database_url,encryption_key,s3_access_key,s3_secret,provider_secret]
+  mock:
+    <<: *app
+    command: ['node','dist/apps/mock/src/main.js']
+    healthcheck: {test: ['CMD','node','-e',"fetch('http://127.0.0.1:3000/health/ready').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]}
+  worker:
+    <<: *app
+    command: ['node','dist/apps/worker/src/main.js']
+    depends_on: {migrate: {condition: service_completed_successfully},temporal: {condition: service_healthy},nats: {condition: service_started}}
+    healthcheck: {test: ['CMD','node','-e',"fetch('http://127.0.0.1:3000/health/ready').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]}
+  workflow-worker:
+    <<: *app
+    command: ['node','dist/apps/workflow-worker/src/main.js']
+    depends_on: {migrate: {condition: service_completed_successfully},temporal: {condition: service_healthy},mock: {condition: service_healthy}}
+    healthcheck: {test: ['CMD','node','-e',"fetch('http://127.0.0.1:3000/health/ready').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]}
+  integration-worker:
+    <<: *app
+    command: ['node','dist/apps/integration-worker/src/main.js']
+    depends_on: {migrate: {condition: service_completed_successfully},clamav: {condition: service_healthy}}
+    healthcheck: {test: ['CMD','node','-e',"fetch('http://127.0.0.1:3000/health/ready').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]}
+  customer-web:
+    <<: *web
+    build: {context: .,dockerfile: infrastructure/Dockerfile,target: web,args: {WEB_APP: customer-web}}
+    image: insurance-platform/customer-web:0.1.0
+    ports: ['127.0.0.1:3100:3000']
+  partner-web:
+    <<: *web
+    build: {context: .,dockerfile: infrastructure/Dockerfile,target: web,args: {WEB_APP: partner-web}}
+    image: insurance-platform/partner-web:0.1.0
+    ports: ['127.0.0.1:3101:3000']
+  admin-web:
+    <<: *web
+    build: {context: .,dockerfile: infrastructure/Dockerfile,target: web,args: {WEB_APP: admin-web}}
+    image: insurance-platform/admin-web:0.1.0
+    ports: ['127.0.0.1:3102:3000']
+  developer-web:
+    <<: *web
+    build: {context: .,dockerfile: infrastructure/Dockerfile,target: web,args: {WEB_APP: developer-web}}
+    image: insurance-platform/developer-web:0.1.0
+    ports: ['127.0.0.1:3103:3000']
+volumes: {postgres: {},storage: {},nats: {},clamav: {}}
+secrets:
+  db_password: {file: .local/db-password}
+  app_db_password: {file: .local/app-db-password}
+  worker_db_password: {file: .local/worker-db-password}
+  demo_password: {file: .local/demo-password}
+  database_url: {file: .local/database-url}
+  worker_database_url: {file: .local/worker-database-url}
+  migration_database_url: {file: .local/migration-database-url}
+  encryption_key: {file: .local/encryption-key}
+  s3_access_key: {file: .local/s3-access-key}
+  s3_secret: {file: .local/s3-secret}
+  nats_token: {file: .local/nats-token}
+  provider_secret: {file: .local/provider-secret}

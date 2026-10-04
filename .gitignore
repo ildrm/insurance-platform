@@ -1,0 +1,15 @@
+.local/
+.env
+.env.*
+!.env.example
+node_modules/
+__pycache__/
+artifacts/
+.next/
+*.tsbuildinfo
+dist/
+test-results/
+playwright-report/
+ops/secrets/
+ops/operator-secrets/
+ops/runtime.env

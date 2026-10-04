@@ -1,0 +1,1 @@
+{"name":"@insurance/api","version":"0.1.0","private":true,"type":"module","scripts":{"build":"tsc -p ../../tsconfig.backend.json","start":"node ../../dist/apps/api/src/main.js"}}

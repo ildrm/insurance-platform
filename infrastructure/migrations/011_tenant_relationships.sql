@@ -1,0 +1,20 @@
+-- Tenant and canonical-party equality are properties of stored relationships.
+ALTER TABLE product.products ADD CONSTRAINT product_tenant_identity UNIQUE(tenant_id,id);
+ALTER TABLE product.versions ADD CONSTRAINT version_tenant_product_identity UNIQUE(tenant_id,product_id,id);
+ALTER TABLE product.versions ADD CONSTRAINT version_product_tenant FOREIGN KEY(tenant_id,product_id) REFERENCES product.products(tenant_id,id);
+ALTER TABLE quote.quotes ADD CONSTRAINT quote_version_tenant FOREIGN KEY(tenant_id,product_id,product_version_id) REFERENCES product.versions(tenant_id,product_id,id);
+ALTER TABLE quote.quotes ADD CONSTRAINT quote_party_identity UNIQUE(tenant_id,id,party_id);
+ALTER TABLE policy.policies ADD CONSTRAINT policy_quote_owner FOREIGN KEY(tenant_id,quote_id,party_id) REFERENCES quote.quotes(tenant_id,id,party_id);
+ALTER TABLE policy.policies ADD CONSTRAINT policy_party_identity UNIQUE(tenant_id,id,party_id);
+ALTER TABLE policy.revisions ADD CONSTRAINT revision_policy_owner FOREIGN KEY(tenant_id,policy_id,party_id) REFERENCES policy.policies(tenant_id,id,party_id);
+ALTER TABLE claims.claims ADD CONSTRAINT claim_policy_owner FOREIGN KEY(tenant_id,policy_id,party_id) REFERENCES policy.policies(tenant_id,id,party_id);
+ALTER TABLE claims.claims ADD CONSTRAINT claim_party_identity UNIQUE(tenant_id,id,party_id);
+ALTER TABLE claims.documents ADD CONSTRAINT document_claim_owner FOREIGN KEY(tenant_id,claim_id,party_id) REFERENCES claims.claims(tenant_id,id,party_id);
+ALTER TABLE claims.decisions ADD CONSTRAINT decision_claim_owner FOREIGN KEY(tenant_id,claim_id,party_id) REFERENCES claims.claims(tenant_id,id,party_id);
+ALTER TABLE service.complaints ADD CONSTRAINT complaint_policy_owner FOREIGN KEY(tenant_id,policy_id,party_id) REFERENCES policy.policies(tenant_id,id,party_id);
+ALTER TABLE service.complaints ADD CONSTRAINT complaint_party_identity UNIQUE(tenant_id,id,party_id);
+ALTER TABLE service.complaint_history ADD CONSTRAINT complaint_history_owner FOREIGN KEY(tenant_id,complaint_id,party_id) REFERENCES service.complaints(tenant_id,id,party_id);
+ALTER TABLE integrations.providers ADD CONSTRAINT provider_tenant_identity UNIQUE(tenant_id,id);
+ALTER TABLE product.versions ADD CONSTRAINT carrier_binding_tenant FOREIGN KEY(tenant_id,carrier_adapter_id) REFERENCES integrations.providers(tenant_id,id);
+ALTER TABLE product.versions ADD CONSTRAINT payment_binding_tenant FOREIGN KEY(tenant_id,payment_adapter_id) REFERENCES integrations.providers(tenant_id,id);
+ALTER TABLE settlement.batches ADD CONSTRAINT settlement_binding_tenant FOREIGN KEY(tenant_id,payment_adapter_id) REFERENCES integrations.providers(tenant_id,id);

@@ -1,0 +1,32 @@
+api_id,owner,resources,methods,permission,contract
+API-IDENTITY,identity,/api/v1/customer/sessions; /api/v1/partner/memberships,GET;POST;DELETE,session.manage;user.invite,IdP callback/session management and membership scope
+API-TENANT,tenant,/api/v1/partner/organizations; /api/v1/partner/appointments; /api/v1/admin/grants,GET;POST;DELETE,organization.manage;grant.delegate,Scope and explicit grant/appointment revocation
+API-PARTY,party,/api/v1/customer/party; /api/v1/partner/party-roles; /api/v1/admin/party-merge-reviews,GET;POST,party.read;party.review,Purpose-limited aliases; steward-reviewed correction/merge
+API-CUSTOMER,customer,/api/v1/customer/tickets; /api/v1/partner/customer-timelines; /api/v1/customer/reviews,GET;POST,customer.support.read;review.create,CRM timeline and verified relationship review
+API-VENDOR,vendor,/api/v1/admin/vendor-onboardings; /api/v1/partner/vendor-contracts,GET;POST,vendor.onboard;vendor.activate,KYB/license/contract and onboarding human approvals
+API-PRODUCT,product,/api/v1/public/products; /api/v1/partner/product-versions; /api/v1/partner/product-publications,GET;POST,product.read;product.publish,Immutable effective versions and separate publication approval
+API-PRICING,pricing,/api/v1/partner/rating-versions; /api/v1/partner/rating-simulations; /api/v1/partner/rating-publications,GET;POST,pricing.simulate;pricing.publish,Exact versioned rating and actuarial publication approval
+API-RISK,risk,/api/v1/partner/risk-snapshots; /api/v1/integrations/telematics-summaries,GET;POST,risk.read;risk.verify,Purpose-approved signed risk and usage summaries
+API-QUOTE,quote,/api/v1/customer/quote-requests; /api/v1/customer/quotes/{id}/offers; /api/v1/customer/quotes/{id}/acceptances,GET;POST,quote.create;quote.accept,Fan-out/RFQ/compare/firm acceptance with ETag and key
+API-UW,underwriting,/api/v1/partner/underwriting-cases; /api/v1/partner/underwriting-cases/{id}/decisions,GET;POST,underwriting.read;underwriting.decide,Assigned task/evidence/authority and four-eyes overrides
+API-POLICY,policy,/api/v1/customer/policies; /api/v1/partner/policy-issuances; /api/v1/customer/endorsements; /api/v1/customer/renewals,GET;POST,policy.read;policy.issue;policy.cancel,Bind/issue/immutable revision/cancel/renewal operation resources
+API-CLAIM,claims,/api/v1/customer/fnol; /api/v1/partner/claims; /api/v1/partner/claims/{id}/decision-revisions; /api/v1/customer/claim-appeals,GET;POST,claim.submit;claim.update;claim.approve,Coverage-at-loss/items/reserves/payees/appeals/recoveries
+API-PROVIDER,providers,/api/v1/public/providers; /api/v1/customer/assistance-requests; /api/v1/partner/work-orders; /api/v1/partner/bookings,GET;POST,assistance.request;work-order.manage,Networks/tariffs/dispatch/assignment and completion
+API-BILLING,billing,/api/v1/customer/invoices; /api/v1/partner/installment-schedules,GET;POST,billing.read;billing.schedule,Receivables and collections paired with ledger
+API-PAYMENT,payments,/api/v1/customer/payment-intents; /api/v1/partner/refunds; /api/v1/partner/payout-intents,GET;POST,payment.create;refund.approve;payout.approve,Exact tokenized provider intents and uncertain outcome resolution
+API-LEDGER,ledger,/api/v1/partner/journal-entries; /api/v1/partner/balances; /api/v1/partner/reconciliations,GET;POST,ledger.read;ledger.adjust;reconciliation.manage,Posting not generic CRUD; books/currencies/period approvals
+API-COMMISSION,commission,/api/v1/partner/commission-agreements; /api/v1/partner/commission-accruals,GET;POST,commission.read;commission.publish,Versioned basis/vesting/tier/clawback and journal linkage
+API-SETTLEMENT,settlement,/api/v1/partner/settlements; /api/v1/partner/settlements/{id}/approvals; /api/v1/partner/settlement-statements,GET;POST,settlement.prepare;settlement.approve,"Hash-bound approval, held lines and per-line reconciled payouts"
+API-DISTRIBUTION,distribution,/api/v1/partner/leads; /api/v1/partner/enrollment-imports; /api/v1/partner/affiliate-campaigns; /api/v1/integrations/purchases,GET;POST,distribution.sell;corporate.enroll;campaign.manage,"Appointment/consent, row-idempotent imports, embedded client scope"
+API-DOCUMENT,documents,/api/v1/customer/document-uploads; /api/v1/customer/documents/{id}/download-grants; /api/v1/partner/extraction-reviews,GET;POST,document.upload;document.read;extraction.review,"Quarantine/scan/purpose, <=60s download grants and OCR evidence"
+API-COMPLIANCE,compliance,/api/v1/customer/consents; /api/v1/customer/complaints; /api/v1/admin/kyc-cases; /api/v1/admin/jurisdiction-releases,GET;POST,consent.manage;complaint.resolve;compliance.publish,Consent/legal-basis/holds/notices/appeals/jurisdiction rules
+API-FRAUD,fraud,/api/v1/partner/fraud-cases; /api/v1/partner/fraud-cases/{id}/dispositions,GET;POST,fraud.investigate;fraud.review,Human findings and purpose-restricted evidence
+API-NOTIFICATION,notifications,/api/v1/customer/notification-preferences; /api/v1/partner/notification-deliveries,GET;POST,notification.preference;notification.read,Consent/channel/quiet-hour templates with fallback receipts
+API-INTEGRATION,integrations,/api/v1/integrations/webhooks/{provider}; /api/v1/partner/api-clients; /api/v1/partner/webhook-subscriptions; /api/v1/partner/integration-logs,GET;POST;DELETE,api-key.rotate;webhook.configure;integration.read,"Tenant-bound signed callback, sandbox/SDK/usage and scoped logs"
+API-ANALYTICS,analytics,/api/v1/partner/metrics; /api/v1/partner/metric-exports,GET;POST,analytics.read;analytics.export,Tenant-scoped governed metrics/valuation snapshots
+API-AI,ai,/api/v1/customer/assistant-proposals; /api/v1/partner/ai-reviews,GET;POST,ai.request;ai.review,Purpose-authorized evidence-backed proposals; no direct mutations
+CTRL-FRONTEND,frontend,N/A: design-control contract,N/A,applies to protected actions,blueprint sections 32;33;34
+CTRL-SECURITY,security,N/A: design-control contract,N/A,applies to protected actions,blueprint sections 6;26;51
+CTRL-PRIVACY,privacy,N/A: design-control contract,N/A,applies to protected actions,blueprint sections 27;53
+CTRL-PLATFORM,platform,N/A: design-control contract,N/A,applies to protected actions,blueprint sections 35;36;37;39;48
+CTRL-ARCH,architecture,N/A: design-control contract,N/A,applies to protected actions,blueprint sections 1;8;40;41;46;54;55;58

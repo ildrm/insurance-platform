@@ -1,0 +1,19 @@
+{
+  "name": "@insurance/ui",
+  "version": "1.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/portal.tsx",
+    "./styles.css": "./src/styles.css",
+    "./proxy": "./src/proxy.ts"
+  },
+  "peerDependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "next": "^16.0.0"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "node --test src/*.test.ts"
+  }
+}

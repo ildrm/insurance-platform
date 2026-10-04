@@ -1,0 +1,12 @@
+.git
+.local
+**/node_modules
+**/.next
+**/dist
+**/.env
+**/.env.*
+**/secrets
+**/*.pem
+**/*.key
+coverage
+artifacts

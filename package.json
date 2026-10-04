@@ -1,0 +1,56 @@
+{
+  "name": "insurance-platform",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "scripts": {
+    "build:backend": "tsc -p tsconfig.backend.json",
+    "build:web": "npm run build --workspace=@insurance/customer-web && npm run build --workspace=@insurance/partner-web && npm run build --workspace=@insurance/admin-web && npm run build --workspace=@insurance/developer-web",
+    "build": "npm run build:backend && npm run build:web",
+    "typecheck": "tsc -p tsconfig.backend.json --noEmit",
+    "test": "node --test dist/tests/domain.test.js",
+    "test:integration": "node dist/tests/integration.js",
+    "lint": "node scripts/check-boundaries.mjs",
+    "audit:production": "npm audit --omit=dev",
+    "test:service": "node dist/tests/service.integration.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.1146.0",
+    "@aws-sdk/s3-request-presigner": "3.1146.0",
+    "@nestjs/common": "12.1.2",
+    "@nestjs/core": "12.1.2",
+    "@nestjs/platform-express": "12.1.2",
+    "@nestjs/swagger": "12.0.2",
+    "@temporalio/client": "1.24.0",
+    "@temporalio/worker": "1.24.0",
+    "@temporalio/workflow": "1.24.0",
+    "helmet": "8.3.0",
+    "multer": "2.4.0",
+    "nats": "2.29.3",
+    "next": "16.3.8",
+    "pg": "8.23.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/express": "5.0.6",
+    "@types/multer": "2.3.0",
+    "@types/node": "26.6.4",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "prettier": "3.9.9",
+    "typescript": "6.0.3"
+  }
+}

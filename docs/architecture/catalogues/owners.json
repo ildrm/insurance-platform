@@ -1,0 +1,250 @@
+{
+  "identity": {
+    "component": "identity",
+    "database_owner": "identity",
+    "api_contract": "API-IDENTITY",
+    "workflow": "IdentitySession",
+    "test": "T-AUTHN",
+    "blueprint_sections": "6;26"
+  },
+  "tenant": {
+    "component": "tenant",
+    "database_owner": "tenant",
+    "api_contract": "API-TENANT",
+    "workflow": "ResourceGrant",
+    "test": "T-TENANT",
+    "blueprint_sections": "6;26;28"
+  },
+  "party": {
+    "component": "party",
+    "database_owner": "party",
+    "api_contract": "API-PARTY",
+    "workflow": "PartyStewardship",
+    "test": "T-PARTY",
+    "blueprint_sections": "10;26;28"
+  },
+  "customer": {
+    "component": "customer",
+    "database_owner": "customer",
+    "api_contract": "API-CUSTOMER",
+    "workflow": "CustomerService",
+    "test": "T-CRM",
+    "blueprint_sections": "8;22;33"
+  },
+  "vendor": {
+    "component": "vendor",
+    "database_owner": "vendor",
+    "api_contract": "API-VENDOR",
+    "workflow": "VendorOnboarding",
+    "test": "T-WORKFLOW",
+    "blueprint_sections": "21;23;31;42"
+  },
+  "product": {
+    "component": "product",
+    "database_owner": "product",
+    "api_contract": "API-PRODUCT",
+    "workflow": "ProductPublication",
+    "test": "T-PRODUCT",
+    "blueprint_sections": "12;28"
+  },
+  "pricing": {
+    "component": "pricing",
+    "database_owner": "pricing",
+    "api_contract": "API-PRICING",
+    "workflow": "RatingCalculation",
+    "test": "T-RATING",
+    "blueprint_sections": "13;18"
+  },
+  "risk": {
+    "component": "risk",
+    "database_owner": "risk",
+    "api_contract": "API-RISK",
+    "workflow": "RiskVerification",
+    "test": "T-RATING",
+    "blueprint_sections": "13;14;25"
+  },
+  "quote": {
+    "component": "quote",
+    "database_owner": "quote",
+    "api_contract": "API-QUOTE",
+    "workflow": "QuoteToPolicy",
+    "test": "T-QUOTE",
+    "blueprint_sections": "15;29;31;42"
+  },
+  "underwriting": {
+    "component": "underwriting",
+    "database_owner": "underwriting",
+    "api_contract": "API-UW",
+    "workflow": "UnderwritingCase",
+    "test": "T-UW",
+    "blueprint_sections": "14;31;42"
+  },
+  "policy": {
+    "component": "policy",
+    "database_owner": "policy",
+    "api_contract": "API-POLICY",
+    "workflow": "PolicyLifecycle",
+    "test": "T-HISTORY",
+    "blueprint_sections": "16;31;42"
+  },
+  "claims": {
+    "component": "claims",
+    "database_owner": "claims",
+    "api_contract": "API-CLAIM",
+    "workflow": "ClaimLifecycle",
+    "test": "T-CLAIM",
+    "blueprint_sections": "17;31;42"
+  },
+  "providers": {
+    "component": "providers",
+    "database_owner": "providers",
+    "api_contract": "API-PROVIDER",
+    "workflow": "AssistanceDispatch",
+    "test": "T-ASSIST",
+    "blueprint_sections": "21;31;42"
+  },
+  "billing": {
+    "component": "billing",
+    "database_owner": "billing",
+    "api_contract": "API-BILLING",
+    "workflow": "InstallmentCollection",
+    "test": "T-LEDGER",
+    "blueprint_sections": "18;31"
+  },
+  "payments": {
+    "component": "payments",
+    "database_owner": "payments",
+    "api_contract": "API-PAYMENT",
+    "workflow": "PaymentResolution",
+    "test": "T-PAYMENT",
+    "blueprint_sections": "18;29;31;42"
+  },
+  "ledger": {
+    "component": "ledger",
+    "database_owner": "ledger",
+    "api_contract": "API-LEDGER",
+    "workflow": "PostAndReconcile",
+    "test": "T-LEDGER",
+    "blueprint_sections": "18;28"
+  },
+  "commission": {
+    "component": "commission",
+    "database_owner": "commission",
+    "api_contract": "API-COMMISSION",
+    "workflow": "CommissionVesting",
+    "test": "T-COMMISSION",
+    "blueprint_sections": "19;18"
+  },
+  "settlement": {
+    "component": "settlement",
+    "database_owner": "settlement",
+    "api_contract": "API-SETTLEMENT",
+    "workflow": "SettlementPeriod",
+    "test": "T-SETTLEMENT",
+    "blueprint_sections": "20;31;42"
+  },
+  "distribution": {
+    "component": "distribution",
+    "database_owner": "distribution",
+    "api_contract": "API-DISTRIBUTION",
+    "workflow": "DistributionEnrollment",
+    "test": "T-IMPORT",
+    "blueprint_sections": "22;23"
+  },
+  "documents": {
+    "component": "documents",
+    "database_owner": "documents",
+    "api_contract": "API-DOCUMENT",
+    "workflow": "DocumentCollection",
+    "test": "T-DOC",
+    "blueprint_sections": "23;27;28"
+  },
+  "compliance": {
+    "component": "compliance",
+    "database_owner": "compliance",
+    "api_contract": "API-COMPLIANCE",
+    "workflow": "ComplianceReview",
+    "test": "T-COMPLIANCE",
+    "blueprint_sections": "27;53;57"
+  },
+  "fraud": {
+    "component": "fraud",
+    "database_owner": "fraud",
+    "api_contract": "API-FRAUD",
+    "workflow": "FraudInvestigation",
+    "test": "T-FRAUD",
+    "blueprint_sections": "25;27"
+  },
+  "notifications": {
+    "component": "notifications",
+    "database_owner": "notifications",
+    "api_contract": "API-NOTIFICATION",
+    "workflow": "NotificationDelivery",
+    "test": "T-NOTIFY",
+    "blueprint_sections": "33;37"
+  },
+  "integrations": {
+    "component": "integrations",
+    "database_owner": "integrations",
+    "api_contract": "API-INTEGRATION",
+    "workflow": "ProviderInvocation",
+    "test": "T-CONTRACT",
+    "blueprint_sections": "23;29;52"
+  },
+  "analytics": {
+    "component": "analytics",
+    "database_owner": "ClickHouse marts",
+    "api_contract": "API-ANALYTICS",
+    "workflow": "ProjectionReconciliation",
+    "test": "T-ANALYTICS",
+    "blueprint_sections": "38;49"
+  },
+  "ai": {
+    "component": "ai",
+    "database_owner": "ai",
+    "api_contract": "API-AI",
+    "workflow": "ValidatedProposal",
+    "test": "T-AI",
+    "blueprint_sections": "24;25;27"
+  },
+  "frontend": {
+    "component": "four Next applications",
+    "database_owner": "no authoritative domain tables",
+    "api_contract": "CTRL-FRONTEND",
+    "workflow": "RoleJourney",
+    "test": "T-A11Y",
+    "blueprint_sections": "32;33;34"
+  },
+  "security": {
+    "component": "authorization and security controls",
+    "database_owner": "owned data policies; no generic security DB",
+    "api_contract": "CTRL-SECURITY",
+    "workflow": "ThreatReview",
+    "test": "T-SECURITY",
+    "blueprint_sections": "6;26;51"
+  },
+  "privacy": {
+    "component": "compliance purpose and vault controls",
+    "database_owner": "compliance/party/documents",
+    "api_contract": "CTRL-PRIVACY",
+    "workflow": "PurposeRetention",
+    "test": "T-PRIVACY",
+    "blueprint_sections": "27;53"
+  },
+  "platform": {
+    "component": "container platform and workers",
+    "database_owner": "infra state; owner DBs remain authoritative",
+    "api_contract": "CTRL-PLATFORM",
+    "workflow": "DeploymentRecovery",
+    "test": "T-COMPOSE",
+    "blueprint_sections": "35;36;37;39;48"
+  },
+  "architecture": {
+    "component": "architecture governance",
+    "database_owner": "design contracts; no runtime table",
+    "api_contract": "CTRL-ARCH",
+    "workflow": "DesignReview",
+    "test": "T-DESIGN",
+    "blueprint_sections": "1;8;40;41;46;54;55;58"
+  }
+}

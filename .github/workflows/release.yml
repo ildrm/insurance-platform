@@ -1,0 +1,29 @@
+name: Verify release
+on: [push,pull_request]
+permissions: {contents: read}
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with: {node-version: '24.21.0',cache: npm}
+      - run: npm ci --ignore-scripts
+      - run: npm run build:backend && npm test && npm run lint && npm audit --omit=dev
+      - run: node scripts/bootstrap.mjs
+      - run: for app in api customer-web partner-web admin-web developer-web; do docker compose -p insurance-ci build "$app"; done
+      - run: docker compose -p insurance-ci up -d --no-build --wait --wait-timeout 600
+      - run: npm run test:integration
+      - run: npm run test:service
+      - run: COMPOSE_PROJECT_NAME=insurance-ci node dist/tests/renewal.integration.js
+      - run: npm test --workspace=@insurance/ui
+      - run: docker compose -p insurance-ci exec -T api node dist/tests/database.js
+      - run: COMPOSE_PROJECT_NAME=insurance-ci node tests/credential-isolation.mjs
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e --workspace=@insurance/customer-web
+      - run: COMPOSE_PROJECT_NAME=insurance-ci node tests/readiness.mjs
+      - run: COMPOSE_PROJECT_NAME=insurance-ci node tests/recovery-roundtrip.mjs
+      - run: node scripts/scan-release.mjs
+      - if: always()
+        run: docker compose -p insurance-ci ps -a

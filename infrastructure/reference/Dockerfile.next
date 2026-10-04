@@ -1,0 +1,28 @@
+# Build contract: output=standalone, outputFileTracingRoot at monorepo root,
+# @insurance/<APP> workspace; all apps supply public/ and /healthz/ready.
+ARG NODE_IMAGE
+FROM ${NODE_IMAGE} AS build
+ARG PNPM_VERSION
+ARG APP=customer-web
+WORKDIR /workspace
+RUN test -n "$PNPM_VERSION" && npm install --global "pnpm@${PNPM_VERSION}"
+COPY . .
+RUN --mount=type=cache,id=insurance-pnpm,target=/pnpm/store \
+    --mount=type=secret,id=npmrc,target=/root/.npmrc \
+    pnpm install --frozen-lockfile --store-dir /pnpm/store
+RUN pnpm --filter "@insurance/${APP}..." build
+
+FROM ${NODE_IMAGE} AS runtime
+ARG APP=customer-web
+ENV NODE_ENV=production PORT=3000 HOSTNAME=0.0.0.0 APP_NAME=${APP}
+WORKDIR /app
+COPY --from=build --chown=node:node /workspace/apps/${APP}/.next/standalone/ ./
+COPY --from=build --chown=node:node /workspace/apps/${APP}/.next/static/ ./apps/${APP}/.next/static/
+COPY --from=build --chown=node:node /workspace/apps/${APP}/public/ ./apps/${APP}/public/
+USER node
+EXPOSE 3000
+HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
+    CMD node -e "fetch('http://127.0.0.1:3000/healthz/ready').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+STOPSIGNAL SIGTERM
+# exec replaces the shell, retaining proper PID1 SIGTERM delivery.
+CMD ["sh", "-c", "exec node \"apps/${APP_NAME}/server.js\""]

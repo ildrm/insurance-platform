@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "rootDir": ".",
+    "outDir": "dist",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "sourceMap": true
+  },
+  "include": [
+    "apps/api/src/**/*.ts",
+    "apps/worker/src/**/*.ts",
+    "apps/workflow-worker/src/**/*.ts",
+    "apps/integration-worker/src/**/*.ts",
+    "apps/mock/src/**/*.ts",
+    "packages/domain/src/**/*.ts",
+    "packages/runtime/src/**/*.ts",
+    "tests/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

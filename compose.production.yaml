@@ -1,0 +1,92 @@
+name: insurance-production
+# External PostgreSQL, Temporal, TLS NATS, S3 and scanner are configured in ops/runtime.env.
+# No demo seed, mock provider, infrastructure management ports or public API listener.
+x-production-env: &production-env
+  DEPLOYMENT_MODE: production
+  SEED_DEMO: 'false'
+  PROVIDER_MODE: live
+x-runtime: &runtime
+  image: ${BACKEND_IMAGE:?Set the tested backend image digest}
+  restart: unless-stopped
+  init: true
+  read_only: true
+  tmpfs: [/tmp]
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  env_file: [./ops/runtime.env]
+  environment: *production-env
+  secrets: [database-url,worker-database-url,encryption-key,s3-access-key,s3-secret,nats-token,temporal-ca,temporal-client-cert,temporal-client-key]
+x-web: &web
+  restart: unless-stopped
+  init: true
+  read_only: true
+  tmpfs: [/tmp]
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  environment: {API_INTERNAL_ORIGIN: 'http://api:3000'}
+  depends_on: {api: {condition: service_healthy}}
+services:
+  api:
+    <<: *runtime
+    environment: {<<: *production-env,WORKER_DATABASE_URL_FILE: /run/secrets/database-url}
+    secrets: [database-url,encryption-key,s3-access-key,s3-secret]
+  operator:
+    <<: *runtime
+    profiles: [operator]
+    restart: 'no'
+    command: ['node','dist/apps/api/src/migrate.js']
+    healthcheck: {disable: true}
+    environment:
+      <<: *production-env
+      MIGRATION_DATABASE_URL_FILE: /run/secrets/migration-database-url
+      APP_DB_PASSWORD_FILE: /run/secrets/app-db-password
+      WORKER_DB_PASSWORD_FILE: /run/secrets/worker-db-password
+    secrets: [database-url,worker-database-url,encryption-key,s3-access-key,s3-secret,migration-database-url,app-db-password,worker-db-password]
+  worker:
+    <<: *runtime
+    command: ['node','dist/apps/worker/src/main.js']
+    healthcheck: {test: ['CMD','node','-e',"fetch('http://127.0.0.1:3000/health/ready').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]}
+  workflow-worker:
+    <<: *runtime
+    command: ['node','dist/apps/workflow-worker/src/main.js']
+    healthcheck: {test: ['CMD','node','-e',"fetch('http://127.0.0.1:3000/health/ready').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]}
+  integration-worker:
+    <<: *runtime
+    command: ['node','dist/apps/integration-worker/src/main.js']
+    healthcheck: {test: ['CMD','node','-e',"fetch('http://127.0.0.1:3000/health/ready').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]}
+  customer-web:
+    <<: *web
+    image: ${CUSTOMER_IMAGE:?Set the tested customer image digest}
+    environment: {API_INTERNAL_ORIGIN: 'http://api:3000',PORTAL_PUBLIC_ORIGIN: 'https://${CUSTOMER_HOST:?}'}
+  partner-web:
+    <<: *web
+    image: ${PARTNER_IMAGE:?Set the tested partner image digest}
+    environment: {API_INTERNAL_ORIGIN: 'http://api:3000',PORTAL_PUBLIC_ORIGIN: 'https://${PARTNER_HOST:?}'}
+  admin-web:
+    <<: *web
+    image: ${ADMIN_IMAGE:?Set the tested admin image digest}
+    environment: {API_INTERNAL_ORIGIN: 'http://api:3000',PORTAL_PUBLIC_ORIGIN: 'https://${ADMIN_HOST:?}'}
+  developer-web:
+    <<: *web
+    image: ${DEVELOPER_IMAGE:?Set the tested developer image digest}
+    environment: {API_INTERNAL_ORIGIN: 'http://api:3000',PORTAL_PUBLIC_ORIGIN: 'https://${DEVELOPER_HOST:?}'}
+  ingress:
+    image: caddy@sha256:13b7fbadd017b042956fddbceedeeea12bb1e560534f9b3df281269dbcc61813
+    restart: unless-stopped
+    ports: ['80:80','443:443']
+    environment: {CUSTOMER_HOST: '${CUSTOMER_HOST:?}',PARTNER_HOST: '${PARTNER_HOST:?}',ADMIN_HOST: '${ADMIN_HOST:?}',DEVELOPER_HOST: '${DEVELOPER_HOST:?}'}
+    volumes: [./infrastructure/Caddyfile:/etc/caddy/Caddyfile:ro,caddy_data:/data,caddy_config:/config]
+volumes: {caddy_data: {},caddy_config: {}}
+secrets:
+  database-url: {file: ./ops/secrets/database-url}
+  worker-database-url: {file: ./ops/secrets/worker-database-url}
+  encryption-key: {file: ./ops/secrets/encryption-key}
+  s3-access-key: {file: ./ops/secrets/s3-access-key}
+  s3-secret: {file: ./ops/secrets/s3-secret}
+  nats-token: {file: ./ops/secrets/nats-token}
+  temporal-ca: {file: ./ops/secrets/temporal-ca}
+  temporal-client-cert: {file: ./ops/secrets/temporal-client-cert}
+  temporal-client-key: {file: ./ops/secrets/temporal-client-key}
+  migration-database-url: {file: ./ops/operator-secrets/migration-database-url}
+  app-db-password: {file: ./ops/operator-secrets/app-db-password}
+  worker-db-password: {file: ./ops/operator-secrets/worker-db-password}

@@ -1,0 +1,20 @@
+{$CUSTOMER_HOST} {
+  encode zstd gzip
+  header Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  reverse_proxy customer-web:3000
+}
+{$PARTNER_HOST} {
+  encode zstd gzip
+  header Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  reverse_proxy partner-web:3000
+}
+{$ADMIN_HOST} {
+  encode zstd gzip
+  header Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  reverse_proxy admin-web:3000
+}
+{$DEVELOPER_HOST} {
+  encode zstd gzip
+  header Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  reverse_proxy developer-web:3000
+}

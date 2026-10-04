@@ -1,0 +1,25 @@
+# Build contract: exact NODE_IMAGE digest, PNPM_VERSION, workspace packages
+# @insurance/<APP>, built dist/main.js and pnpm deploy workspace support.
+ARG NODE_IMAGE
+FROM ${NODE_IMAGE} AS build
+ARG PNPM_VERSION
+ARG APP=api
+WORKDIR /workspace
+RUN test -n "$PNPM_VERSION" && npm install --global "pnpm@${PNPM_VERSION}"
+COPY . .
+RUN --mount=type=cache,id=insurance-pnpm,target=/pnpm/store \
+    --mount=type=secret,id=npmrc,target=/root/.npmrc \
+    pnpm install --frozen-lockfile --store-dir /pnpm/store
+RUN pnpm --filter "@insurance/${APP}..." build \
+    && pnpm --filter "@insurance/${APP}" deploy --prod /out
+
+FROM ${NODE_IMAGE} AS runtime
+ENV NODE_ENV=production PORT=3000
+WORKDIR /app
+COPY --from=build --chown=node:node /out/ ./
+USER node
+EXPOSE 3000
+HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
+    CMD node -e "fetch('http://127.0.0.1:3000/healthz/ready').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+STOPSIGNAL SIGTERM
+CMD ["node", "dist/main.js"]

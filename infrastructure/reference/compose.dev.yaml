@@ -1,0 +1,92 @@
+# Dev-only build/mount override; run from repository root with both -f paths.
+x-nest-build: &nest-build
+  context: ../..
+  dockerfile: infrastructure/reference/Dockerfile.nest
+x-next-build: &next-build
+  context: ../..
+  dockerfile: infrastructure/reference/Dockerfile.next
+services:
+  provision:
+    command: [node, dist/main.js, provision-development]
+    # Readiness polling is bounded; waits for IdP/NATS/S3/Temporal before seeding.
+  api:
+    image: insurance/api:dev
+    build:
+      <<: *nest-build
+      args: {APP: api, NODE_IMAGE: "${NODE_IMAGE:?}", PNPM_VERSION: "${PNPM_VERSION:?}"}
+  worker:
+    image: insurance/worker:dev
+    build:
+      <<: *nest-build
+      args: {APP: worker, NODE_IMAGE: "${NODE_IMAGE:?}", PNPM_VERSION: "${PNPM_VERSION:?}"}
+  workflow-worker:
+    image: insurance/workflow-worker:dev
+    build:
+      <<: *nest-build
+      args: {APP: workflow-worker, NODE_IMAGE: "${NODE_IMAGE:?}", PNPM_VERSION: "${PNPM_VERSION:?}"}
+  integration-worker:
+    image: insurance/integration-worker:dev
+    build:
+      <<: *nest-build
+      args: {APP: integration-worker, NODE_IMAGE: "${NODE_IMAGE:?}", PNPM_VERSION: "${PNPM_VERSION:?}"}
+  customer-web:
+    image: insurance/customer-web:dev
+    build:
+      <<: *next-build
+      args: {APP: customer-web, NODE_IMAGE: "${NODE_IMAGE:?}", PNPM_VERSION: "${PNPM_VERSION:?}"}
+  partner-web:
+    image: insurance/partner-web:dev
+    build:
+      <<: *next-build
+      args: {APP: partner-web, NODE_IMAGE: "${NODE_IMAGE:?}", PNPM_VERSION: "${PNPM_VERSION:?}"}
+  admin-web:
+    image: insurance/admin-web:dev
+    build:
+      <<: *next-build
+      args: {APP: admin-web, NODE_IMAGE: "${NODE_IMAGE:?}", PNPM_VERSION: "${PNPM_VERSION:?}"}
+  developer-web:
+    image: insurance/developer-web:dev
+    build:
+      <<: *next-build
+      args: {APP: developer-web, NODE_IMAGE: "${NODE_IMAGE:?}", PNPM_VERSION: "${PNPM_VERSION:?}"}
+  mock-insurer:
+    image: ${MOCK_IMAGE:?verified mock image required}
+    command: [node, dist/main.js, insurer]
+    profiles: [testing, full]
+    user: "1000:1000"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    networks: [data]
+  mock-payment:
+    image: ${MOCK_IMAGE:?}
+    command: [node, dist/main.js, payment]
+    profiles: [testing, full]
+    user: "1000:1000"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    networks: [data]
+  mock-kyc:
+    image: ${MOCK_IMAGE:?}
+    command: [node, dist/main.js, kyc]
+    profiles: [testing, full]
+    user: "1000:1000"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    networks: [data]
+  mock-bank:
+    image: ${MOCK_IMAGE:?}
+    command: [node, dist/main.js, bank]
+    profiles: [testing, full]
+    user: "1000:1000"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    networks: [data]
+  mail:
+    image: ${MAIL_IMAGE:?verified dev mail image required}
+    user: ${MAIL_RUNTIME_USER:?verified non-root UID GID required}
+    profiles: [testing, full]
+    networks: [data]

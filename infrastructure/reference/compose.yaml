@@ -1,0 +1,259 @@
+# Architecture template. Requires Foundation application/configuration contracts.
+name: insurance-reference
+
+x-app: &app
+  init: true
+  restart: unless-stopped
+  user: "1000:1000"
+  read_only: true
+  tmpfs: ["/tmp:rw,nosuid,noexec,size=64m"]
+  cap_drop: [ALL]
+  security_opt: ["no-new-privileges:true"]
+  stop_grace_period: 45s
+  cpus: 1
+  mem_limit: 1g
+  logging:
+    driver: local
+    options: {max-size: "10m", max-file: "3"}
+  healthcheck:
+    test: [CMD, node, -e, "fetch('http://127.0.0.1:3000/healthz/ready').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+    interval: 30s
+    timeout: 5s
+    start_period: 30s
+    retries: 3
+
+services:
+  reverse-proxy:
+    image: ${PROXY_IMAGE:?verified proxy image required}
+    user: "1000:1000"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    tmpfs: [/tmp]
+    ports: ["127.0.0.1:8080:8080"]
+    volumes: ["${LOCAL_CONFIG_DIR:?generated config required}/proxy:/etc/insurance-proxy:ro"]
+    networks: [edge, app, object-access]
+    depends_on: [customer-web, partner-web, admin-web, developer-web, api, identity-provider]
+  customer-web:
+    <<: *app
+    image: ${CUSTOMER_WEB_IMAGE:?verified customer image required}
+    environment: {API_INTERNAL_ORIGIN: "http://api:3000", PORT: "3000"}
+    secrets: [customer_session]
+    networks: [app]
+    depends_on: {api: {condition: service_healthy}}
+  partner-web:
+    <<: *app
+    image: ${PARTNER_WEB_IMAGE:?verified partner image required}
+    environment: {API_INTERNAL_ORIGIN: "http://api:3000", PORT: "3000"}
+    secrets: [partner_session]
+    networks: [app]
+    depends_on: {api: {condition: service_healthy}}
+  admin-web:
+    <<: *app
+    image: ${ADMIN_WEB_IMAGE:?verified admin image required}
+    environment: {API_INTERNAL_ORIGIN: "http://api:3000", PORT: "3000"}
+    secrets: [admin_session]
+    networks: [app]
+    depends_on: {api: {condition: service_healthy}}
+  developer-web:
+    <<: *app
+    image: ${DEVELOPER_WEB_IMAGE:?verified developer image required}
+    environment: {API_INTERNAL_ORIGIN: "http://api:3000", PORT: "3000"}
+    secrets: [developer_session]
+    networks: [app]
+    depends_on: {api: {condition: service_healthy}}
+  api:
+    <<: *app
+    image: ${API_IMAGE:?verified API image required}
+    environment: {APP_CONFIG_FILE: /run/secrets/api_config, PORT: "3000"}
+    secrets: [api_config]
+    networks: [app, data]
+    depends_on:
+      provision: {condition: service_completed_successfully}
+      postgres: {condition: service_healthy}
+  worker:
+    <<: *app
+    image: ${WORKER_IMAGE:?verified event worker image required}
+    environment: {APP_CONFIG_FILE: /run/secrets/worker_config, PORT: "3000"}
+    secrets: [worker_config]
+    networks: [data, egress]
+    depends_on: {provision: {condition: service_completed_successfully}}
+  workflow-worker:
+    <<: *app
+    image: ${WORKFLOW_WORKER_IMAGE:?verified workflow worker image required}
+    environment: {APP_CONFIG_FILE: /run/secrets/workflow_config, PORT: "3000"}
+    secrets: [workflow_config]
+    networks: [data]
+    depends_on: {provision: {condition: service_completed_successfully}, temporal: {condition: service_started}}
+  integration-worker:
+    <<: *app
+    image: ${INTEGRATION_WORKER_IMAGE:?verified integration worker image required}
+    environment: {APP_CONFIG_FILE: /run/secrets/integration_config, PORT: "3000"}
+    secrets: [integration_config]
+    networks: [data, egress]
+    depends_on: {provision: {condition: service_completed_successfully}}
+  bootstrap:
+    <<: *app
+    image: ${BOOTSTRAP_IMAGE:?verified bootstrap image required}
+    restart: "no"
+    healthcheck: {disable: true}
+    command: [node, dist/main.js, migrate-and-bootstrap]
+    environment: {APP_CONFIG_FILE: /run/secrets/bootstrap_config}
+    secrets: [bootstrap_config]
+    networks: [data]
+    depends_on: {postgres: {condition: service_healthy}}
+  provision:
+    <<: *app
+    image: ${BOOTSTRAP_IMAGE:?verified provisioning image required}
+    restart: "no"
+    healthcheck: {disable: true}
+    command: [node, dist/main.js, provision-runtime]
+    environment: {APP_CONFIG_FILE: /run/secrets/provision_config}
+    secrets: [provision_config]
+    networks: [data, app]
+    depends_on:
+      bootstrap: {condition: service_completed_successfully}
+      nats: {condition: service_started}
+      temporal: {condition: service_started}
+      identity-provider: {condition: service_started}
+      minio: {condition: service_started}
+  postgres:
+    image: ${POSTGRES_IMAGE:?verified Postgres image required}
+    user: ${POSTGRES_RUNTIME_USER:?verified non-root UID GID required}
+    environment: {POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password}
+    secrets: [postgres_password]
+    volumes: ["pgdata:/var/lib/postgresql"]
+    networks: [data]
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U postgres -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    stop_grace_period: 60s
+  nats:
+    image: ${NATS_IMAGE:?verified NATS image required}
+    user: ${NATS_RUNTIME_USER:?verified non-root UID GID required}
+    command: ["--config", /run/secrets/nats_config]
+    secrets: [nats_config]
+    volumes: ["natsdata:/data"]
+    networks: [data]
+  temporal:
+    image: ${TEMPORAL_IMAGE:?verified configured Temporal image required}
+    user: ${TEMPORAL_RUNTIME_USER:?verified non-root UID GID required}
+    secrets: [temporal_config]
+    networks: [data]
+    depends_on: {bootstrap: {condition: service_completed_successfully}}
+    # Verified image startup contract consumes /run/secrets/temporal_config.
+    # Foundation must pin image and server/SQL schema tools together.
+  identity-provider:
+    image: ${KEYCLOAK_IMAGE:?verified configured Keycloak image required}
+    user: ${KEYCLOAK_RUNTIME_USER:?verified non-root UID GID required}
+    secrets: [idp_config]
+    networks: [app, data, egress]
+    depends_on: {bootstrap: {condition: service_completed_successfully}}
+    # Configured image consumes /run/secrets/idp_config without secrets in env.
+  minio:
+    image: ${MINIO_IMAGE:?verified S3 reference image required}
+    user: ${MINIO_RUNTIME_USER:?verified non-root UID GID required}
+    command: [server, /data, --console-address, ":9001"]
+    environment:
+      MINIO_ROOT_USER_FILE: /run/secrets/minio_user
+      MINIO_ROOT_PASSWORD_FILE: /run/secrets/minio_password
+    secrets: [minio_user, minio_password]
+    volumes: ["objects:/data"]
+    networks: [data, object-access]
+  clamav:
+    image: ${CLAMAV_IMAGE:?verified scanner image required}
+    user: ${CLAMAV_RUNTIME_USER:?verified non-root UID GID required}
+    volumes: ["clamdefs:/var/lib/clamav"]
+    networks: [data, scan-updates]
+  valkey:
+    image: ${VALKEY_IMAGE:?verified optional cache image required}
+    user: ${VALKEY_RUNTIME_USER:?verified non-root UID GID required}
+    profiles: [cache, full]
+    command: [valkey-server, /run/secrets/valkey_config]
+    secrets: [valkey_config]
+    networks: [data]
+  clickhouse:
+    image: ${CLICKHOUSE_IMAGE:?verified analytics image required}
+    user: ${CLICKHOUSE_RUNTIME_USER:?verified non-root UID GID required}
+    profiles: [analytics, full]
+    volumes: ["clickhouse:/var/lib/clickhouse", "${LOCAL_CONFIG_DIR:?}/clickhouse:/etc/clickhouse-server/config.d:ro"]
+    networks: [data]
+  opensearch:
+    image: ${OPENSEARCH_IMAGE:?verified advanced search image required}
+    user: ${OPENSEARCH_RUNTIME_USER:?verified non-root UID GID required}
+    profiles: [advanced-search, full]
+    volumes: ["search:/usr/share/opensearch/data", "${LOCAL_CONFIG_DIR:?}/opensearch.yml:/usr/share/opensearch/config/opensearch.yml:ro"]
+    networks: [data]
+  otel-collector:
+    image: ${OTEL_IMAGE:?verified telemetry image required}
+    user: ${OTEL_RUNTIME_USER:?verified non-root UID GID required}
+    profiles: [observability, full]
+    command: ["--config=/etc/otelcol/config.yaml"]
+    volumes: ["${LOCAL_CONFIG_DIR:?}/otel.yaml:/etc/otelcol/config.yaml:ro"]
+    networks: [data, management]
+  prometheus:
+    image: ${PROMETHEUS_IMAGE:?verified Prometheus image required}
+    user: ${PROMETHEUS_RUNTIME_USER:?verified non-root UID GID required}
+    profiles: [observability, full]
+    volumes: ["${LOCAL_CONFIG_DIR:?}/prometheus.yml:/etc/prometheus/prometheus.yml:ro", "promdata:/prometheus"]
+    networks: [management]
+  grafana:
+    image: ${GRAFANA_IMAGE:?verified Grafana image required}
+    user: ${GRAFANA_RUNTIME_USER:?verified non-root UID GID required}
+    profiles: [observability, full]
+    volumes: ["grafanadata:/var/lib/grafana", "${LOCAL_CONFIG_DIR:?}/grafana:/etc/grafana/provisioning:ro"]
+    networks: [management]
+  tempo:
+    image: ${TEMPO_IMAGE:?verified Tempo image required}
+    user: ${TEMPO_RUNTIME_USER:?verified non-root UID GID required}
+    profiles: [observability, full]
+    command: ["-config.file=/etc/tempo.yaml"]
+    volumes: ["${LOCAL_CONFIG_DIR:?}/tempo.yaml:/etc/tempo.yaml:ro", "tempodata:/var/tempo"]
+    networks: [management]
+  loki:
+    image: ${LOKI_IMAGE:?verified Loki image required}
+    user: ${LOKI_RUNTIME_USER:?verified non-root UID GID required}
+    profiles: [observability, full]
+    command: ["-config.file=/etc/loki/config.yaml"]
+    volumes: ["${LOCAL_CONFIG_DIR:?}/loki.yaml:/etc/loki/config.yaml:ro", "lokidata:/loki"]
+    networks: [management]
+
+networks:
+  edge: {}
+  app: {internal: true}
+  data: {internal: true}
+  management: {internal: true}
+  object-access: {internal: true}
+  egress: {}
+  scan-updates: {}
+volumes:
+  pgdata: {}
+  natsdata: {}
+  objects: {}
+  clamdefs: {}
+  clickhouse: {}
+  search: {}
+  promdata: {}
+  grafanadata: {}
+  tempodata: {}
+  lokidata: {}
+secrets:
+  postgres_password: {file: "${LOCAL_SECRET_DIR:?}/postgres_password"}
+  customer_session: {file: "${LOCAL_SECRET_DIR:?}/customer_session"}
+  partner_session: {file: "${LOCAL_SECRET_DIR:?}/partner_session"}
+  admin_session: {file: "${LOCAL_SECRET_DIR:?}/admin_session"}
+  developer_session: {file: "${LOCAL_SECRET_DIR:?}/developer_session"}
+  api_config: {file: "${LOCAL_SECRET_DIR:?}/api_config"}
+  worker_config: {file: "${LOCAL_SECRET_DIR:?}/worker_config"}
+  workflow_config: {file: "${LOCAL_SECRET_DIR:?}/workflow_config"}
+  integration_config: {file: "${LOCAL_SECRET_DIR:?}/integration_config"}
+  bootstrap_config: {file: "${LOCAL_SECRET_DIR:?}/bootstrap_config"}
+  provision_config: {file: "${LOCAL_SECRET_DIR:?}/provision_config"}
+  nats_config: {file: "${LOCAL_SECRET_DIR:?}/nats_config"}
+  temporal_config: {file: "${LOCAL_SECRET_DIR:?}/temporal_config"}
+  idp_config: {file: "${LOCAL_SECRET_DIR:?}/idp_config"}
+  minio_user: {file: "${LOCAL_SECRET_DIR:?}/minio_user"}
+  minio_password: {file: "${LOCAL_SECRET_DIR:?}/minio_password"}
+  valkey_config: {file: "${LOCAL_SECRET_DIR:?}/valkey_config"}

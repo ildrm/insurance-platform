@@ -1,0 +1,44 @@
+# Reference Docker deployment specification
+
+These files are deployment **templates for the architecture**, not a runnable implementation. No app source/package lock, generated TLS/runtime config, migration/bootstrap binary, seeded accounts, certified infrastructure build or verified image manifest exists yet. Compose configuration validation proves syntax/topology only. The one-command startup requirement is an explicit Foundation acceptance gate, not claimed as completed runtime work.
+
+## Foundation build/runtime contract
+
+Create workspace packages `@insurance/<app>` with `build`, Nest `dist/main.js`, Next standalone monorepo output and `/healthz/ready` including workers. Configure pnpm injected workspace dependencies/deploy behavior for the pinned pnpm release. Copy `.dockerignore.example` to build-context root. Bind `APP` to an allowlisted workspace; no end-user influence. Dockerfile build secret `npmrc` is optional for private registry; credentials never enter image layers. Runtime config is secret-file based, validated and redacted; fail startup on missing/unsafe production configuration.
+
+Each first-party image installs a shutdown handler: stop HTTP intake/polls, drain work, release/checkpoint leases, close pools and exit within 45 seconds. Workers expose internal readiness endpoint on port 3000 and never publish it. Next runtime image requires writable bounded ISR/data-cache mount only if deliberately enabled; baseline public static rendering and private no-store avoid runtime shared cache. Bootstrap performs context-owned expand migrations and creates separate IdP/Temporal databases/roles, then exits. IdP/Temporal startup waits for schema initialization. The `provision` one-shot performs bounded readiness polling, imports the runtime realm, provisions broker streams/private object buckets/scoped credentials and exits before API/workers start. Development override additionally seeds synthetic demo identities/data. No seed occurs before IdP is listening; timeout fails provisioning rather than reporting success.
+
+The configured Keycloak/Temporal images must consume their mounted secret config, use tested official startup commands, wait on correct SQL schemas and expose vendor-supported health checks. The template intentionally does not guess image-specific flags/secret `_FILE` support. Pin and smoke-test those derived vendor images/configs in Foundation. Verify every infrastructure runtime's non-root user, volume ownership, read-only paths, health checks, update process, TLS, credential scopes and license/support. PostgreSQL 18 candidate uses the parent `/var/lib/postgresql` volume layout; reassess if another stable version is selected. No superuser DB credential reaches API/workers. Object scanner egress is limited to approved definition updates, not document content; application scanners have no general egress.
+
+All infrastructure UID:GID values are required manifest fields, not assumed identical across images. Certified images must prepare volume directory ownership at image construction/bootstrap and provide native health checks in image metadata; do not substitute a root runtime to fix a permissions failure. Per-image minimal writable volume/tmpfs paths and read-only root configuration are recorded and tested in the compatibility manifest. Those settings require actual selected images; the architecture does not invent vendor UIDs or assume arbitrary upstream images meet this contract.
+
+Compose cannot enforce per-container firewall policies within a network; deploy broker ACLs, database roles, object credentials, workload mTLS and production network policies. IdP/notification/integration containers attach an egress network but production traffic must traverse a scoped allowlist proxy/firewall; network attachment alone does not enforce the allowlist. The proxy and object store share a separate object-access network for browser signed uploads/downloads without exposing database/broker networks. Infrastructure resource/user/health settings are image-specific launch gates. Management ports never publish by default. Production certificate configuration is required for DB/broker/IdP/workflow/object links; the local plaintext reference exception is not a production exemption.
+
+## Images, configs and secrets
+
+`.env.example` contains no secrets and intentionally no fabricated pins. Resolve every image to stable version plus digest and all packages to exact versions using [research procedure](../../docs/architecture/research.md). Even disabled profile variables are interpolated by Compose; the full manifest must have values. Production consumes signed built images. Development overrides use explicit local `:dev` tags for first-party builds, backed by frozen dependencies and pinned base images; these local tags are never promoted to production.
+
+Generate `.local/secrets` with random development-only secrets, per-app session keys, scoped DB/broker/object configs and TLS; generate `.local/config` with proxy/telemetry/analytics/search settings. `.local/` must be gitignored. Compose file secrets are mounts, not an encrypted secret manager; restrict host ownership/permissions. Production replaces local files with managed secret distribution and controlled certificate/key rotation. The four audience-specific session secrets remain distinct; IdP provides cross-app SSO without shared session-cookie signing keys. Web apps resolve their own configured secret mount, never scan another app's session files. Test and prod use distinct secrets, PSP environments, databases and hostnames.
+
+Seed synthetic tenant A/B insurers, broker appointment to A, provider work order, corporate roster, two product versions, quote/rating vectors and a cross-insurer customer Party with two resource grants. Development account labels: `customer-demo`, `carrier-a-uw`, `carrier-b-adjuster`, `broker-a`, `finance-preparer`, `finance-approver`, `provider-demo`, `corporate-demo`, `support-demo`. Credentials are generated at bootstrap and displayed locally once, never committed or installed in production. Mock insurer/payment/KYC/bank implement duplicate/out-of-order callbacks, timeout-after-success and definite failure; local mail captures notifications.
+
+## Startup contract after Foundation
+
+Run from repository root. The bootstrap command will be implemented as a containerized setup command which emits the verified `infrastructure/versions.env` and local config/secret references. Then development:
+
+```sh
+docker compose --env-file infrastructure/versions.env \
+  -f infrastructure/reference/compose.yaml \
+  -f infrastructure/reference/compose.dev.yaml \
+  --profile testing up --build --wait
+```
+
+Core is the default profile, requiring no `--profile core`. `full` enables cache, analytics, advanced-search, observability and dev mocks; only use advanced-search/cache when need is demonstrated. Health gates and seed provisioning must make `--wait` prove useful app readiness rather than only a listening TCP port. Containers can start while broker/carrier unavailable if durable capacity and essential readiness contracts permit it; wait conditions must not encode synchronous coupling to all external providers.
+
+CI first starts base + dev with the testing profile using `up --build --wait`, allowing migration/provisioning one-shots to finish successfully. It then combines base + dev + test and executes `run --rm --no-deps test-runner`; its exit code is the CI result. Do not use whole-stack abort-on-container-exit, which would stop the environment when successful bootstrap exits. Disposable project names isolate volumes/seeds; the test runner verifies mock readiness with bounded retries. Test commands cannot run against production secrets. Local developer teardown preserves volumes by default; destructive test-volume cleanup is confined to isolated CI projects.
+
+Production reference combines base + prod with immutable image manifest, production configs/TLS/secrets and no dev override/mock profile. It binds only 443, uses explicit `!override` port merge (requires Compose 2.24.4+ with the actual release pinned/verified) and has no demo seeds. It is a single-host reference; HA production maps the same containers to multi-host orchestration/managed state with fencing and recovery design in blueprint sections 35–39. Host memory/resource budgets must be verified against the chosen optional profiles.
+
+## Remaining startup evidence
+
+T-COMPOSE must prove clean-checkout startup, all four frontends, real migration/seed, IdP login/federation, NATS outbox/inbox, Temporal history replay, quarantined uploads and mock quote→payment→policy→claim→settlement. T-SUPPLY covers non-root vendor containers, SIGTERM, secrets/digests/SBOM. T-RESTORE proves named volume/PITR/object/key/workflow recovery. These are explicit deliverables; configuration-only checks cannot substitute for them.
